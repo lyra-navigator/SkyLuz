@@ -9,7 +9,9 @@
 
 package com.google.android.stardroid.render.api
 
+import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.Vector3
+import kotlin.math.tan
 
 /** A point projected onto the surface: top-left-origin pixels plus a pseudo-[depth] in NDC z. */
 data class ScreenPoint(val xPx: Float, val yPx: Float, val depth: Float)
@@ -62,5 +64,38 @@ class SkyProjection(private val camera: SkyCamera, private val viewport: Viewpor
     private companion object {
         /** Reject points at or behind the eye plane (homogeneous w ≈ the look-direction dot). */
         const val W_EPSILON = 1e-9
+    }
+
+    /**
+     * Inverse of [worldToScreen] (the constellation draw mode's tap → sky-direction step).
+     * Returns the unit geocentric direction whose projection lands on the given pixel
+     * (top-left origin, same convention as [worldToScreen]), or `null` for a degenerate
+     * viewport. Shares the camera basis with [Matrix4.view], so directions round-trip
+     * through [worldToScreen] to the same pixel: this is pure CPU math, unit-tested with
+     * no GL context.
+     */
+    fun screenToDirection(
+        xPx: Float,
+        yPx: Float,
+    ): Vector3? {
+        val width = viewport.widthPx.toDouble()
+        val height = viewport.heightPx.toDouble()
+        if (width <= 0.0 || height <= 0.0) return null
+        val ndcX = 2.0 * xPx / width - 1.0
+        val ndcY = 1.0 - 2.0 * yPx / height
+        // The same orthonormal basis Matrix4.view builds (D21): f = look, r = look × up,
+        // u = r × f — so this agrees with the GL backend pixel-for-pixel.
+        val f = camera.lineOfSight.normalized()
+        val r = (f cross camera.up).normalized()
+        if (r.length2 < 1e-12) return null // collinear look/up (invalid camera)
+        val u = r cross f
+        // Perspective mapping (Matrix4.perspective): ndc = dir·basis / (dir·f) scaled by
+        // cot(fov/2) * shortPx / sidePx. Inverting with dir·f fixed at 1 gives the ray.
+        val t = tan(camera.fovDeg * DEGREES_TO_RADIANS / 2.0)
+        val shortPx = minOf(width, height)
+        val tanX = t * width / shortPx
+        val tanY = t * height / shortPx
+        val dir = f + r * (ndcX * tanX) + u * (ndcY * tanY)
+        return dir.normalized()
     }
 }
