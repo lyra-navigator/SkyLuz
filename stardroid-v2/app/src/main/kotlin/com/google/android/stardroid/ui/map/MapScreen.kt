@@ -92,6 +92,8 @@ import com.google.android.stardroid.startup.Experiment
 import com.google.android.stardroid.startup.ExperimentConfig
 import com.google.android.stardroid.time.TimeTravelState
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
+import com.google.android.stardroid.layers.CatalogLayers
+import com.google.android.stardroid.layers.CustomFiguresLayer
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.AcquiringTimeoutDialog
 import com.google.android.stardroid.ui.location.LocationPermanentlyDeniedDialog
@@ -784,6 +786,11 @@ fun MapScreen(
                 },
                 onStartDrawMode = {
                     showOverflowSheet = false
+                    // The user's rule: drawing/guessing modes work on a bare sky — the IAU
+                    // figure lines must be OFF so they don't guide (or clutter) the drawing.
+                    // The custom-figures layer carries the live draft preview, so it stays ON.
+                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
+                    layersViewModel.setEnabled(CustomFiguresLayer.LAYER_ID, true)
                     drawMode = true
                 },
                 onOpenLocation = {

@@ -24,11 +24,11 @@ data class StarAppearance(val color: Rgba, val sizePx: Float)
  * brightest few stars get a modest size boost, brightness is otherwise conveyed by color/alpha.
  */
 object StellarStyler {
-    private const val BASE_SIZE_DP = 3f
-    private const val BRIGHT_SIZE_DP = 5f
+    private const val BASE_SIZE_DP = 3.5f
+    private const val BRIGHT_SIZE_DP = 5.5f
 
     /** Stars at or brighter than this magnitude get [BRIGHT_SIZE_DP] instead of [BASE_SIZE_DP]. */
-    private const val BRIGHT_MAGNITUDE_THRESHOLD = 1.0
+    private const val BRIGHT_MAGNITUDE_THRESHOLD = 1.5
 
     /** Magnitudes past [RenderState.magnitudeLimit] over which a star fades out, not pops. */
     private const val FADE_RANGE_MAGNITUDES = 0.5

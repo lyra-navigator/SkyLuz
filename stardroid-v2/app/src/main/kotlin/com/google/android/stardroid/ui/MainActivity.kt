@@ -93,6 +93,7 @@ import com.google.android.stardroid.ui.map.ReferenceFrame
 import com.google.android.stardroid.ui.objectinfo.ObjectInfoViewModel
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.update.UpdateViewModel
 import com.google.android.stardroid.ui.startup.EulaScreen
 import com.google.android.stardroid.ui.startup.StartupViewModel
 import com.google.android.stardroid.ui.startup.VersionBanner
@@ -294,6 +295,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private val updateViewModel: UpdateViewModel by viewModels {
+        viewModelFactory { initializer { UpdateViewModel() } }
+    }
+
     private val galleryViewModel: GalleryViewModel by viewModels {
         viewModelFactory {
             initializer { GalleryViewModel(catalogAccess::repository, localeSource.specs) }
@@ -454,7 +459,7 @@ class MainActivity : ComponentActivity() {
         val binder = RenderBinder(connector)
         lifecycleScope.launch {
             try {
-                val layers = catalogAccess.layerRegistry().layers
+                val layers = catalogAccess.layerRegistry(constellationDrawViewModel.stateFlow).layers
                 repeatOnLifecycle(Lifecycle.State.STARTED) {
                     binder.bindCamera(this, mapViewModel.camera)
                     binder.bindRenderState(this, mapViewModel.renderState)
@@ -508,6 +513,7 @@ class MainActivity : ComponentActivity() {
                     objectInfoViewModel = objectInfoViewModel,
                     locationViewModel = locationViewModel,
                     settingsViewModel = settingsViewModel,
+                    updateViewModel = updateViewModel,
                     galleryViewModel = galleryViewModel,
                     diagnosticsViewModel = diagnosticsViewModel,
                     calibrationViewModel = calibrationViewModel,
