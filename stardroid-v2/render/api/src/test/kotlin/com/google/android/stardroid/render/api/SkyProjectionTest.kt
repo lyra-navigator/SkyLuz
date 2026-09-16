@@ -90,6 +90,61 @@ class SkyProjectionTest {
         }
     }
 
+    @Test
+    fun screenToDirection_roundTrips_throughWorldToScreen() {
+        val rng = Random(20260916)
+        repeat(500) {
+            val cam = randomCamera(rng)
+            val projection = SkyProjection(cam, square)
+            // Random on-screen pixels; the direction must re-project to the same pixel.
+            val x = rng.nextDouble(0.0, 600.0).toFloat()
+            val y = rng.nextDouble(0.0, 600.0).toFloat()
+            val dir = projection.screenToDirection(x, y)!!
+            val back = projection.worldToScreen(dir)!!
+            assertThat(back.xPx.toDouble()).isWithin(PX_TOL).of(x.toDouble())
+            assertThat(back.yPx.toDouble()).isWithin(PX_TOL).of(y.toDouble())
+        }
+    }
+
+    @Test
+    fun screenToDirection_center_isLineOfSight_andAxesMatchWorldToScreen() {
+        val projection = SkyProjection(camera, square)
+        // Centre of the screen is the line of sight.
+        val center = projection.screenToDirection(300f, 300f)!!
+        assertThat((center dot camera.lineOfSight)).isWithin(1e-9).of(1.0)
+        // Right-edge and top-edge pixels map to the same directions worldToScreen expects.
+        val right = projection.screenToDirection(600f, 300f)!!
+        assertThat(projection.worldToScreen(right)!!.xPx.toDouble()).isWithin(PX_TOL).of(600.0)
+        val top = projection.screenToDirection(300f, 0f)!!
+        assertThat(projection.worldToScreen(top)!!.yPx.toDouble()).isWithin(PX_TOL).of(0.0)
+    }
+
+    /** A random valid camera: line of sight and up 60–120° apart, both unit-ish. */
+    private fun randomCamera(rng: Random): SkyCamera {
+        val look =
+            Vector3(
+                rng.nextDouble(-1.0, 1.0),
+                rng.nextDouble(-1.0, 1.0),
+                rng.nextDouble(-1.0, 1.0),
+            ).normalized()
+        var up =
+            Vector3(
+                rng.nextDouble(-1.0, 1.0),
+                rng.nextDouble(-1.0, 1.0),
+                rng.nextDouble(-1.0, 1.0),
+            )
+        // Push `up` away from collinearity with the look direction.
+        while ((look cross up).length2 < 0.1) {
+            up =
+                Vector3(
+                    rng.nextDouble(-1.0, 1.0),
+                    rng.nextDouble(-1.0, 1.0),
+                    rng.nextDouble(-1.0, 1.0),
+                )
+        }
+        return SkyCamera(lineOfSight = look, up = up, fovDeg = rng.nextDouble(20.0, 120.0))
+    }
+
     /**
      * A unit direction [azDeg] to the screen-right and [altDeg] up from the line of sight, in this
      * test's camera frame (lookDir +X, up +Z, right −Y).
