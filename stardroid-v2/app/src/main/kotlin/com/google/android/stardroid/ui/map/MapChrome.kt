@@ -825,6 +825,8 @@ fun OverflowSheet(
     // Sharing is behind the SHARE_SKY experiment; off, the row simply isn't offered.
     shareEnabled: Boolean = true,
     onOpenGallery: () -> Unit,
+    onOpenMyConstellations: () -> Unit,
+    onStartDrawMode: () -> Unit,
     onOpenLocation: () -> Unit,
     onOpenCalibration: () -> Unit,
     onOpenTutorial: () -> Unit,
@@ -839,6 +841,9 @@ fun OverflowSheet(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 12.dp, vertical = 4.dp),
         ) {
+            // SkyLuz: draw + library sit above the app destinations — they ARE the sky work.
+            OverflowRow(R.drawable.ic_draw_constellation, R.string.draw_constellation_button, onStartDrawMode)
+            OverflowRow(R.drawable.ic_draw_constellation, R.string.my_constellations_button, onOpenMyConstellations)
             // Ordered by when a user needs them, not by how the app is built: Help and
             // Tutorial were 7th and 6th of nine and fell below the fold on a short phone,
             // which is precisely where a lost newcomer stops scrolling (Hannah's feedback,

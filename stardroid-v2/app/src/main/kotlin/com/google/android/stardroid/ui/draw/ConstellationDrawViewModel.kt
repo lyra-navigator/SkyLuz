@@ -18,6 +18,10 @@ import com.google.android.stardroid.catalog.LayerKind
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.render.api.SkyCamera
 import com.google.android.stardroid.ui.objectinfo.IdentifyGeometry
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 
 /** One recorded tap: where the user aimed (snapped to the star when one is in tolerance). */
@@ -50,14 +54,17 @@ data class DrawState(
 class ConstellationDrawViewModel(
     private val customFigures: suspend () -> CustomFigureRepository,
     private val catalog: suspend () -> CatalogRepository,
-) {
-    private var state = DrawState()
+) : ViewModel() {
+    private val _state = MutableStateFlow(DrawState())
 
     /** The latest snapshot; the map screen reads this for its overlay. */
-    val drawState: DrawState get() = state
+    val drawState: DrawState get() = _state.value
+
+    /** Observable state for Compose; re-emits on every drawing change. */
+    val stateFlow: StateFlow<DrawState> = _state.asStateFlow()
 
     private fun update(transform: (DrawState) -> DrawState) {
-        state = transform(state)
+        _state.value = transform(_state.value)
     }
 
     /**
@@ -71,7 +78,7 @@ class ConstellationDrawViewModel(
         heightPx: Int,
         camera: SkyCamera,
     ): DrawPoint? {
-        if (state.saving) return null
+        if (_state.value.saving) return null
         val direction = IdentifyGeometry.screenToDirection(camera, widthPx, heightPx, xPx, yPx)
         val tapRaDec = RaDec.fromGeocentricVector(direction)
         val snapped = nearestStar(tapRaDec, drawToleranceDeg(camera.fovDeg))
@@ -82,7 +89,7 @@ class ConstellationDrawViewModel(
         // Tapping the open stroke's first star closes it (loop gesture; the closing vertex is
         // the first one, so nothing is appended). With only one point recorded, the same tap
         // ABORTS the stroke — a lone point is discarded rather than left dangling.
-        val open = state.openStroke
+        val open = _state.value.openStroke
         if (open.isNotEmpty() && tapStarId != null && tapStarId == open.first().snappedTo) {
             if (open.size >= 2) {
                 closeStroke()
@@ -123,12 +130,12 @@ class ConstellationDrawViewModel(
 
     /** Clears the drawing in progress entirely. */
     fun reset() {
-        state = DrawState()
+        _state.value = DrawState()
     }
 
     /** Persists the finished figure; returns the stored id, or null when there is nothing to save. */
     suspend fun save(name: String): String? {
-        if (!state.canSave) return null
+        if (!stateFlow.value.canSave) return null
         val strokes = strokes()
         if (strokes.isEmpty()) return null
         update { it.copy(saving = true) }
@@ -138,7 +145,7 @@ class ConstellationDrawViewModel(
                     figure = Figure(owner = CelestialObjectId(""), strokes = strokes),
                     name = name,
                 )
-            state = DrawState()
+            _state.value = DrawState()
             id
         } finally {
             update { it.copy(saving = false) }
@@ -147,7 +154,7 @@ class ConstellationDrawViewModel(
 
     /** All strokes, closed ones first, the open one last. */
     fun strokes(): List<List<RaDec>> =
-        (state.closedStrokes + listOf(state.openStroke))
+        (_state.value.closedStrokes + listOf(_state.value.openStroke))
             .filter { it.size >= 2 }
             .map { stroke -> stroke.map { it.raDec } }
 

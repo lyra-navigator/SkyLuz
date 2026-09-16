@@ -592,4 +592,7 @@ readings to SkyLuz.</blockquote>
     <string name="layer_param_disc_size_auto">Steady</string>
     <string name="layer_param_disc_size_auto_desc">Holds a fixed size on screen as you zoom, then switches to real size.</string>
     <string name="layer_param_expand">Show options for %1$s</string>
+    <!-- SkyLuz: constellation draw mode + library (custom-constellations.md). -->
+    <string name="draw_constellation_button" translation_description="Overflow sheet row that enters constellation draw mode">Draw a constellation</string>
+    <string name="my_constellations_button" translation_description="Overflow sheet row that opens the saved-custom-constellation library">My constellations</string>
 </resources>
