@@ -100,7 +100,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Увімкнути ручний режим</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Увімкнути авторежим</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    Цей пристрій не має компаса або датчиків руху, тому Sky Map не може стежити за тим, куди ви його спрямовуєте. Замість цього перетягуйте карту вручну.
+    Цей пристрій не має компаса або датчиків руху, тому SkyLuz не може стежити за тим, куди ви його спрямовуєте. Замість цього перетягуйте карту вручну.
     </string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">ОК</string>
 
@@ -139,8 +139,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Час затвора камери</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Поділитися зоряним небом</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Поділитися цим небом</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Дізнайтеся, що ви бачите — завантажте Sky Map безплатно</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Дізнайтеся, що ви бачите — завантажте Sky Map безплатно: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Дізнайтеся, що ви бачите — завантажте SkyLuz безплатно</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Дізнайтеся, що ви бачите — завантажте SkyLuz безплатно: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Накладання</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Пліч-о-пліч</string>
@@ -242,7 +242,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Налаштування</string>
     <string name="location_permission_dialog_title">Потрібна геолокація</string>
     <string name="location_permission_dialog_message">
-    Sky Map потребує вашого приблизного місцезнаходження, щоб показати правильне нічне небо. Ви можете надати дозвіл, ввести своє місцезнаходження вручну або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.
+    SkyLuz потребує вашого приблизного місцезнаходження, щоб показати правильне нічне небо. Ви можете надати дозвіл, ввести своє місцезнаходження вручну або вирішити пізніше. Якщо ви вирішите пізніше, карта не буде точною, доки ваше місцезнаходження не буде встановлено.
     </string>
     <string name="location_permission_grant">Надати дозвіл</string>
     <string name="location_permission_enter_manually">Ввести вручну</string>
@@ -307,7 +307,7 @@
     <string name="settings_section_sensors">Налаштування матриці</string>
     <string name="settings_section_other">Інше</string>
     <string name="enable_analytics">Надсилати статистику використання</string>
-    <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
+    <string name="enable_analytics_desc">Зробіть SkyLuz кращою, відправивши анонімні дані в Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Дані про датчики, місцезнаходження та продуктивність</string>
     <string name="settings_tap_to_identify">Показувати інформацію при дотику</string>
     <string name="settings_tap_to_identify_summary">Дотикніться до небесних об\'єктів, щоб дізнатися про них</string>
@@ -331,7 +331,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Рівень затемнення екрана в нічному режимі</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Системний за замовчуванням</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Дуже темний</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Класичний</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">Класичний</string>
     <string name="settings_sky_gradient">Показувати градієнт неба</string>
     <string name="settings_sky_gradient_summary">Затінює небо синім біля Сонця та темним на протилежній стороні</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Використовувати застарілі датчики</string>
@@ -375,14 +375,14 @@
     <string name="diagnostics_button">Діагностика</string>
     <string name="diagnostics_title">Діагностика</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Надіслати розробникам</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Звіт про діагностику Sky Map</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Діагностика Sky Map. Будь ласка, опишіть проблему вище цієї лінії. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Звіт про діагностику SkyLuz</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Діагностика SkyLuz. Будь ласка, опишіть проблему вище цієї лінії. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Останній журнал</string>
     <string name="diagnostics_section_general">Загальний</string>
     <string name="diagnostics_device">Пристрій</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Версія Android</string>
-    <string name="diagnostics_sky_map_version">Версія Sky Map</string>
+    <string name="diagnostics_sky_map_version">Версія SkyLuz</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Графіка</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Рендерер</string>
@@ -450,8 +450,8 @@
     <string name="calibration_accuracy_high">Калібрування: добре</string>
     <string name="calibration_accuracy_no_contact">Калібрування: Немає зв\'язку</string>
     <string name="calibration_do_not_show_again">Більше не показувати</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Датчик компаса вашого телефону повідомляє про погане калібрування. Рух вісімкою (<a href="%s">подивіться демонстрацію</a>) спонукає апаратне забезпечення вашого телефону скинути датчик компаса — Sky Map не контролює цей процес.<br/><br/><blockquote><b>Калібрований не означає точний.</b> Жест вісімкою допомагає скинути датчик, але він не може усунути перешкоди від сусідніх металевих предметів, автомобільних панелей приладів або чохлів для телефонів. Якщо після калібрування карта все ще зміщена, найбільш вірогідною причиною є ці зовнішні джерела, а не Sky Map.</blockquote>Перейдіть на відкриту місцевість подалі від металу та спробуйте ще раз.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Стан калібрування компаса вашого телефону показано вище.<br/><br/>Якщо необхідно, виконайте рух у вигляді вісімки (<a href="%s">переглянути демонстрацію</a>), щоб апаратне забезпечення вашого телефону повторно відкалібрувало датчик компаса.<br/><br/><blockquote><b>Важливо:</b> калібрування допомагає датчику скинути свої внутрішні параметри. Це не означає, що компас обов\'язково точний!<br/>Місцеві магнітні перешкоди (металеві предмети, панелі приладів автомобілів, чохли для телефонів) все одно можуть спричинити передачу вашим телефоном неточних даних у Sky Map.</blockquote><br/><b>Якщо карта відображає положення неправильно, проблема, швидше за все, у вашому телефоні, а не в Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Датчик компаса вашого телефону повідомляє про погане калібрування. Рух вісімкою (<a href="%s">подивіться демонстрацію</a>) спонукає апаратне забезпечення вашого телефону скинути датчик компаса — SkyLuz не контролює цей процес.<br/><br/><blockquote><b>Калібрований не означає точний.</b> Жест вісімкою допомагає скинути датчик, але він не може усунути перешкоди від сусідніх металевих предметів, автомобільних панелей приладів або чохлів для телефонів. Якщо після калібрування карта все ще зміщена, найбільш вірогідною причиною є ці зовнішні джерела, а не SkyLuz.</blockquote>Перейдіть на відкриту місцевість подалі від металу та спробуйте ще раз.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Стан калібрування компаса вашого телефону показано вище.<br/><br/>Якщо необхідно, виконайте рух у вигляді вісімки (<a href="%s">переглянути демонстрацію</a>), щоб апаратне забезпечення вашого телефону повторно відкалібрувало датчик компаса.<br/><br/><blockquote><b>Важливо:</b> калібрування допомагає датчику скинути свої внутрішні параметри. Це не означає, що компас обов\'язково точний!<br/>Місцеві магнітні перешкоди (металеві предмети, панелі приладів автомобілів, чохли для телефонів) все одно можуть спричинити передачу вашим телефоном неточних даних у SkyLuz.</blockquote><br/><b>Якщо карта відображає положення неправильно, проблема, швидше за все, у вашому телефоні, а не в SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Компас вашого телефону повідомляє про низьку точність</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Висока точність датчиків</string>
 
@@ -484,7 +484,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6 500 світлових років</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 світлових років у поперечнику</string>
     <string name="warm_welcome_slide3_title">Датчики та калібрування</string>
-    <string name="warm_welcome_slide3_desc">Sky Map використовує датчики вашого телефону для вирівнювання зі зірками.</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz використовує датчики вашого телефону для вирівнювання зі зірками.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Схоже, на вашому пристрої немає датчиків, необхідних для автоматичного відстеження. Але не хвилюйтеся — ви все одно можете досліджувати всю макрокосмічну систему в <b>ручному режимі</b>!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Щоби тримати все під контролем, періодично робіть своїм телефоном швидкі рухи у формі <b>вісімки</b>.]]></string>
     <string name="warm_welcome_skip">Пропустити</string>
@@ -537,7 +537,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Закрити пропозицію віджета</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Додайте віджет з головного екрана</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    Ваш запускник не підтримує додавання віджетів із додатків. Натисніть і утримуйте головний екран, виберіть «Віджети», а потім знайдіть Sky Map.
+    Ваш запускник не підтримує додавання віджетів із додатків. Натисніть і утримуйте головний екран, виберіть «Віджети», а потім знайдіть SkyLuz.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Зрозуміло</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">освітленість 83%</string>
@@ -579,13 +579,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Сповіщення</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map надсилає сповіщення лише про рідкісні астрономічні події, не частіше ніж раз на день. Усі сповіщення вимкнено, доки ви їх не ввімкнете.
+    SkyLuz надсилає сповіщення лише про рідкісні астрономічні події, не частіше ніж раз на день. Усі сповіщення вимкнено, доки ви їх не ввімкнете.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Піки метеорних потоків</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Близько десятка на рік, увечері в день піку</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Зведення про нічне небо</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Одне зведення після заходу сонця, пропускається у спокійні ночі</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Сповіщення для Sky Map заблоковано</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Сповіщення для SkyLuz заблоковано</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Торкніться, щоб дозволити їх у системних налаштуваннях</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Піки метеорних потоків</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Близько десятка на рік, увечері в день піку</string>

@@ -100,7 +100,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Beralih ke mode manual</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Beralih ke mode otomatis</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    Perangkat ini tidak memiliki kompas atau sensor gerak, sehingga Sky Map tidak dapat mengikuti arah yang Anda tunjuk. Seret peta secara manual saja.
+    Perangkat ini tidak memiliki kompas atau sensor gerak, sehingga SkyLuz tidak dapat mengikuti arah yang Anda tunjuk. Seret peta secara manual saja.
     </string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">OKE</string>
 
@@ -138,8 +138,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Waktu rana kamera</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Bagikan langit</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Bagikan langit ini</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Lihat apa yang Anda lihat — dapatkan Sky Map gratis</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Lihat apa yang Anda lihat — dapatkan Sky Map gratis: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Lihat apa yang Anda lihat — dapatkan SkyLuz gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Lihat apa yang Anda lihat — dapatkan SkyLuz gratis: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Hamparan</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Berdampingan</string>
@@ -241,7 +241,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Pengaturan</string>
     <string name="location_permission_dialog_title">Lokasi Diperlukan</string>
     <string name="location_permission_dialog_message">
-    Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.
+    SkyLuz memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.
     </string>
     <string name="location_permission_grant">Berikan Izin</string>
     <string name="location_permission_enter_manually">Masukkan Secara Manual</string>
@@ -306,7 +306,7 @@
     <string name="settings_section_sensors">Pengaturan Sensor (ahli)</string>
     <string name="settings_section_other">Lainnya</string>
     <string name="enable_analytics">Kirim statistik penggunaan</string>
-    <string name="enable_analytics_desc">Tingkatkan Sky Map dengan mengirim data anonim ke Google Analytics</string>
+    <string name="enable_analytics_desc">Tingkatkan SkyLuz dengan mengirim data anonim ke Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Detail sensor, lokasi, dan kinerja</string>
     <string name="settings_tap_to_identify">Tampilkan info saat diketuk</string>
     <string name="settings_tap_to_identify_summary">Ketuk objek langit untuk mempelajari tentang mereka</string>
@@ -328,7 +328,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Seberapa banyak mode malam meredupkan layar</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Default Sistem</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Sangat Redup</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klasik</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">Klasik</string>
     <string name="settings_sky_gradient">Tampilkan gradien langit</string>
     <string name="settings_sky_gradient_summary">Mengarsir langit biru di dekat Matahari dan gelap di sisi sebaliknya</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Gunakan sensor lama</string>
@@ -372,14 +372,14 @@
     <string name="diagnostics_button">Diagnostik</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Kirim ke pengembang</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Laporan diagnostik Sky Map</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostik Sky Map. Harap jelaskan masalah di atas garis ini. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Laporan diagnostik SkyLuz</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Diagnostik SkyLuz. Harap jelaskan masalah di atas garis ini. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Log Terbaru</string>
     <string name="diagnostics_section_general">Umum</string>
     <string name="diagnostics_device">Perangkat</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Versi Android</string>
-    <string name="diagnostics_sky_map_version">Versi Sky Map</string>
+    <string name="diagnostics_sky_map_version">Versi SkyLuz</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafis</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Perender</string>
@@ -447,8 +447,8 @@
     <string name="calibration_accuracy_high">Kalibrasi: Baik</string>
     <string name="calibration_accuracy_no_contact">Kalibrasi: Tidak ada kontak</string>
     <string name="calibration_do_not_show_again">Jangan tampilkan lagi</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Sensor kompas ponsel Anda melaporkan kalibrasi yang buruk. Gerakan angka-8 (<a href="%s">tonton demonstrasinya</a>) akan meminta perangkat keras ponsel Anda untuk mengatur ulang sensor kompasnya — Sky Map tidak memiliki kendali atas proses ini.<br/><br/><blockquote><b>Terkalibrasi bukan berarti akurat.</b> Gerakan angka-8 membantu mengatur ulang sensor, tetapi tidak dapat menghilangkan gangguan dari benda logam di dekatnya, dasbor mobil, atau casing ponsel. Jika peta masih tidak akurat setelah kalibrasi, sumber eksternal tersebut adalah penyebab yang paling mungkin — bukan Sky Map.</blockquote>Pindah ke area terbuka yang jauh dari logam dan coba lagi.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Ponsel Anda melaporkan status kalibrasi kompasnya seperti yang ditunjukkan di atas.<br/><br/>Jika perlu, lakukan gerakan angka-8 (<a href="%s">tonton demonstrasi</a>) untuk meminta perangkat keras ponsel Anda mengkalibrasi ulang sensor kompasnya.<br/><br/><blockquote><b>Penting:</b> kalibrasi membantu sensor mengatur ulang dirinya secara internal. Ini tidak berarti kompas pasti akurat! Interferensi magnetik lokal (benda logam, dasbor mobil, casing ponsel) masih dapat menyebabkan kompas ponsel Anda mengirimkan pembacaan yang tidak akurat ke Sky Map.</blockquote><b>Jika peta tidak menampilkan posisi dengan benar, masalahnya kemungkinan besar ada pada ponsel Anda - bukan Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Sensor kompas ponsel Anda melaporkan kalibrasi yang buruk. Gerakan angka-8 (<a href="%s">tonton demonstrasinya</a>) akan meminta perangkat keras ponsel Anda untuk mengatur ulang sensor kompasnya — SkyLuz tidak memiliki kendali atas proses ini.<br/><br/><blockquote><b>Terkalibrasi bukan berarti akurat.</b> Gerakan angka-8 membantu mengatur ulang sensor, tetapi tidak dapat menghilangkan gangguan dari benda logam di dekatnya, dasbor mobil, atau casing ponsel. Jika peta masih tidak akurat setelah kalibrasi, sumber eksternal tersebut adalah penyebab yang paling mungkin — bukan SkyLuz.</blockquote>Pindah ke area terbuka yang jauh dari logam dan coba lagi.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Ponsel Anda melaporkan status kalibrasi kompasnya seperti yang ditunjukkan di atas.<br/><br/>Jika perlu, lakukan gerakan angka-8 (<a href="%s">tonton demonstrasi</a>) untuk meminta perangkat keras ponsel Anda mengkalibrasi ulang sensor kompasnya.<br/><br/><blockquote><b>Penting:</b> kalibrasi membantu sensor mengatur ulang dirinya secara internal. Ini tidak berarti kompas pasti akurat! Interferensi magnetik lokal (benda logam, dasbor mobil, casing ponsel) masih dapat menyebabkan kompas ponsel Anda mengirimkan pembacaan yang tidak akurat ke SkyLuz.</blockquote><b>Jika peta tidak menampilkan posisi dengan benar, masalahnya kemungkinan besar ada pada ponsel Anda - bukan SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Kompas ponsel Anda melaporkan akurasi rendah</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensor memiliki akurasi tinggi</string>
 
@@ -482,7 +482,7 @@
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">Lebar 11 tahun cahaya</string>
     <string name="warm_welcome_slide3_title">Sensor &amp; Kalibrasi</string>
     <string name="warm_welcome_slide3_desc">
-    Sky Map menggunakan sensor ponsel Anda untuk menyelaraskan dengan bintang-bintang.
+    SkyLuz menggunakan sensor ponsel Anda untuk menyelaraskan dengan bintang-bintang.
     </string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Perangkat Anda tampaknya tidak memiliki sensor yang diperlukan untuk pelacakan otomatis. Jangan khawatir—Anda masih bisa menjelajahi seluruh kosmos dalam <b>Mode Manual</b>!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Agar tetap akurat, goyangkan ponsel Anda dengan cepat membentuk <b>angka 8</b> sesekali.]]></string>
@@ -538,7 +538,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Tutup saran widget</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Tambahkan widget dari layar utama Anda</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    Peluncur Anda tidak mendukung penambahan widget dari aplikasi. Sentuh dan tahan layar beranda Anda, pilih Widget, lalu temukan Sky Map.
+    Peluncur Anda tidak mendukung penambahan widget dari aplikasi. Sentuh dan tahan layar beranda Anda, pilih Widget, lalu temukan SkyLuz.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Mengerti</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% teriluminasi</string>
@@ -580,13 +580,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifikasi</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map hanya memberi notifikasi tentang peristiwa langit langka, paling banyak sekali sehari. Semuanya mati sampai Anda menyalakannya.
+    SkyLuz hanya memberi notifikasi tentang peristiwa langit langka, paling banyak sekali sehari. Semuanya mati sampai Anda menyalakannya.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Puncak hujan meteor</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Sekitar selusin setahun, pada malam puncak</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Ringkasan langit malam ini</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Satu ringkasan setelah matahari terbenam, dilewati pada malam yang tenang</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikasi diblokir untuk Sky Map</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikasi diblokir untuk SkyLuz</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Ketuk untuk mengizinkan di pengaturan sistem</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Puncak hujan meteor</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Sekitar selusin setahun, pada malam puncak</string>

@@ -1,4 +1,4 @@
-Baru Sky Map sepenuhnya dibangun ulang — mesin baru, UI baru, lebih akurat.
+Baru SkyLuz sepenuhnya dibangun ulang — mesin baru, UI baru, lebih akurat.
 
 Baru Bulan, gerhana, dan planet ditempatkan dan diatur waktunya dengan akurat.
 

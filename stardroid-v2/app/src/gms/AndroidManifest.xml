@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Sky Map does not advertise, so the advertising-identifier permissions that
+  SkyLuz does not advertise, so the advertising-identifier permissions that
   firebase-analytics injects have no purpose here. Stripping them keeps the gms build's
   permission set identical to fdroid's, which is what the terms screen and the Play
   listing tell users (see values/eula.xml, permissions_notice). Analytics itself is

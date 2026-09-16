@@ -101,7 +101,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Skift til manuel tilstand</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Skift til automatisk tilstand</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    Denne enhed har intet kompas eller bevægelsessensorer, så Sky Map kan ikke følge, hvor du peger den hen. Træk kortet manuelt i stedet.
+    Denne enhed har intet kompas eller bevægelsessensorer, så SkyLuz kan ikke følge, hvor du peger den hen. Træk kortet manuelt i stedet.
     </string>
     <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
 
@@ -139,8 +139,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kameraets lukkertid</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Del himlen</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Del denne himmel</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Se, hvad du kigger på — få Sky Map gratis</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Se, hvad du kigger på — få Sky Map gratis: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Se, hvad du kigger på — få SkyLuz gratis</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Se, hvad du kigger på — få SkyLuz gratis: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Overlejring</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Side om side</string>
@@ -242,7 +242,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Indstillinger</string>
     <string name="location_permission_dialog_title">Lokalisering påkrævet</string>
     <string name="location_permission_dialog_message">
-    Sky Map har brug for din omtrentlige placering for at vise den korrekte nattehimmel. Du kan give tilladelse, angive din placering manuelt eller beslutte det senere. Hvis du beslutter det senere, vil kortet ikke være nøjagtigt, før din placering er blevet indstillet.
+    SkyLuz har brug for din omtrentlige placering for at vise den korrekte nattehimmel. Du kan give tilladelse, angive din placering manuelt eller beslutte det senere. Hvis du beslutter det senere, vil kortet ikke være nøjagtigt, før din placering er blevet indstillet.
     </string>
     <string name="location_permission_grant">Giv tilladelse</string>
     <string name="location_permission_enter_manually">Angiv manuelt</string>
@@ -307,7 +307,7 @@
     <string name="settings_section_sensors">Sensorindstillinger (eksperter)</string>
     <string name="settings_section_other">Øvrigt</string>
     <string name="enable_analytics">Send brugsstatistik</string>
-    <string name="enable_analytics_desc">Forbedre Sky Map ved at sende anonyme data til Google Analytics</string>
+    <string name="enable_analytics_desc">Forbedre SkyLuz ved at sende anonyme data til Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor-, placerings- og ydeevnedetaljer</string>
     <string name="settings_tap_to_identify">Vis info ved tryk</string>
     <string name="settings_tap_to_identify_summary">Tryk på himmellegemer for at lære om dem</string>
@@ -329,7 +329,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Hvor meget nattilstand dæmper skærmen</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systemstandard</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Meget dæmpet</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassisk</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">Klassisk</string>
     <string name="settings_sky_gradient">Vis himmelgradient</string>
     <string name="settings_sky_gradient_summary">Skygger himlen blå nær Solen og mørk på den modsatte side</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Brug ældre sensorer</string>
@@ -373,14 +373,14 @@
     <string name="diagnostics_button">Diagnostik</string>
     <string name="diagnostics_title">Diagnostik</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send til udviklere</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map diagnostikrapport</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map diagnostik. Beskriv venligst problemet over denne linje. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz diagnostikrapport</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz diagnostik. Beskriv venligst problemet over denne linje. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Seneste log</string>
     <string name="diagnostics_section_general">Generelt</string>
     <string name="diagnostics_device">Enhed</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android-version</string>
-    <string name="diagnostics_sky_map_version">Sky Map-version</string>
+    <string name="diagnostics_sky_map_version">SkyLuz-version</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafik</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Gengiver</string>
@@ -448,8 +448,8 @@
     <string name="calibration_accuracy_high">Kalibrering: God</string>
     <string name="calibration_accuracy_no_contact">Kalibrering: Ingen kontakt</string>
     <string name="calibration_do_not_show_again">Vis ikke igen</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Din telefons kompassensor rapporterer dårlig kalibrering. Otte-talsbevægelsen (<a href="%s">se en demonstration</a>) får din telefons hardware til at nulstille kompassensoren – Sky Map har ingen kontrol over denne proces.<br/><br/><blockquote><b>Kalibreret betyder ikke nøjagtigt.</b> Otte-talsbevægelsen hjælper med at nulstille sensoren, men den kan ikke fjerne interferens fra nærliggende metalgenstande, bilinstrumentbrætter eller telefonetuier. Hvis kortet stadig er forkert efter kalibrering, er disse eksterne kilder den mest sandsynlige årsag – ikke Sky Map.</blockquote>Flyt dig til et åbent område væk fra metal og prøv igen.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Din telefon rapporterer sin kompas kalibreringsstatus som vist ovenfor.<br/><br/>Hvis nødvendigt, udfør otte-talsbevægelsen (<a href="%s">se en demonstration</a>) for at få din telefons hardware til at genkalibrere dens kompassensor.<br/><br/><blockquote><b>Vigtigt:</b> kalibrering hjælper sensoren med at nulstille sig selv internt. Det betyder ikke, at kompasset nødvendigvis er nøjagtigt!<br/>Lokal magnetisk interferens (metalgenstande, bilinstrumentbrætter, telefonetuier) kan stadig få din telefons kompas til at sende unøjagtige<br/>aflæsninger til Sky Map.</blockquote><b>Hvis kortet ikke viser positioner korrekt, er problemet sandsynligvis din telefon - ikke Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Din telefons kompassensor rapporterer dårlig kalibrering. Otte-talsbevægelsen (<a href="%s">se en demonstration</a>) får din telefons hardware til at nulstille kompassensoren – SkyLuz har ingen kontrol over denne proces.<br/><br/><blockquote><b>Kalibreret betyder ikke nøjagtigt.</b> Otte-talsbevægelsen hjælper med at nulstille sensoren, men den kan ikke fjerne interferens fra nærliggende metalgenstande, bilinstrumentbrætter eller telefonetuier. Hvis kortet stadig er forkert efter kalibrering, er disse eksterne kilder den mest sandsynlige årsag – ikke SkyLuz.</blockquote>Flyt dig til et åbent område væk fra metal og prøv igen.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Din telefon rapporterer sin kompas kalibreringsstatus som vist ovenfor.<br/><br/>Hvis nødvendigt, udfør otte-talsbevægelsen (<a href="%s">se en demonstration</a>) for at få din telefons hardware til at genkalibrere dens kompassensor.<br/><br/><blockquote><b>Vigtigt:</b> kalibrering hjælper sensoren med at nulstille sig selv internt. Det betyder ikke, at kompasset nødvendigvis er nøjagtigt!<br/>Lokal magnetisk interferens (metalgenstande, bilinstrumentbrætter, telefonetuier) kan stadig få din telefons kompas til at sende unøjagtige<br/>aflæsninger til SkyLuz.</blockquote><b>Hvis kortet ikke viser positioner korrekt, er problemet sandsynligvis din telefon - ikke SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Din telefons kompas rapporterer lav nøjagtighed</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensorer har høj nøjagtighed</string>
 
@@ -482,7 +482,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 lysår</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 lysår i diameter</string>
     <string name="warm_welcome_slide3_title">Sensorer og kalibrering</string>
-    <string name="warm_welcome_slide3_desc">Sky Map bruger din telefons sensorer til at justere efter stjernerne.</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz bruger din telefons sensorer til at justere efter stjernerne.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Din enhed ser ud til at mangle de nødvendige sensorer til automatisk sporing. Bare rolig – du kan stadig udforske hele kosmos i <b>Manuel tilstand</b>!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[For at holde tingene nøjagtige, ryst din telefon i et <b>otte-tal</b> en gang imellem.]]></string>
     <string name="warm_welcome_skip">Spring over</string>
@@ -535,7 +535,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Afvis widgetforslag</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Tilføj widgetten fra din startskærm</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    Din launcher understøtter ikke at tilføje widgets fra en app. Tryk og hold din startskærm, vælg Widgets, find derefter Sky Map.
+    Din launcher understøtter ikke at tilføje widgets fra en app. Tryk og hold din startskærm, vælg Widgets, find derefter SkyLuz.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Forstået</string>
     <string xmlns:tools="http://schemas.android.com/tools" name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% belyst</string>
@@ -577,13 +577,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifikationer</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map giver kun besked om sjældne himmelbegivenheder, højst én gang om dagen. Alt er slået fra, indtil du slår det til.
+    SkyLuz giver kun besked om sjældne himmelbegivenheder, højst én gang om dagen. Alt er slået fra, indtil du slår det til.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorsværmtoppe</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Omkring et dusin om året, om aftenen for toppen</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Aftenens himmel-oversigt</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Én oversigt efter solnedgang, springes over på stille aftener</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikationer er blokeret for Sky Map</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifikationer er blokeret for SkyLuz</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tryk for at tillade dem i systemindstillingerne</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorsværmtoppe</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Omkring et dusin om året, om aftenen for toppen</string>

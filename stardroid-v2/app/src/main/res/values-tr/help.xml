@@ -3,17 +3,17 @@
     <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
 
     <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Giriş ve Hızlı Başlangıç</h2>
-<p>Telefonunuzu havaya kaldırın ve uzaya açılan bir pencere gibi bakın. Sky Map, nereye baktığınızı takip etmek ve yıldız haritasını gerçek zamanlı olarak güncellemek için telefonunuzun sensörlerini kullanır.</p>
-<blockquote>Her telefon Sky Map uygulamasını çalıştıramaz! Aşağıdaki donanım gereksinimleri bölümüne bakın.</blockquote>
+<p>Telefonunuzu havaya kaldırın ve uzaya açılan bir pencere gibi bakın. SkyLuz, nereye baktığınızı takip etmek ve yıldız haritasını gerçek zamanlı olarak güncellemek için telefonunuzun sensörlerini kullanır.</p>
+<blockquote>Her telefon SkyLuz uygulamasını çalıştıramaz! Aşağıdaki donanım gereksinimleri bölümüne bakın.</blockquote>
 <h3>Bu ilk deneyiminizse:</h3>
-<p>1. İstendiğinde konum erişimine izin verin; Sky Map, bulunduğunuz yere uygun gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar.<br/>
+<p>1. İstendiğinde konum erişimine izin verin; SkyLuz, bulunduğunuz yere uygun gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar.<br/>
 2. Telefonunuzu herhangi bir yönde gökyüzüne doğru tutun.<br/>
 3. Harita, baktığınız yöne uyum sağlayacak şekilde hareket edecektir.</p>]]></string>
 
     <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Gökyüzünde Gezinme</h2>
 Kontrolleri ve baş üstü göstergesini (sağ üst) açmak için ekrana dokunun.
 <h3>Otomatik Mod</h3>
-<p>Otomatik Modda (varsayılan), Sky Map, telefonunuzun yönünü gösterdiği yeri göstermek için telefonunuzun pusulasını, ivmeölçerini ve jiroskop sensörlerini kullanır. Sadece telefonunuzu hareket ettirin ve harita takip edecektir.</p>
+<p>Otomatik Modda (varsayılan), SkyLuz, telefonunuzun yönünü gösterdiği yeri göstermek için telefonunuzun pusulasını, ivmeölçerini ve jiroskop sensörlerini kullanır. Sadece telefonunuzu hareket ettirin ve harita takip edecektir.</p>
 <p>Yakınlaştırmak ve uzaklaştırmak için iki parmağınızla sıkıştırma hareketi kullanın.</p>
 <h3>Manuel Mod</h3>
 <p>Kontroller görünür durumdayken Manuel Moda geçmek için <b>el</b> düğmesine (sağ alt) dokunun. Bu modda şunları yapabilirsiniz:</p>
@@ -26,7 +26,7 @@ Kontrolleri ve baş üstü göstergesini (sağ üst) açmak için ekrana dokunun
     <!-- Symbol map will go here-->
 
     <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Katmanlar</h2>
-<p>Sky Map, gösterdiklerini katmanlar halinde düzenler. Bu katmanların her biri sol taraftaki katman düğmeleri aracılığıyla bağımsız olarak açılıp kapatılabilir. Daha fazla katman için açma/kapatma düğmelerini getirmek üzere uzun basın veya alt tarafa yakın olan <b>Katmanlar</b> düğmesine dokunun.</p>
+<p>SkyLuz, gösterdiklerini katmanlar halinde düzenler. Bu katmanların her biri sol taraftaki katman düğmeleri aracılığıyla bağımsız olarak açılıp kapatılabilir. Daha fazla katman için açma/kapatma düğmelerini getirmek üzere uzun basın veya alt tarafa yakın olan <b>Katmanlar</b> düğmesine dokunun.</p>
 <br/>
 <p>Mevcut katmanlar şunları içerir:<br/>
 • <b>Yıldızlar:</b> Önemli olanların etiketleriyle birlikte en parlak yıldızlar<br/>
@@ -47,7 +47,7 @@ Kontrolleri ve baş üstü göstergesini (sağ üst) açmak için ekrana dokunun
 • <b>Gerçek ölçek:</b> Gökyüzündeki gerçek boyutunda her gök cismi. Güneş ve Ay yaklaşık yarım derece genişliğindedir (kol mesafesinde tutulan bir kurşun kalem silgisi kadardır) ve siz iyice yakınlaştırana kadar gezegenler birer noktadır. Sonuna kadar yakınlaştırın; Jüpiter kuşaklarını gösterir, Satürn\'ün halkaları gezegenden ayrılır ve bir tutulma tam olarak gökyüzünde olduğu gibi hizalanır.<br/>
 • <b>Sabit:</b> Yakınlaştırma yaptıkça her gök cismini ekranda sabit bir boyutta tutar ve ikisinden büyük olanı haline geleceği kadar yakınlaştırma yaptığınızda gerçek boyuta geçer.</p>
 <blockquote>Bu iki mod size farklı şeyler söyler. <b>Semboller</b> modu Jüpiter\'in dev, Pluton\'un ise minik olduğunu söyler. <b>Gerçek ölçek</b> modu ise Güneş ve Ay\'ın Dünya\'dan neredeyse tamamen aynı boyutta göründüğünü söyler; tam güneş tutulmasının gerçekleşebilmesinin ve bunu izleyebilmenizin nedeni de budur.</blockquote>
-<blockquote>Sky Map, binaların, tepelerin veya ağaçların pratikte gizleyebileceği nesnelerin aksine, tamamen düz ve engelsiz bir görünüm sunan geometrik ufku gösterir.</blockquote>]]></string>
+<blockquote>SkyLuz, binaların, tepelerin veya ağaçların pratikte gizleyebileceği nesnelerin aksine, tamamen düz ve engelsiz bir görünüm sunan geometrik ufku gösterir.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Bilgi Kartları</h2>
 <p>Gökyüzü haritasında etiketlenmiş bir gök cismine dokunarak, o cismin fotoğrafını ve detaylarını içeren bir panel olan bilgi kartını açabilirsiniz.
@@ -69,9 +69,9 @@ Bilgi kartları; yıldızlar, gezegenler, Ay, önemli derin uzay cisimleri ve ta
 • <b>Takımyıldızları</b> — ör. "Avcı", "Kraliçe"<br/>
 • <b>Derin uzay nesneleri</b> — ör. "M31", "Andromeda Gökadası", "Ülker"<br/>
 • <b>Koordinatlar</b> — sağ açıklık ve dik açıklık, ör. "5h 55m, 7° 24\'" (derece simgesi için \'o\' harfini kullanabilirsiniz)</p>
-<p><b>Otomatik Modda:</b> Bir sonuç seçtikten sonra Sky Map bir hedef çemberi ve yön oku gösterir. Telefonunuzu döndürerek oku takip edin; nesne görüş alanınıza girdikçe çemberin rengi değişir. Aramadan çıkmak için <b>İptal</b> düğmesine dokunun (veya Geri tuşuna basın).</p>
+<p><b>Otomatik Modda:</b> Bir sonuç seçtikten sonra SkyLuz bir hedef çemberi ve yön oku gösterir. Telefonunuzu döndürerek oku takip edin; nesne görüş alanınıza girdikçe çemberin rengi değişir. Aramadan çıkmak için <b>İptal</b> düğmesine dokunun (veya Geri tuşuna basın).</p>
 <p><b>Manuel Modda:</b> Harita doğrudan nesneye odaklanır.</p>
-<blockquote>Sky Map\'in doğrudan göstermediği Jüpiter\'in uydusu Europa gibi nesneleri de arayabilirsiniz.
+<blockquote>SkyLuz\'in doğrudan göstermediği Jüpiter\'in uydusu Europa gibi nesneleri de arayabilirsiniz.
 Bu durumda arama sizi ana nesneye (Jüpiter) yönlendirecektir.</blockquote>]]></string>
 
     <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Zaman Yolculuğu</h2>
@@ -91,7 +91,7 @@ Bu durumda arama sizi ana nesneye (Jüpiter) yönlendirecektir.</blockquote>]]><
     <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Gece Görüşü Modu</h2>
 <p>Dışarıda gerçek gözlem yapıyorsanız Gece Görüşü modu, karanlığa uyum sağlamış göz sağlığınızı korumanıza yardımcı olur. Alttaki <b>Gece Modu</b> düğmesini kullanarak bunu açıp kapatabilirsiniz.</p>
 <br/>
-<p>Gece Görüşü modunda Sky Map, ekranı koyu kırmızı tonlarına geçirir ve ekranı karartır. 
+<p>Gece Görüşü modunda SkyLuz, ekranı koyu kırmızı tonlarına geçirir ve ekranı karartır. 
 <b>Ayarlar</b> bölümündeki <b>Otomatik ekran karartma</b> seçeneği, ekranın ne kadar karartılacağı konusunda size ek kontrol sağlar.</p>]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Diğer işlevler</h1>
@@ -104,31 +104,31 @@ Bu durumda arama sizi ana nesneye (Jüpiter) yönlendirecektir.</blockquote>]]><
 Gökyüzündeki o nesneyi bulmak için <b>Bul</b> düğmesini kullanın.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Konumunuzu Ayarlama</h2>
-<p>Sky Map, doğru gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar. Varsayılan olarak cihazınızın konum servislerini (hücresel ağ veya GPS) kullanır.</p>
+<p>SkyLuz, doğru gökyüzünü çizebilmek için yaklaşık konumunuza ihtiyaç duyar. Varsayılan olarak cihazınızın konum servislerini (hücresel ağ veya GPS) kullanır.</p>
 <br/>
 <p>Konum erişimi kullanılamıyorsa veya bunu manuel olarak ayarlamak istiyorsanız, <b>Konumu Manuel Girin</b> düğmesine dokunun ve bir <b>yer adı</b> veya derece cinsinden <b>enlem ve boylam</b> girin.</p>
 <blockquote>Yer adlarını çözümlemek için internet bağlantısı gereklidir.</blockquote>
-<p>Daha önce Sky Map konum iznini reddettiyseniz, cihazınızın <b>Uygulama Ayarları → İzinler</b> bölümünden bu izni yeniden etkinleştirmeniz gerekebilir.</p>
-<blockquote>Erişim vermezseniz Sky Map, (0, 90) konumunda — Kuzey Kutbu\'nda olduğunuzu varsayar!</blockquote>]]></string>
+<p>Daha önce SkyLuz konum iznini reddettiyseniz, cihazınızın <b>Uygulama Ayarları → İzinler</b> bölümünden bu izni yeniden etkinleştirmeniz gerekebilir.</p>
+<blockquote>Erişim vermezseniz SkyLuz, (0, 90) konumunda — Kuzey Kutbu\'nda olduğunuzu varsayar!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Tanılama</h2>
-    <p>Bu sayfa, sorunları ayıklamak için yararlı olabilecek telefonunuz ve Sky Map hakkındaki çeşitli verileri listeler. Bunu <b>Ayarlar → Tanılama</b> altında bulabilirsiniz.</p>
+    <p>Bu sayfa, sorunları ayıklamak için yararlı olabilecek telefonunuz ve SkyLuz hakkındaki çeşitli verileri listeler. Bunu <b>Ayarlar → Tanılama</b> altında bulabilirsiniz.</p>
     <br/>
     <p>Bir sorun bildirirken, bu ayrıntıları bize <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden e-posta ile göndermek için sayfanın üst kısmındaki paylaş düğmesine dokunun. Göndermeden önce raporu okuyabilir ve düzenleyebilirsiniz.</p>]]></string>
 
     <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrasyon</h2>
-    Zaman zaman telefonunuzun pusulasını kalibre etmeniz gerekir; bu sayfa bunu nasıl yapacağınızı gösterir. Sky Map ayrıca pusulanızın kalibre edilmesi gerektiğinde sizi uyaracaktır.
+    Zaman zaman telefonunuzun pusulasını kalibre etmeniz gerekir; bu sayfa bunu nasıl yapacağınızı gösterir. SkyLuz ayrıca pusulanızın kalibre edilmesi gerektiğinde sizi uyaracaktır.
     <blockquote><b>ÖNEMLİ:</b> Kalibre edilmiş bir pusula, <b>doğru</b> bir pusula olduğu anlamına <b>gelmez</b>.
     Tek yapıldığı şey pusulayı dahili olarak sıfırlamaktır. Yakındaki manyetik parazitler veya sadece kötü donanım nedeniyle hala yanlış çalışabilir.
-    Neredeyse tüm doğruluk sorunları telefonun donanımından kaynaklanır ve <b>Sky Map ile hiçbir ilgisi yoktur</b>.
-    Sky Map\'in yaptığı tek şey, telefonun kendisine bildirdiği durumu size aktarmaktır.</blockquote>
+    Neredeyse tüm doğruluk sorunları telefonun donanımından kaynaklanır ve <b>SkyLuz ile hiçbir ilgisi yoktur</b>.
+    SkyLuz\'in yaptığı tek şey, telefonun kendisine bildirdiği durumu size aktarmaktır.</blockquote>
     <br/>
     <p>Daha fazla yardım için aşağıdaki sorun giderme bölümüne bakın.</p>]]></string>
 
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Çeşitli ve Sorun Giderme</h1>]]></string>
 
     <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Donanım Gereksinimleri</h2>
-<p>Her cihaz Sky Map uygulamasını tamamen destekleyemez!</p>
+<p>Her cihaz SkyLuz uygulamasını tamamen destekleyemez!</p>
  <br/>
  <p>En azından aşağıdakilere sahip bir telefona ihtiyacınız var:</p>
 <p>• Manyetik alan sensörü (diğer adıyla Pusula) — hangi yöne baktığınızı anlamak için<br/>
@@ -136,13 +136,13 @@ Gökyüzündeki o nesneyi bulmak için <b>Bul</b> düğmesini kullanın.</p>]]><
 <p>İdeal olarak ayrıca:</p>
 <p>• Jiroskop — bu, hareketi yumuşatacak ve sarsıntıyı azaltacaktır</p>
 <blockquote><b>Telefon pusulaları bilindiği üzere güvenilmezdir.</b>
-Gökyüzü haritası yanlış görünüyorsa, bu neredeyse her zaman telefonunuzun pusulası ile ilgili bir donanım sorunudur; Sky Map uygulamasındaki bir hata değildir.
-Sky Map, telefonunuzun sensörünün bildirdiği verileri aynen okur; hatalı veya sapmalı bir okumayı otomatik olarak düzeltmenin bir yolu yoktur.
+Gökyüzü haritası yanlış görünüyorsa, bu neredeyse her zaman telefonunuzun pusulası ile ilgili bir donanım sorunudur; SkyLuz uygulamasındaki bir hata değildir.
+SkyLuz, telefonunuzun sensörünün bildirdiği verileri aynen okur; hatalı veya sapmalı bir okumayı otomatik olarak düzeltmenin bir yolu yoktur.
 Aşağıdaki Sorun Giderme bölümüne bakın.</blockquote>
 <h3>Telefonumda hangi sensörlerin olduğunu nasıl anlarım?</h3>
 <p><b>Ayarlar → Tanılama</b> bölümünü açın — telefonunuzda bulunmayan sensörler yok olarak işaretlenecektir. Ayrıca eğitim sırasında da bilgilendirilmiş olacaksınız.</p>
 <h3>Cihazımda gerekli sensörler yoksa ne olur?</h3>
-<p>Sky Map manuel moda geçecektir. Yine de gökyüzünü keşfedebilirsiniz, ancak sensörler olmadan hiçbir uygulamanın size yönünüzü göstermesinin bir yolu yoktur.</p>]]></string>
+<p>SkyLuz manuel moda geçecektir. Yine de gökyüzünü keşfedebilirsiniz, ancak sensörler olmadan hiçbir uygulamanın size yönünüzü göstermesinin bir yolu yoktur.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Sorun Giderme</h2>
 <h3>Harita hareket etmiyor</h3>
@@ -150,8 +150,8 @@ Aşağıdaki Sorun Giderme bölümüne bakın.</blockquote>
 • Cihazınızda pusula ve ivmeölçer olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin<br/>
 • 8 rakamı kalibrasyon hareketini deneyin: telefonunuzu yavaşça büyük, akıcı bir 8 rakamı şeklinde sallayın</p>
 <h3>Harita yanlış yönü gösteriyor veya hatalı</h3>
-<p>Sky Map\'in doğru gökyüzünü göstermesi için üç şeye ihtiyacı vardır: telefonunuzun baktığı yön, konumunuz ve güncel saat. Harita yanlış görünüyorsa, bunlardan biri muhtemelen hatalıdır.</p>
-<p>• <b>Pusula (en yaygın neden):</b> Bu, bir Sky Map hatası değil, telefonunuzla ilgili donanımsal bir sorundur. 8 rakamı kalibrasyon hareketi, telefonunuzun pusula sensörünü dahili olarak sıfırlamasını ister, ancak <i>kalibre edilmiş bir pusula mutlaka doğru bir pusula değildir</i>. Metal bir nesnenin, araba torpidosunun veya manyetik telefon kılıfının yakınındaysanız, kalibrasyondan sonra bile harita yanlış gösterebilir. Açık bir alana gidin ve 8 rakamı hareketini tekrarlayın.<br/>
+<p>SkyLuz\'in doğru gökyüzünü göstermesi için üç şeye ihtiyacı vardır: telefonunuzun baktığı yön, konumunuz ve güncel saat. Harita yanlış görünüyorsa, bunlardan biri muhtemelen hatalıdır.</p>
+<p>• <b>Pusula (en yaygın neden):</b> Bu, bir SkyLuz hatası değil, telefonunuzla ilgili donanımsal bir sorundur. 8 rakamı kalibrasyon hareketi, telefonunuzun pusula sensörünü dahili olarak sıfırlamasını ister, ancak <i>kalibre edilmiş bir pusula mutlaka doğru bir pusula değildir</i>. Metal bir nesnenin, araba torpidosunun veya manyetik telefon kılıfının yakınındaysanız, kalibrasyondan sonra bile harita yanlış gösterebilir. Açık bir alana gidin ve 8 rakamı hareketini tekrarlayın.<br/>
 • <b>Konum:</b> <b>Uygulama Ayarları → İzinler</b> aracılığıyla konum izni verin. Koordinatlarınızı doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin. Eksik konumun ele veren bir belirtisi, Kutup Yıldızı\'nın doğrudan başucunda görünmesidir.<br/>
 • <b>Zaman:</b> Daha az yaygındır, ancak yanlış bir saat dilimi tüm gökyüzünü kaydırır. Cihazınızın saatinin ve saat diliminin doğru olduğunu doğrulamak için Tanılama sayfasını (<b>Ayarlar → Tanılama</b>) kontrol edin.</p>
 <h3>Harita titriyor</h3>
@@ -163,6 +163,6 @@ Aşağıdaki Sorun Giderme bölümüne bakın.</blockquote>
 <p>Hâlâ takılıp kaldıysanız, <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> adresinden bize e-posta gönderin — Tanılama sayfanızın bir ekran görüntüsü çok yardımcı olur.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskop Kullanıcıları — İşaretçi Modu</h2>
-<p><b>Ayarlar → Sensörler</b> altında, <b>Görüş Yönü</b> ayarını <b>İşaretçi Modu</b> olarak değiştirin. Bu modda Sky Map, ekranın baktığı yeri değil, telefonun <i>uzun kenarının</i> işaret ettiği yeri gösterir.</p>
+<p><b>Ayarlar → Sensörler</b> altında, <b>Görüş Yönü</b> ayarını <b>İşaretçi Modu</b> olarak değiştirin. Bu modda SkyLuz, ekranın baktığı yeri değil, telefonun <i>uzun kenarının</i> işaret ettiği yeri gösterir.</p>
 <p>Bu, telefonunuzu bir teleskop borusunun yanına monte etmenizi sağlar; böylece ekran boruya dik olurken harita hâlâ teleskopun nereye nişan aldığını takip eder.</p>]]></string>
 </resources>

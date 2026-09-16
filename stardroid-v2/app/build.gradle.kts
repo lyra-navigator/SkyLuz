@@ -18,7 +18,7 @@ val secrets =
 android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
-        applicationId = "com.google.android.stardroid"
+        applicationId = "org.digitalfleet.skyluz"
         versionCode = 1738
         versionName = "2.0.6:Apollo"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

@@ -42,7 +42,7 @@ import kotlin.time.Duration.Companion.minutes
  * time absorbs the imprecision.
  *
  * `setExactAndAllowWhileIdle` was rejected: on Android 12+ it needs `SCHEDULE_EXACT_ALARM`, which
- * Play restricts to apps whose core function is alarms. Sky Map would not qualify, so most
+ * Play restricts to apps whose core function is alarms. SkyLuz would not qualify, so most
  * installs would land on this fallback anyway and the guard would be pure cost. `setAlarmClock`
  * is exempt from Doze and needs no permission, but puts an alarm icon in the status bar — the
  * wrong signal entirely for a sky event.

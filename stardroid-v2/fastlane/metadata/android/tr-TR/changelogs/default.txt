@@ -1,4 +1,4 @@
-Yeni Sky Map tamamen yeniden inşa edildi — yeni motor, yeni kullanıcı arayüzü, daha doğru.
+Yeni SkyLuz tamamen yeniden inşa edildi — yeni motor, yeni kullanıcı arayüzü, daha doğru.
 
 Yeni Ay, tutulmalar ve gezegenler doğru bir şekilde konumlandırıldı ve zamanlandı.
 

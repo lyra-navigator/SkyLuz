@@ -1,31 +1,47 @@
-# <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map
+# <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/stardroid-v1/assets/skymap-logo-large.png" width="45" height="45" align="center"> SkyLuz
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
 [![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_badge)
 
 http://stardroid.app
 
-Sky Map is the open-source astronomy Android app built for the community.
+SkyLuz is the open-source astronomy Android app built for the community.
 
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="60">](https://play.google.com/store/apps/details?id=com.google.android.stardroid)
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60">](https://f-droid.org/en/packages/com.google.android.stardroid/)
 
+
+## About this fork (SkyLuz)
+
+SkyLuz is a community fork of [Sky Map v2](https://github.com/sky-map-team/stardroid)
+(originally Google Sky Map, open-sourced in 2012). This fork:
+
+- **Rebrands the app** (name, id `org.digitalfleet.skyluz`, original GPLv3 icon artwork).
+- **Adds custom constellations** — draw your own asterisms by tapping stars, save and
+  share them (in development).
+- Ships the fully-FOSS `fdroid` flavor; no ads, no trackers, offline-first.
+- Maintained by the Digital Fleet; upstream is tracked at `upstream` remote.
+
+All Penterakt LLC brand assets (launcher/notification/onboarding art) have been
+**replaced** with original GPLv3 artwork — none are copied. Code remains GPLv3 as
+required by the upstream license.
+
 ## Need Help?
 > Check out [help.md](help.md) and [troubleshooting.md](troubleshooting.md) for accuracy issues and why 'compass calibration' doesn't do what you think it does.
 
 ## FAQ
-### Is this *Google* Sky Map?
+### Is this *Google* SkyLuz?
 It was originally! 
 
-Sky Map has a *long* history, launching as Google Sky Map on the very first Android phone at Searchology 2009. In 2011 Google ceased active support and the original developers open-sourced it with Google's permission.  Google's [Open Source Programs Office](https://opensource.org/blog/google-ospo-why-we-support-the-osi) kindly allowed us to continue to work on it as a personal project, provided we removed Google's branding from it and did not use Google's resources. Today it is still maintained by the same folks. While we no longer work for Google we continue to develop Sky Map using our own resources.
+SkyLuz has a *long* history, launching as Google SkyLuz on the very first Android phone at Searchology 2009. In 2011 Google ceased active support and the original developers open-sourced it with Google's permission.  Google's [Open Source Programs Office](https://opensource.org/blog/google-ospo-why-we-support-the-osi) kindly allowed us to continue to work on it as a personal project, provided we removed Google's branding from it and did not use Google's resources. Today it is still maintained by the same folks. While we no longer work for Google we continue to develop SkyLuz using our own resources.
 
 #### Then what is stardroid?
-"Stardroid" was the internal name - you can see it's still used as an identifier in the code. Back in the day Google's lawyercats were concerned that 'stardroid' might attract the wrath of, let's say, followers of the Dark Side of the Force so we were _strongly_ encouraged not to call it that. Plus, Google likes to name products after what they are (Photos, Calendar, Docs...). So, Sky Map it is.
+"Stardroid" was the internal name - you can see it's still used as an identifier in the code. Back in the day Google's lawyercats were concerned that 'stardroid' might attract the wrath of, let's say, followers of the Dark Side of the Force so we were _strongly_ encouraged not to call it that. Plus, Google likes to name products after what they are (Photos, Calendar, Docs...). So, SkyLuz it is.
 
 ### Why does it lack feature _X_ or look so dated?
 
-> Check out Sky Map v2! It's a complete rewrite and not only does it look more like a modern Android app but it's a solid platform to build new features on. Expect more features very soon!
+> Check out SkyLuz v2! It's a complete rewrite and not only does it look more like a modern Android app but it's a solid platform to build new features on. Expect more features very soon!
 
 If you're still on v1 though, Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins which is why it looks somewhat retro.
 Nevertheless, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
@@ -38,9 +54,9 @@ I'm glad you asked! We have a section on that below.
 
 <a href="https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_support" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Sky Map is a labor of love maintained in our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
+SkyLuz is a labor of love maintained in our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
 
-If you enjoy using Sky Map, there are several ways to help keep the project alive:
+If you enjoy using SkyLuz, there are several ways to help keep the project alive:
 
 * **Donations:** [Buy Me a Coffee](https://www.buymeacoffee.com/skymapdevs?utm_source=github&utm_medium=readme&utm_campaign=readme_support) — Every coffee helps keep the servers running and the code flowing!
 * **Join the beta and give us feedback!** Visit the [Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) on your phone.
@@ -65,10 +81,10 @@ IMPORTANT: Contributions are currently closed! The V1 codebase has been retired 
 
 # Licensing, Ownership & Trademarks
 
-Sigh. I'm sorry we have to do this. But this legalese is to prevent lazy people taking the source code and releasing a clone of Sky Map that is just stuffed full of ads. Yes people do this. It adds no value to the world and just lines their pockets.
+Sigh. I'm sorry we have to do this. But this legalese is to prevent lazy people taking the source code and releasing a clone of SkyLuz that is just stuffed full of ads. Yes people do this. It adds no value to the world and just lines their pockets.
 
 ## 1. Source Code License
-The source code of this project is a derivative work of the original open-source Sky Map application (formerly Google Sky Map). The repository holds two applications:
+The source code of this project is a derivative work of the original open-source SkyLuz application (formerly Google SkyLuz). The repository holds two applications:
 
 * **`stardroid-v1/`** — the legacy app. Licensed under the **Apache License, Version 2.0**.
   Original copyright headers and notices within inherited files have been preserved as
@@ -95,6 +111,6 @@ Subject to the platform terms of the public code hosting service (e.g., GitHub's
 ---
 
 # Fun
-## Sky Map Prototype (2009)
+## SkyLuz Prototype (2009)
 
-![Sky Map Prototype (2009)](./stardroid-v1/assets/SkyMap_prototype.png)
+![SkyLuz Prototype (2009)](./stardroid-v1/assets/SkyMap_prototype.png)

@@ -34,7 +34,7 @@ import kotlinx.datetime.toLocalDateTime
 import java.util.concurrent.TimeUnit
 
 /**
- * One WorkManager job refreshes every Sky Map widget (D75): rise/set and "tonight" content
+ * One WorkManager job refreshes every SkyLuz widget (D75): rise/set and "tonight" content
  * are per-day figures, so a 12-hour period keeps them fresh across midnight and the
  * tonight-rollover without exact alarms. Placement/removal drive scheduling from the
  * receivers; [WidgetGate] re-applies the experiment flags on app start.

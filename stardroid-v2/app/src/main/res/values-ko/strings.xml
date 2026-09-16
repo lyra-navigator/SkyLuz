@@ -97,7 +97,7 @@
     <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">야간 모드</string>
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">수동 모드로 전환</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">자동 모드로 전환</string>
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">이 기기에는 나침반이나 모션 센서가 없으므로 Sky Map이 가리키는 방향을 따라갈 수 없습니다. 대신 지도를 직접 드래그하세요.</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">이 기기에는 나침반이나 모션 센서가 없으므로 SkyLuz이 가리키는 방향을 따라갈 수 없습니다. 대신 지도를 직접 드래그하세요.</string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">확인</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
@@ -135,8 +135,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">카메라 셔터 시간</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">하늘 공유</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">이 하늘 공유</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — Sky Map을 무료로 받으세요: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">보고 있는 것을 확인하세요 — SkyLuz을 무료로 받으세요</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">보고 있는 것을 확인하세요 — SkyLuz을 무료로 받으세요: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">오버레이</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">나란히</string>
@@ -238,7 +238,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">설정</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">위치 (선택 사항)</string>
     <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">
-    Sky Map은 정확한 밤하늘을 표시하기 위해 대략적인 위치를 사용합니다. 이 권한은 선택 사항입니다. 거부하고 위치를 수동으로 입력하거나 나중에 결정할 수 있습니다. 나중에 결정하는 경우, 위치가 설정될 때까지 지도가 정확하지 않을 것입니다.
+    SkyLuz은 정확한 밤하늘을 표시하기 위해 대략적인 위치를 사용합니다. 이 권한은 선택 사항입니다. 거부하고 위치를 수동으로 입력하거나 나중에 결정할 수 있습니다. 나중에 결정하는 경우, 위치가 설정될 때까지 지도가 정확하지 않을 것입니다.
     </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">권한 부여</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">수동으로 입력</string>
@@ -247,7 +247,7 @@
     <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">위치 권한이 영구적으로 거부되었습니다. 앱 설정에서 다시 사용하도록 설정하세요.</string>
     <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">앱 설정 열기</string>
     <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">위치 찾는 중…</string>
-    <string name="location_acquiring_message" translation_description="Body text of dialog shown when Sky Map has been waiting a while for the device GPS or network location">계속해서 위치를 찾는 중…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown when SkyLuz has been waiting a while for the device GPS or network location">계속해서 위치를 찾는 중…</string>
     <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">계속 기다리기</string>
     <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">위치 입력</string>
     <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">도시 또는 장소 이름</string>
@@ -301,7 +301,7 @@
     <string name="settings_section_sensors">센서 설정</string>
     <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">기타</string>
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">사용 통계 보내기</string>
-    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics에 익명 데이터를 보내 Sky Map을 개선하는 데 도움을 주세요</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics에 익명 데이터를 보내 SkyLuz을 개선하는 데 도움을 주세요</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">센서, 위치 및 성능 세부 정보</string>
     <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">탭하여 정보 표시</string>
     <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">천체를 탭하여 자세히 알아보세요</string>
@@ -321,7 +321,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">야간 모드에서 화면을 어둡게 하는 정도</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">시스템 기본값</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">매우 어둡게</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">클래식</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">클래식</string>
     <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">하늘 그라데이션 표시</string>
     <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">태양 근처는 하늘을 파랗게, 반대편은 어둡게 음영 처리합니다</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">레거시 센서 사용</string>
@@ -363,14 +363,14 @@
     <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">진단</string>
     <string name="diagnostics_title" translation_description="Title bar text for the diagnostics screen">진단</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">개발자에게 보내기</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 진단 보고서</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 진단. 이 줄 위에 문제를 설명해 주세요. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz 진단 보고서</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz 진단. 이 줄 위에 문제를 설명해 주세요. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">최근 로그</string>
     <string name="diagnostics_section_general" translation_description="Section heading in the diagnostics screen for general device information">일반</string>
     <string name="diagnostics_device" translation_description="Row label in the diagnostics screen for the device model name">기기</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version" translation_description="Row label in the diagnostics screen for the Android OS version">Android 버전</string>
-    <string name="diagnostics_sky_map_version" translation_description="Row label in the diagnostics screen for the Sky Map app version">Sky Map 버전</string>
+    <string name="diagnostics_sky_map_version" translation_description="Row label in the diagnostics screen for the SkyLuz app version">SkyLuz 버전</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">그래픽</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">렌더러</string>
@@ -436,10 +436,10 @@
     <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">보정: 나쁨</string>
     <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">보정: 양호</string>
     <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">보정: 좋음</string>
-    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">보정: 연결 없음</string>
+    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in SkyLuz but included for completeness">보정: 연결 없음</string>
     <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">다시 표시 안 함</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대폰의 나침반 센서가 보정 상태가 좋지 않다고 보고하고 있습니다. 숫자 8자 모양으로 움직이는 동작(<a href="%s">시연 보기</a>)은 휴대폰 하드웨어의 나침반 센서를 재설정하도록 유도합니다. Sky Map은 이 과정에 대해 제어할 수 없습니다.<br/><br/><blockquote><b>보정되었다고 정확하다는 의미는 아닙니다.</b> 숫자 8자 제스처는 센서를 재설정하는 데 도움이 되지만, 주변 금속 물체, 자동차 대시보드 또는 휴대폰 케이스로 인한 간섭을 제거할 수는 없습니다. 보정 후에도 지도가 여전히 정확하지 않다면, Sky Map이 아닌 이러한 외부 요인이 가장 큰 원인일 가능성이 높습니다.</blockquote>금속이 없는 개방된 공간으로 이동하여 다시 시도해 보세요.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대전화에서 나침반 보정 상태를 위와 같이 보고하고 있습니다.<br/><br/>필요한 경우, 8자 모양으로 움직여 (<a href="%s">시연 영상 보기</a>) 휴대전화 하드웨어에서 나침반 센서를 다시 보정하도록 유도하세요.<br/><br/><blockquote><b>중요:</b> 보정은 센서가 내부적으로 자체 재설정하는 데 도움이 됩니다. 그렇다고 나침반이 반드시 정확하다는 의미는 아닙니다! 국부적인 자기 간섭(금속 물체, 자동차 대시보드, 휴대전화 케이스)으로 인해 휴대전화의 나침반이 Sky Map에 부정확한 판독값을 보낼 수 있습니다.</blockquote><b>지도가 위치를 올바르게 표시하지 않는다면 문제는 Sky Map이 아니라 휴대전화일 가능성이 높습니다!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대폰의 나침반 센서가 보정 상태가 좋지 않다고 보고하고 있습니다. 숫자 8자 모양으로 움직이는 동작(<a href="%s">시연 보기</a>)은 휴대폰 하드웨어의 나침반 센서를 재설정하도록 유도합니다. SkyLuz은 이 과정에 대해 제어할 수 없습니다.<br/><br/><blockquote><b>보정되었다고 정확하다는 의미는 아닙니다.</b> 숫자 8자 제스처는 센서를 재설정하는 데 도움이 되지만, 주변 금속 물체, 자동차 대시보드 또는 휴대폰 케이스로 인한 간섭을 제거할 수는 없습니다. 보정 후에도 지도가 여전히 정확하지 않다면, SkyLuz이 아닌 이러한 외부 요인이 가장 큰 원인일 가능성이 높습니다.</blockquote>금속이 없는 개방된 공간으로 이동하여 다시 시도해 보세요.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[휴대전화에서 나침반 보정 상태를 위와 같이 보고하고 있습니다.<br/><br/>필요한 경우, 8자 모양으로 움직여 (<a href="%s">시연 영상 보기</a>) 휴대전화 하드웨어에서 나침반 센서를 다시 보정하도록 유도하세요.<br/><br/><blockquote><b>중요:</b> 보정은 센서가 내부적으로 자체 재설정하는 데 도움이 됩니다. 그렇다고 나침반이 반드시 정확하다는 의미는 아닙니다! 국부적인 자기 간섭(금속 물체, 자동차 대시보드, 휴대전화 케이스)으로 인해 휴대전화의 나침반이 SkyLuz에 부정확한 판독값을 보낼 수 있습니다.</blockquote><b>지도가 위치를 올바르게 표시하지 않는다면 문제는 SkyLuz이 아니라 휴대전화일 가능성이 높습니다!</b>]]></string>
     <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">휴대전화 나침반의 정확도가 낮습니다</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">센서 정확도가 높습니다</string>
 
@@ -466,7 +466,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500광년</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11광년 너비</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">센서 및 보정</string>
-    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map은 휴대전화 센서를 사용하여 별과 정렬합니다.</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">SkyLuz은 휴대전화 센서를 사용하여 별과 정렬합니다.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[기기에 자동 추적에 필요한 센서가 없는 것 같습니다. 걱정하지 마세요. <b>수동 모드</b>에서 여전히 전체 우주를 탐험할 수 있습니다!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[정확도를 유지하려면, 가끔 휴대폰을 빠르게 <b>8자</b> 모양으로 흔들어 주세요.]]></string>
     <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">건너뛰기</string>
@@ -516,7 +516,7 @@
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">위젯 추가</string>
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">위젯 제안 닫기</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">홈 화면에서 위젯을 추가하세요</string>
-    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">런처에서 앱을 통해 위젯을 추가하는 것을 지원하지 않습니다. 홈 화면을 길게 터치하여 위젯을 선택한 다음, Sky Map을 찾으세요.</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">런처에서 앱을 통해 위젯을 추가하는 것을 지원하지 않습니다. 홈 화면을 길게 터치하여 위젯을 선택한 다음, SkyLuz을 찾으세요.</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">확인</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% 밝음</string>
 
@@ -554,12 +554,12 @@
 
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">알림</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map은 희귀한 천문 현상에 대해서만 알림을 보내며, 하루에 최대 한 번입니다. 모든 알림은 사용자가 켜기 전까지 꺼져 있습니다.</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">SkyLuz은 희귀한 천문 현상에 대해서만 알림을 보내며, 하루에 최대 한 번입니다. 모든 알림은 사용자가 켜기 전까지 꺼져 있습니다.</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">유성우 극대기</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">매년 약 12회, 극대기 저녁에 알림</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">오늘 밤 하늘 요약</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">일몰 후 한 번 요약, 조용한 밤에는 건너뜀</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map의 알림이 차단되었습니다</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">SkyLuz의 알림이 차단되었습니다</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">시스템 설정에서 허용하려면 탭하세요</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">유성우 극대기</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">매년 약 12회, 극대기 저녁에 알림</string>

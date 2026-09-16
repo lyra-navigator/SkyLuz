@@ -119,7 +119,7 @@ fun EulaScreen(
                 .verticalScroll(rememberScrollState()),
             // Start-aligned, not centred: the top app bar's title sits at the leading edge,
             // and a centred column would start well inboard of it — and land on the centred
-            // Sky Map watermark behind the screen.
+            // SkyLuz watermark behind the screen.
             contentAlignment = Alignment.TopStart,
         ) {
             StyledHtml(

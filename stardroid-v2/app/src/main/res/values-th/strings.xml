@@ -99,7 +99,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">สลับเป็นโหมดกำหนดเอง</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">สลับเป็นโหมดอัตโนมัติ</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    อุปกรณ์นี้ไม่มีเข็มทิศหรือเซ็นเซอร์ตรวจจับการเคลื่อนไหว Sky Map จึงไม่สามารถติดตามทิศทางที่คุณชี้ได้ ให้ใช้วิธีลากแผนที่ด้วยมือแทน
+    อุปกรณ์นี้ไม่มีเข็มทิศหรือเซ็นเซอร์ตรวจจับการเคลื่อนไหว SkyLuz จึงไม่สามารถติดตามทิศทางที่คุณชี้ได้ ให้ใช้วิธีลากแผนที่ด้วยมือแทน
     </string>
     <string name="no_sensor_warning_dismiss">ตกลง</string>
 
@@ -137,8 +137,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">เวลาชัตเตอร์กล้อง</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">แชร์ท้องฟ้า</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">แชร์ท้องฟ้านี้</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด Sky Map ได้ฟรี</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด Sky Map ได้ฟรี: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด SkyLuz ได้ฟรี</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ดูว่าคุณกำลังมองอะไรอยู่ — ดาวน์โหลด SkyLuz ได้ฟรี: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ซ้อนทับ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">เคียงข้าง</string>
@@ -223,7 +223,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">การตั้งค่า</string>
     <string name="location_permission_dialog_title">จำเป็นต้องใช้ตำแหน่ง</string>
     <string name="location_permission_dialog_message">
-    Sky Map ต้องการตำแหน่งโดยประมาณของคุณเพื่อแสดงท้องฟ้ายามค่ำคืนที่ถูกต้อง คุณสามารถให้สิทธิ์การเข้าถึง ป้อนตำแหน่งของคุณด้วยตนเอง หรือตัดสินใจภายหลัง หากคุณตัดสินใจภายหลัง แผนที่จะไม่แม่นยำจนกว่าจะตั้งค่าตำแหน่งของคุณ
+    SkyLuz ต้องการตำแหน่งโดยประมาณของคุณเพื่อแสดงท้องฟ้ายามค่ำคืนที่ถูกต้อง คุณสามารถให้สิทธิ์การเข้าถึง ป้อนตำแหน่งของคุณด้วยตนเอง หรือตัดสินใจภายหลัง หากคุณตัดสินใจภายหลัง แผนที่จะไม่แม่นยำจนกว่าจะตั้งค่าตำแหน่งของคุณ
     </string>
     <string name="location_permission_grant">อนุญาตสิทธิ์</string>
     <string name="location_permission_enter_manually">ป้อนด้วยตนเอง</string>
@@ -286,7 +286,7 @@
     <string name="settings_section_sensors">การตั้งค่าเซนเซอร์ (ผู้เชี่ยวชาญ)</string>
     <string name="settings_section_other">อื่นๆ</string>
     <string name="enable_analytics">ส่งสถิติการใช้งาน</string>
-    <string name="enable_analytics_desc">ปรับปรุง Sky Map โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>
+    <string name="enable_analytics_desc">ปรับปรุง SkyLuz โดยการส่งข้อมูลที่ไม่ระบุตัวตนไปยัง Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">รายละเอียดเซ็นเซอร์ ตำแหน่ง และประสิทธิภาพ</string>
     <string name="settings_tap_to_identify">แสดงข้อมูลเมื่อแตะ</string>
     <string name="settings_tap_to_identify_summary">แตะวัตถุท้องฟ้าเพื่อเรียนรู้เกี่ยวกับพวกมัน</string>
@@ -306,7 +306,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">ระดับความมืดของหน้าจอในโหมดกลางคืน</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">ค่าเริ่มต้นของระบบ</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">มืดมาก</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">คลาสสิก</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">คลาสสิก</string>
     <string name="settings_sky_gradient">แสดงการไล่ระดับสีท้องฟ้า</string>
     <string name="settings_sky_gradient_summary">ทำให้ท้องฟ้าเป็นสีน้ำเงินใกล้ดวงอาทิตย์และมืดในด้านตรงข้าม</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">ใช้เซ็นเซอร์แบบเดิม</string>
@@ -350,14 +350,14 @@
     <string name="diagnostics_button">การวินิจฉัย</string>
     <string name="diagnostics_title">การวินิจฉัย</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">ส่งให้ผู้พัฒนา</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">รายงานการวินิจฉัย Sky Map</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- การวินิจฉัย Sky Map โปรดอธิบายปัญหาเหนือเส้นนี้ ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">รายงานการวินิจฉัย SkyLuz</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- การวินิจฉัย SkyLuz โปรดอธิบายปัญหาเหนือเส้นนี้ ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">บันทึกล่าสุด</string>
     <string name="diagnostics_section_general">ทั่วไป</string>
     <string name="diagnostics_device">อุปกรณ์</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">เวอร์ชัน Android</string>
-    <string name="diagnostics_sky_map_version">เวอร์ชัน Sky Map</string>
+    <string name="diagnostics_sky_map_version">เวอร์ชัน SkyLuz</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">กราฟิก</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">ตัวแสดงผล</string>
@@ -425,8 +425,8 @@
     <string name="calibration_accuracy_high">การสอบเทียบ: ดี</string>
     <string name="calibration_accuracy_no_contact">การสอบเทียบ: ไม่มีการติดต่อ</string>
     <string name="calibration_do_not_show_again">อย่าแสดงอีกครั้ง</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[เซนเซอร์เข็มทิศในโทรศัพท์ของคุณรายงานว่ามีการสอบเทียบที่ไม่ดี การเคลื่อนไหวรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) จะช่วยกระตุ้นให้ฮาร์ดแวร์ของโทรศัพท์รีเซ็ตเซนเซอร์เข็มทิศ — Sky Map ไม่สามารถควบคุมกระบวนการนี้ได้<br/><br/><blockquote><b>สอบเทียบแล้วไม่ได้แปลว่าแม่นยำ</b> ท่าทางรูปเลข 8 ช่วยรีเซ็ตเซนเซอร์ แต่ไม่สามารถกำจัดสัญญาณรบกวนจากวัตถุโลหะที่อยู่ใกล้เคียง แดชบอร์ดรถยนต์ หรือเคสโทรศัพท์ได้ หากแผนียังคงไม่ตรงหลังจากสอบเทียบ สาเหตุที่เป็นไปได้มากที่สุดคือแหล่งสัญญาณภายนอกเหล่านั้น — ไม่ใช่ Sky Map</blockquote>ย้ายไปที่โล่งแจ้งที่ห่างจากโลหะแล้วลองใหม่อีกครั้ง。]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[โทรศัพท์ของคุณกำลังรายงานสถานะการปรับเทียบเข็มทิศดังที่แสดงด้านบน<br/><br/>หากจำเป็น ให้ทำการเคลื่อนที่เป็นรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) เพื่อกระตุ้นฮาร์ดแวร์ของโทรศัพท์ให้ปรับเทียบเซ็นเซอร์เข็มทิศใหม่<br/><br/><blockquote><b>ข้อสำคัญ:</b> การปรับเทียบจะช่วยให้เซ็นเซอร์รีเซ็ตตัวเองภายใน แต่นั่นไม่ได้หมายความว่าเข็มทิศจะแม่นยำเสมอไป!<br/>สัญญาณรบกวนแม่เหล็กในพื้นที่ (วัตถุที่เป็นโลหะ, แดชบอร์ดรถยนต์, เคสโทรศัพท์) ยังคงทำให้เข็มทิศของโทรศัพท์ส่งค่าที่คลาดเคลื่อนไปยัง Sky Map ได้</blockquote><b>หากแผนที่แสดงตำแหน่งไม่ถูกต้อง ปัญหาคือน่าจะมาจากโทรศัพท์ของคุณ ไม่ใช่ Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[เซนเซอร์เข็มทิศในโทรศัพท์ของคุณรายงานว่ามีการสอบเทียบที่ไม่ดี การเคลื่อนไหวรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) จะช่วยกระตุ้นให้ฮาร์ดแวร์ของโทรศัพท์รีเซ็ตเซนเซอร์เข็มทิศ — SkyLuz ไม่สามารถควบคุมกระบวนการนี้ได้<br/><br/><blockquote><b>สอบเทียบแล้วไม่ได้แปลว่าแม่นยำ</b> ท่าทางรูปเลข 8 ช่วยรีเซ็ตเซนเซอร์ แต่ไม่สามารถกำจัดสัญญาณรบกวนจากวัตถุโลหะที่อยู่ใกล้เคียง แดชบอร์ดรถยนต์ หรือเคสโทรศัพท์ได้ หากแผนียังคงไม่ตรงหลังจากสอบเทียบ สาเหตุที่เป็นไปได้มากที่สุดคือแหล่งสัญญาณภายนอกเหล่านั้น — ไม่ใช่ SkyLuz</blockquote>ย้ายไปที่โล่งแจ้งที่ห่างจากโลหะแล้วลองใหม่อีกครั้ง。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[โทรศัพท์ของคุณกำลังรายงานสถานะการปรับเทียบเข็มทิศดังที่แสดงด้านบน<br/><br/>หากจำเป็น ให้ทำการเคลื่อนที่เป็นรูปเลข 8 (<a href="%s">ดูวิดีโอสาธิต</a>) เพื่อกระตุ้นฮาร์ดแวร์ของโทรศัพท์ให้ปรับเทียบเซ็นเซอร์เข็มทิศใหม่<br/><br/><blockquote><b>ข้อสำคัญ:</b> การปรับเทียบจะช่วยให้เซ็นเซอร์รีเซ็ตตัวเองภายใน แต่นั่นไม่ได้หมายความว่าเข็มทิศจะแม่นยำเสมอไป!<br/>สัญญาณรบกวนแม่เหล็กในพื้นที่ (วัตถุที่เป็นโลหะ, แดชบอร์ดรถยนต์, เคสโทรศัพท์) ยังคงทำให้เข็มทิศของโทรศัพท์ส่งค่าที่คลาดเคลื่อนไปยัง SkyLuz ได้</blockquote><b>หากแผนที่แสดงตำแหน่งไม่ถูกต้อง ปัญหาคือน่าจะมาจากโทรศัพท์ของคุณ ไม่ใช่ SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">เข็มทิศโทรศัพท์ของคุณกำลังรายงานความแม่นยำต่ำ</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">เซ็นเซอร์มีความแม่นยำสูง</string>
 
@@ -459,7 +459,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 ปีแสง</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">กว้าง 11 ปีแสง</string>
     <string name="warm_welcome_slide3_title">เซ็นเซอร์และการปรับเทียบ</string>
-    <string name="warm_welcome_slide3_desc">Sky Map ใช้เซ็นเซอร์ของโทรศัพท์คุณเพื่อจัดตำแหน่งให้ตรงกับดวงดาว</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz ใช้เซ็นเซอร์ของโทรศัพท์คุณเพื่อจัดตำแหน่งให้ตรงกับดวงดาว</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[ดูเหมือนว่าอุปกรณ์ของคุณจะไม่มีเซนเซอร์ที่จำเป็นสำหรับการติดตามอัตโนมัติ แต่ไม่ต้องกังวล คุณยังคงสามารถสำรวจห้วงอวกาศทั้งหมดได้ใน <b>โหมดกำหนดเอง</b>!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[เพื่อให้ข้อมูลมีความแม่นยำอยู่เสมอ ให้ลองเหวี่ยงโทรศัพท์ของคุณเป็นรูปเลข <b>8</b> สลับไปมาเป็นครั้งคราว]]></string>
     <string name="warm_welcome_skip">ข้าม</string>
@@ -510,7 +510,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">ปิดคำแนะนำวิดเจ็ต</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">เพิ่มวิดเจ็ตจากหน้าจอหลักของคุณ</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    ตัวเรียกใช้งานแอปของคุณไม่รองรับการเพิ่มวิดเจ็ตจากแอป แตะหน้าจอหลักค้างไว้ เลือก วิดเจ็ต แล้วค้นหา Sky Map
+    ตัวเรียกใช้งานแอปของคุณไม่รองรับการเพิ่มวิดเจ็ตจากแอป แตะหน้าจอหลักค้างไว้ เลือก วิดเจ็ต แล้วค้นหา SkyLuz
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">เข้าใจแล้ว</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">สว่าง 83%</string>
@@ -552,13 +552,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">การแจ้งเตือน</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map จะแจ้งเตือนเฉพาะเหตุการณ์บนท้องฟ้าที่เกิดขึ้นได้ยาก สูงสุดวันละครั้งเท่านั้น ทุกอย่างจะถูกปิดไว้จนกว่าคุณจะเปิดใช้งาน
+    SkyLuz จะแจ้งเตือนเฉพาะเหตุการณ์บนท้องฟ้าที่เกิดขึ้นได้ยาก สูงสุดวันละครั้งเท่านั้น ทุกอย่างจะถูกปิดไว้จนกว่าคุณจะเปิดใช้งาน
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">จุดสูงสุดของฝนดาวตก</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">สรุปท้องฟ้าคืนนี้</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">สรุปหนึ่งครั้งหลังพระอาทิตย์ตกดิน ข้ามไปในคืนที่ไม่มีเหตุการณ์</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">การแจ้งเตือนถูกบล็อกสำหรับ Sky Map</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">การแจ้งเตือนถูกบล็อกสำหรับ SkyLuz</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">แตะเพื่ออนุญาตในการตั้งค่าระบบ</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">จุดสูงสุดของฝนดาวตก</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">ประมาณโหลครั้งต่อปี ในเย็นวันที่ถึงจุดสูงสุด</string>

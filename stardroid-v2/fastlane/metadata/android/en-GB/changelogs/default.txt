@@ -1,4 +1,4 @@
-<b><font color="#F67E81">New</font></b> Sky Map has been completely rebuilt — new engine, new UI, more accurate.
+<b><font color="#F67E81">New</font></b> SkyLuz has been completely rebuilt — new engine, new UI, more accurate.
 
 <b><font color="#F67E81">New</font></b> The Moon, eclipses and planets are accurately placed and timed.
 

@@ -1,4 +1,4 @@
-Nowość Sky Map został całkowicie przebudowany — nowy silnik, nowy interfejs użytkownika, większa dokładność.
+Nowość SkyLuz został całkowicie przebudowany — nowy silnik, nowy interfejs użytkownika, większa dokładność.
 
 Nowość Księżyc, zaćmienia i planety są dokładnie umieszczone i ich czasy są precyzyjne.
 

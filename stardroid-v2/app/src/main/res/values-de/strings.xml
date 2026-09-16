@@ -101,7 +101,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">In den manuellen Modus wechseln</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">In den Automodus wechseln</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    Dieses Handy hat keine Kompass- oder Bewegungssensoren, deshalb kann Sky Map nicht folgen, wohin du es zeigst. Ziehe die Karte stattdessen manuell.
+    Dieses Handy hat keine Kompass- oder Bewegungssensoren, deshalb kann SkyLuz nicht folgen, wohin du es zeigst. Ziehe die Karte stattdessen manuell.
     </string>
     <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
 
@@ -139,8 +139,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Kamera-Verschlusszeit</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Himmel teilen</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Diesen Himmel teilen</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Sieh, wohin du schaust – hol dir Sky Map kostenlos</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Sieh, wohin du schaust – hol dir Sky Map kostenlos: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">Sieh, wohin du schaust – hol dir SkyLuz kostenlos</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">Sieh, wohin du schaust – hol dir SkyLuz kostenlos: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">Überlagerung</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">Nebeneinander</string>
@@ -246,7 +246,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Einstellungen</string>
     <string name="location_permission_dialog_title">Standort erforderlich</string>
     <string name="location_permission_dialog_message">
-    Sky Map benötigt Ihren ungefähren Standort, um den korrekten Nachthimmel anzuzeigen. Sie können die Berechtigung erteilen, Ihren Standort manuell einzugeben oder sich später entscheiden. Wenn Sie sich später entscheiden, ist die Karte nicht genau, bis Ihr Standort festgelegt wurde.
+    SkyLuz benötigt Ihren ungefähren Standort, um den korrekten Nachthimmel anzuzeigen. Sie können die Berechtigung erteilen, Ihren Standort manuell einzugeben oder sich später entscheiden. Wenn Sie sich später entscheiden, ist die Karte nicht genau, bis Ihr Standort festgelegt wurde.
     </string>
     <string name="location_permission_grant">Berechtigung erteilen</string>
     <string name="location_permission_enter_manually">Manuell eingeben</string>
@@ -311,7 +311,7 @@
     <string name="settings_section_sensors">Sensoreinstellungen</string>
     <string name="settings_section_other">Sonstiges</string>
     <string name="enable_analytics">Nutzungsstatistiken senden</string>
-    <string name="enable_analytics_desc">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
+    <string name="enable_analytics_desc">SkyLuz durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor-, Standort- und Leistungsdetails</string>
     <string name="settings_tap_to_identify">Info bei Tippen anzeigen</string>
     <string name="settings_tap_to_identify_summary">Tippen Sie auf Himmelsobjekte, um mehr über sie zu erfahren</string>
@@ -335,7 +335,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">Wie stark der Nachtmodus den Bildschirm dimmt</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">Systemstandard</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Sehr dunkel</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Klassisch</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">Klassisch</string>
     <string name="settings_sky_gradient">Himmelsfarbverlauf anzeigen</string>
     <string name="settings_sky_gradient_summary">
     Färbt den Himmel blau in der Nähe der Sonne und dunkel auf der gegenüberliegenden Seite
@@ -383,14 +383,14 @@
     <string name="diagnostics_button">Diagnose</string>
     <string name="diagnostics_title">Diagnose</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">An Entwickler senden</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map Diagnosebericht</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map Diagnose. Bitte beschreibe das Problem oberhalb dieser Zeile. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz Diagnosebericht</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz Diagnose. Bitte beschreibe das Problem oberhalb dieser Zeile. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Aktuelles Protokoll</string>
     <string name="diagnostics_section_general">Allgemein</string>
     <string name="diagnostics_device">Gerät</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android Version</string>
-    <string name="diagnostics_sky_map_version">Sky Map Version</string>
+    <string name="diagnostics_sky_map_version">SkyLuz Version</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Grafik</string>
     <!-- tm:omitted name="diagnostics_gl_renderer" reason="identical_to_source" -->
@@ -458,8 +458,8 @@
     <string name="calibration_accuracy_high">Kalibrierung: Gut</string>
     <string name="calibration_accuracy_no_contact">Kalibrierung: Kein Kontakt</string>
     <string name="calibration_do_not_show_again">Diese Meldung nicht mehr anzeigen</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Der Kompasssensor deines Handys meldet eine schlechte Kalibrierung. Die Acht-Bewegung (<a href="%s">siehe Demonstration</a>) veranlasst die Hardware deines Handys, den Kompasssensor zurückzusetzen – Sky Map hat keine Kontrolle über diesen Vorgang.<br/><br/><blockquote><b>Kalibriert bedeutet nicht genau.</b> Die Acht-Geste hilft, den Sensor zurückzusetzen, kann aber Störungen durch nahegelegene Metallobjekte, Autoarmaturenbretter oder Handyhüllen nicht beseitigen. Wenn die Karte nach der Kalibrierung immer noch ungenau ist, sind diese externen Quellen die wahrscheinlichste Ursache – nicht Sky Map.</blockquote>Begib dich in einen offenen Bereich abseits von Metall und versuche es erneut.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Dein Handy meldet den oben angezeigten Kompass-Kalibrierungsstatus.<br/><br/>Führe bei Bedarf die Acht-Bewegung aus (<a href="%s">siehe Demonstration</a>), um die Hardware deines Handys zur Neukalibrierung des Kompasssensors aufzufordern.<br/><br/><blockquote><b>Wichtig:</b> Die Kalibrierung hilft dem Sensor, sich intern zurückzusetzen. Das bedeutet nicht, dass der Kompass unbedingt genau ist! Lokale magnetische Interferenzen (Metallobjekte, Autoarmaturenbretter, Handyhüllen) können weiterhin dazu führen, dass der Kompass deines Handys ungenaue Messwerte an Sky Map sendet.</blockquote><b>Wenn die Karte die Positionen nicht korrekt anzeigt, liegt das Problem wahrscheinlich bei deinem Handy – nicht bei Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Der Kompasssensor deines Handys meldet eine schlechte Kalibrierung. Die Acht-Bewegung (<a href="%s">siehe Demonstration</a>) veranlasst die Hardware deines Handys, den Kompasssensor zurückzusetzen – SkyLuz hat keine Kontrolle über diesen Vorgang.<br/><br/><blockquote><b>Kalibriert bedeutet nicht genau.</b> Die Acht-Geste hilft, den Sensor zurückzusetzen, kann aber Störungen durch nahegelegene Metallobjekte, Autoarmaturenbretter oder Handyhüllen nicht beseitigen. Wenn die Karte nach der Kalibrierung immer noch ungenau ist, sind diese externen Quellen die wahrscheinlichste Ursache – nicht SkyLuz.</blockquote>Begib dich in einen offenen Bereich abseits von Metall und versuche es erneut.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[Dein Handy meldet den oben angezeigten Kompass-Kalibrierungsstatus.<br/><br/>Führe bei Bedarf die Acht-Bewegung aus (<a href="%s">siehe Demonstration</a>), um die Hardware deines Handys zur Neukalibrierung des Kompasssensors aufzufordern.<br/><br/><blockquote><b>Wichtig:</b> Die Kalibrierung hilft dem Sensor, sich intern zurückzusetzen. Das bedeutet nicht, dass der Kompass unbedingt genau ist! Lokale magnetische Interferenzen (Metallobjekte, Autoarmaturenbretter, Handyhüllen) können weiterhin dazu führen, dass der Kompass deines Handys ungenaue Messwerte an SkyLuz sendet.</blockquote><b>Wenn die Karte die Positionen nicht korrekt anzeigt, liegt das Problem wahrscheinlich bei deinem Handy – nicht bei SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">Der Kompass Ihres Telefons meldet geringe Genauigkeit</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensoren haben hohe Genauigkeit</string>
 
@@ -492,7 +492,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6.500 Lichtjahre</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 Lichtjahre im Durchmesser</string>
     <string name="warm_welcome_slide3_title">Sensoren &amp; Kalibrierung</string>
-    <string name="warm_welcome_slide3_desc">Sky Map nutzt die Sensoren deines Telefons, um sich an den Sternen auszurichten.</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz nutzt die Sensoren deines Telefons, um sich an den Sternen auszurichten.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Dein Handy scheint die benötigten Sensoren für die automatische Nachführung zu vermissen. Keine Sorge – du kannst den gesamten Kosmos trotzdem im <b>manuellen Modus</b> erkunden!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[Damit es genau bleibt, bewege dein Handy ab und zu kurz in einer <b>Achter</b>-Form.]]></string>
     <string name="warm_welcome_skip">Überspringen</string>
@@ -547,7 +547,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Widget-Vorschlag verwerfen</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Füge das Widget von deinem Startbildschirm hinzu</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    Dein Launcher unterstützt das Hinzufügen von Widgets aus einer App nicht. Tippe und halte deinen Startbildschirm, wähle Widgets, dann suche Sky Map.
+    Dein Launcher unterstützt das Hinzufügen von Widgets aus einer App nicht. Tippe und halte deinen Startbildschirm, wähle Widgets, dann suche SkyLuz.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Verstanden</string>
     <string xmlns:tools="http://schemas.android.com/tools" name="moon_widget_preview_illumination" tools:ignore="StringFormatInvalid" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% beleuchtet</string>
@@ -589,13 +589,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Benachrichtigungen</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map benachrichtigt nur über seltene Himmelsereignisse, maximal einmal täglich. Alles ist deaktiviert, bis du es einschaltest.
+    SkyLuz benachrichtigt nur über seltene Himmelsereignisse, maximal einmal täglich. Alles ist deaktiviert, bis du es einschaltest.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteorschauer-Höhepunkte</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">Etwa ein Dutzend pro Jahr, am Abend des Höhepunktes</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Himmelsübersicht für heute Nacht</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">Eine Zusammenfassung nach Sonnenuntergang, wird in ruhigen Nächten übersprungen</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Benachrichtigungen sind für Sky Map blockiert</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Benachrichtigungen sind für SkyLuz blockiert</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tippe, um sie in den Systemeinstellungen zuzulassen</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteorschauer-Höhepunkte</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">Etwa ein Dutzend pro Jahr, am Abend des Höhepunktes</string>

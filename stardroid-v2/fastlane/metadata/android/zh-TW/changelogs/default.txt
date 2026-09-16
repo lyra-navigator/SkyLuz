@@ -1,4 +1,4 @@
-<b><font color="#F67E81">新增</font></b> Sky Map 徹底重建 — 全新引擎、全新使用者介面、更精確。
+<b><font color="#F67E81">新增</font></b> SkyLuz 徹底重建 — 全新引擎、全新使用者介面、更精確。
 
 <b><font color="#F67E81">新增</font></b> 月球、日食和行星的位置與時間都精確無誤。
 

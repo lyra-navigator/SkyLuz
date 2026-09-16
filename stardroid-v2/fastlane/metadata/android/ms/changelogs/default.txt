@@ -1,4 +1,4 @@
-Baharu Sky Map dibina semula sepenuhnya — enjin baharu, UI baharu, lebih tepat.
+Baharu SkyLuz dibina semula sepenuhnya — enjin baharu, UI baharu, lebih tepat.
 
 Baharu Bulan, gerhana dan planet diletakkan serta ditetapkan masanya dengan tepat.
 

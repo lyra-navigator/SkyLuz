@@ -97,7 +97,7 @@
     <string name="night_mode">夜間模式</string>
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">切換至手動模式</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">切換至自動模式</string>
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">這個裝置沒有指南針或動作感應器，所以 Sky Map 無法跟隨您指向的方向。請改為手動拖曳地圖。</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">這個裝置沒有指南針或動作感應器，所以 SkyLuz 無法跟隨您指向的方向。請改為手動拖曳地圖。</string>
     <string name="no_sensor_warning_dismiss">確定</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
@@ -135,8 +135,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">相機快門時間</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">分享星空</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">分享這個天空</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什麼 — 免費取得 Sky Map</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什麼 — 免費取得 Sky Map：%1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">看看你正在看什麼 — 免費取得 SkyLuz</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">看看你正在看什麼 — 免費取得 SkyLuz：%1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">疊加</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並排</string>
@@ -237,7 +237,7 @@
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">標籤大小不會隨縮放而改變 — 請在設定中調整</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">設定</string>
     <string name="location_permission_dialog_title">需要位置</string>
-    <string name="location_permission_dialog_message">Sky Map 需要您的大約位置以顯示正確的夜空。您可以授予權限、手動輸入位置，或稍後決定。如果您稍後決定，在設定位置之前，地圖將不會準確。</string>
+    <string name="location_permission_dialog_message">SkyLuz 需要您的大約位置以顯示正確的夜空。您可以授予權限、手動輸入位置，或稍後決定。如果您稍後決定，在設定位置之前，地圖將不會準確。</string>
     <string name="location_permission_grant">授予權限</string>
     <string name="location_permission_enter_manually">手動輸入</string>
     <string name="location_permission_later">稍後</string>
@@ -319,7 +319,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">夜間模式調暗螢幕的程度</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">系統預設</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">非常暗</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">經典</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">經典</string>
     <string name="settings_sky_gradient">顯示天空漸層</string>
     <string name="settings_sky_gradient_summary">在太陽附近將天空著色為藍色，在相反側著色為深色</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">使用舊版感測器</string>
@@ -353,14 +353,14 @@
     <string name="diagnostics_button">診斷</string>
     <string name="diagnostics_title">診斷</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">傳送給開發人員</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 診斷報告</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 診斷。請在此行上方描述問題。---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz 診斷報告</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz 診斷。請在此行上方描述問題。---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">近期記錄</string>
     <string name="diagnostics_section_general">一般</string>
     <string name="diagnostics_device">裝置</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android 版本</string>
-    <string name="diagnostics_sky_map_version">Sky Map 版本</string>
+    <string name="diagnostics_sky_map_version">SkyLuz 版本</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">圖形</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">渲染器</string>
@@ -428,8 +428,8 @@
     <string name="calibration_accuracy_high">校準：良好</string>
     <string name="calibration_accuracy_no_contact">校準：未接觸</string>
     <string name="calibration_do_not_show_again">不要再顯示這個訊息</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機指南針感測器回報校準不良。畫8字形動作 (<a href="%s">觀看示範</a>) 會提示您手機的硬體重設其指南針感測器 — Sky Map 無法控制此程序。<br/><br/><blockquote><b>已校準不代表準確。</b>畫8字形手勢有助於重設感測器，但無法消除附近金屬物體、汽車儀表板或手機殼的干擾。如果校準後地圖仍然不準確，最可能的原因是這些外部來源 — 而非 Sky Map。</blockquote>請移至遠離金屬的開放區域，然後再試一次。]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機正在回報其指南針校準狀態，如上方所示。<br/><br/>如有必要，請執行「8字形」動作（<a href="%s">觀看示範</a>），以提示您手機的硬體重新校準其指南針感測器。<br/><br/><blockquote><b>重要提示：</b>校準有助於感測器內部重置。這並不表示指南針一定準確！局部磁場干擾（金屬物體、汽車儀表板、手機殼）仍然可能導致您手機的指南針向 Sky Map 發送不準確的讀數。</blockquote><b>如果地圖未正確顯示位置，問題很可能出在您的手機上，而不是 Sky Map！</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機指南針感測器回報校準不良。畫8字形動作 (<a href="%s">觀看示範</a>) 會提示您手機的硬體重設其指南針感測器 — SkyLuz 無法控制此程序。<br/><br/><blockquote><b>已校準不代表準確。</b>畫8字形手勢有助於重設感測器，但無法消除附近金屬物體、汽車儀表板或手機殼的干擾。如果校準後地圖仍然不準確，最可能的原因是這些外部來源 — 而非 SkyLuz。</blockquote>請移至遠離金屬的開放區域，然後再試一次。]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[您的手機正在回報其指南針校準狀態，如上方所示。<br/><br/>如有必要，請執行「8字形」動作（<a href="%s">觀看示範</a>），以提示您手機的硬體重新校準其指南針感測器。<br/><br/><blockquote><b>重要提示：</b>校準有助於感測器內部重置。這並不表示指南針一定準確！局部磁場干擾（金屬物體、汽車儀表板、手機殼）仍然可能導致您手機的指南針向 SkyLuz 發送不準確的讀數。</blockquote><b>如果地圖未正確顯示位置，問題很可能出在您的手機上，而不是 SkyLuz！</b>]]></string>
     <string name="calibration_low_accuracy_toast">手機指南針精準度過低</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">感測器精準度高</string>
 
@@ -454,7 +454,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 光年</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 光年寬</string>
     <string name="warm_welcome_slide3_title">感應器與校準</string>
-    <string name="warm_welcome_slide3_desc">Sky Map 使用您手機的感測器來與星星對齊。</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz 使用您手機的感測器來與星星對齊。</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[您的裝置似乎缺少自動追蹤所需的感應器。別擔心—您仍然可以在<b>手動模式</b>中探索整個宇宙！]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[為了保持準確，請偶爾將手機快速地畫個<b>8字形</b>。]]></string>
     <string name="warm_welcome_skip">略過</string>
@@ -504,7 +504,7 @@
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">新增小工具</string>
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">關閉小工具建議</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">從您的主螢幕新增小工具</string>
-    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">您的啟動器不支援從應用程式新增小工具。請輕觸並長按您的主畫面，選擇「小工具」，然後找到 Sky Map。</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">您的啟動器不支援從應用程式新增小工具。請輕觸並長按您的主畫面，選擇「小工具」，然後找到 SkyLuz。</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">知道了</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">受光 83%</string>
 
@@ -542,12 +542,12 @@
 
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">通知</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map 只會在罕見的天文事件發生時發出通知，每天最多一次。所有通知預設為關閉，直到您開啟為止。</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">SkyLuz 只會在罕見的天文事件發生時發出通知，每天最多一次。所有通知預設為關閉，直到您開啟為止。</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星雨極大期</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">每年約十幾次，在極大期當晚發送</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今晚星空摘要</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日落後發送一份摘要，在平靜的夜晚會跳過</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map 的通知已被封鎖</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">SkyLuz 的通知已被封鎖</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">輕觸以在系統設定中允許</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星雨極大期</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">每年約十幾次，在極大期當晚發送</string>

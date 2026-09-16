@@ -3,18 +3,18 @@
     <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
 
     <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Introduktion och snabbstart</h2>
-<p>Håll upp telefonen och titta igenom den som ett fönster ut i rymden. Sky Map använder telefonens sensorer
+<p>Håll upp telefonen och titta igenom den som ett fönster ut i rymden. SkyLuz använder telefonens sensorer
  för att följa var du tittar och uppdatera stjärnkartan i realtid.</p>
-<blockquote>Alla telefoner har inte stöd för Sky Map! Se avsnittet om hårdvarukrav nedan.</blockquote>
+<blockquote>Alla telefoner har inte stöd för SkyLuz! Se avsnittet om hårdvarukrav nedan.</blockquote>
 <h3>Om det är första gången du använder appen:</h3>
-<p>1. Tillåt platsåtkomst när du uppmanas till det – Sky Map behöver din ungefärliga plats för att rita upp rätt himmel för där du befinner dig.<br/>
+<p>1. Tillåt platsåtkomst när du uppmanas till det – SkyLuz behöver din ungefärliga plats för att rita upp rätt himmel för där du befinner dig.<br/>
 2. Peka telefonen mot himlen i valfri riktning.<br/>
 3. Kartan flyttar sig så att den stämmer överens med det du tittar på.</p>]]></string>
 
     <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Navigera på stjärnhimlen</h2>
 Tryck på skärmen för att visa kontrollerna och head-up-displayen (uppe till höger).
 <h3>Automatiskt läge</h3>
-<p>I det automatiska läget (standard) använder Sky Map telefonens kompass-, accelerometer- och gyrosensorer för att visa det som finns i den riktning telefonen pekar. Det är bara att flytta runt telefonen så följer kartan med.</p>
+<p>I det automatiska läget (standard) använder SkyLuz telefonens kompass-, accelerometer- och gyrosensorer för att visa det som finns i den riktning telefonen pekar. Det är bara att flytta runt telefonen så följer kartan med.</p>
 <p>Nyp med två fingrar för att zooma in och ut.</p>
 <h3>Manuellt läge</h3>
 <p>När kontrollerna är synliga trycker du på <b>handknappen</b> (nere till höger) för att växla till det manuella läget. I det här läget kan du:</p>
@@ -27,7 +27,7 @@ Tryck på skärmen för att visa kontrollerna och head-up-displayen (uppe till h
     <!-- Symbol map will go here-->
 
     <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Lager</h2>
-<p>Sky Map organiserar det som visas i lager, som vardera kan slås på eller av oberoende av varandra
+<p>SkyLuz organiserar det som visas i lager, som vardera kan slås på eller av oberoende av varandra
 via lagerknapparna till vänster. Håll intryckt, eller tryck på knappen <b>Lager</b> nära
 botten, för att få fram reglage för fler lager.</p>
 <br/>
@@ -62,7 +62,7 @@ storleken när du har zoomat in tillräckligt långt för att den ska vara den s
 <blockquote>De två lägena berättar olika saker. <b>Ikoner</b> säger att Jupiter är en jätte och
 Pluto är liten. <b>Sann skala</b> säger att solen och månen ser nästan exakt lika stora ut från
 jorden — vilket är varför en total solformörkelse överhuvudtaget fungerar, och du kan titta på när den händer.</blockquote>
-<blockquote>Sky Map visar den geometriska horisonten — en helt platt, obehindrad vy.
+<blockquote>SkyLuz visar den geometriska horisonten — en helt platt, obehindrad vy.
 Objekt som befinner sig precis ovanför den kan i praktiken fortfarande vara dolda av byggnader, kullar eller träd.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Infoartiklar</h2>
@@ -85,9 +85,9 @@ Infoartiklar finns för hundratals objekt, inklusive stjärnor, planeter, månen
 • <b>Stjärnbilder</b> — t.ex. "Orion", "Cassiopeia"<br/>
 • <b>Deep sky-objekt</b> — t.ex. "M31", "Andromedagalaxen", "Plejaderna"<br/>
 • <b>Koordinater</b> — rektascension och deklination, t.ex. "5h 55m, 7° 24\'" (du kan använda ett "o" som gradtecken)</p>
-<p><b>I autoläge:</b> när du har valt ett resultat visar Sky Map en målcirkel och en riktningspil. Följ pilen genom att vrida på telefonen – cirkeln ändrar färg när objektet kommer in i ditt synfält. Tryck på <b>Avbryt</b> (eller tryck på Bakåt) för att avsluta sökningen.</p>
+<p><b>I autoläge:</b> när du har valt ett resultat visar SkyLuz en målcirkel och en riktningspil. Följ pilen genom att vrida på telefonen – cirkeln ändrar färg när objektet kommer in i ditt synfält. Tryck på <b>Avbryt</b> (eller tryck på Bakåt) för att avsluta sökningen.</p>
 <p><b>I manuellt läge:</b> kartan hoppar helt enkelt så att objektet hamnar i mitten.</p>
-<blockquote>Du kan söka efter objekt som Sky Map inte visar, till exempel Europa, en av Jupiters månar.
+<blockquote>Du kan söka efter objekt som SkyLuz inte visar, till exempel Europa, en av Jupiters månar.
 I det här fallet leder sökningen dig till moderobjektet (Jupiter).</blockquote>]]></string>
 
     <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Tidsresa</h2>
@@ -111,7 +111,7 @@ från den aktuella stunden.</p>
 <p>Om du är utomhus och tittar på stjärnorna hjälper mörkerseendeläget till att bevara ditt mörkerseende. Slå på eller av det med knappen <b>Nattläge</b>
 längst ner.</p>
 <br/>
-<p>I mörkerseendeläget växlar Sky Map till djupröda toner och dämpar skärmens ljusstyrka.
+<p>I mörkerseendeläget växlar SkyLuz till djupröda toner och dämpar skärmens ljusstyrka.
 Alternativet <b>Automatiskt skärmljus</b> i <b>Inställningar</b> ger dig extra kontroll över hur mörk skärmen blir.</p>]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Andra funktioner</h1>
@@ -125,25 +125,25 @@ Alternativet <b>Automatiskt skärmljus</b> i <b>Inställningar</b> ger dig extra
 Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Ställ in din plats</h2>
-<p>Sky Map behöver din ungefärliga plats för att rita upp rätt stjärnhimmel. Som standard används enhetens platstjänster (mobilnät eller GPS).</p>
+<p>SkyLuz behöver din ungefärliga plats för att rita upp rätt stjärnhimmel. Som standard används enhetens platstjänster (mobilnät eller GPS).</p>
 <br/>
 <p>Om platstildelning inte är tillgänglig eller om du hellre vill ställa in den manuellt trycker du på knappen <b>Ange plats manuellt</b> och anger en <b>ort</b> eller <b>latitud och longitud</b> i grader.</p>
 <blockquote>Internet krävs för att avkoda ortnamn.</blockquote>
-<p>Om du tidigare har nekat Sky Map behörighet till din plats kan du behöva aktivera det igen under <b>Appinställningar → Behörigheter</b> på din enhet.</p>
-<blockquote>Om du inte ger appen tillgång kommer Sky Map att utgå från att du befinner dig vid (0, 90) – nordpolen!</blockquote>]]></string>
+<p>Om du tidigare har nekat SkyLuz behörighet till din plats kan du behöva aktivera det igen under <b>Appinställningar → Behörigheter</b> på din enhet.</p>
+<blockquote>Om du inte ger appen tillgång kommer SkyLuz att utgå från att du befinner dig vid (0, 90) – nordpolen!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostik</h2>
-    <p>Denna sida listar olika uppgifter om din telefon och Sky Map som kan vara användbara för att felsöka problem. Du hittar den under <b>Inställningar → Diagnostik</b>.</p>
+    <p>Denna sida listar olika uppgifter om din telefon och SkyLuz som kan vara användbara för att felsöka problem. Du hittar den under <b>Inställningar → Diagnostik</b>.</p>
     <br/>
     <p>När du rapporterar ett problem, tryck på delningsknappen längst upp på sidan för att skicka dessa uppgifter via e-post till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Du kan läsa och redigera rapporten innan du skickar den.</p>]]></string>
 
     <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Kalibrera</h2>
-    Då och då bör du kalibrera telefonens kompass – den här sidan visar hur du gör. Sky Map kommer
+    Då och då bör du kalibrera telefonens kompass – den här sidan visar hur du gör. SkyLuz kommer
     också att varna dig om kompassen behöver kalibreras.
     <blockquote><b>VIKTIGT:</b> En kalibrerad kompass betyder INTE en <b>exakt</b> kompass.
     All kalibrering gör är att återställa kompassen internt. Den kan fortfarande visa fel på grund av
     magnetisk störning i närheten eller helt enkelt dålig hårdvara. Nästan alla problem med noggrannheten beror på
-    telefonens hårdvara och har <b>ingenting att göra med Sky Map</b>. Det enda Sky Map gör är att visa
+    telefonens hårdvara och har <b>ingenting att göra med SkyLuz</b>. Det enda SkyLuz gör är att visa
     för dig vad telefonen rapporterar till den.</blockquote>
     <br/>
     <p>Se felsökningsavsnittet nedan för mer hjälp.</p>]]></string>
@@ -151,7 +151,7 @@ Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Diverse och felsökning</h1>]]></string>
 
     <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Hårdvarukrav</h2>
-<p>Inte alla enheter har fullt stöd för Sky Map!</p>
+<p>Inte alla enheter har fullt stöd för SkyLuz!</p>
  <br/>
  <p>Du behöver åtminstone en telefon med:</p>
 <p>• Ett magnetfältssensor (även känd som en kompass) – för att avgöra vilken riktning du tittar åt<br/>
@@ -159,14 +159,14 @@ Använd knappen <b>Hitta</b> för att leta upp det objektet på himlen.</p>]]></
 <p>Helst också:</p>
 <p>• Ett gyroskop – detta gör rörelserna mjukare och mindre ryckiga</p>
 <blockquote><b>Telefonkompasser är ökända för att vara opålitliga.</b>
-Om stjärnkartan ser fel ut beror det nästan alltid på ett hårdvaruproblem med din telefons kompass – inte på en bugg i Sky Map.
-Sky Map läser av exakt det din telefons sensor rapporterar; appen har inget sätt att automatiskt korrigera en felaktig eller snedvriden avläsning.
+Om stjärnkartan ser fel ut beror det nästan alltid på ett hårdvaruproblem med din telefons kompass – inte på en bugg i SkyLuz.
+SkyLuz läser av exakt det din telefons sensor rapporterar; appen har inget sätt att automatiskt korrigera en felaktig eller snedvriden avläsning.
 Se Felsökning nedan.</blockquote>
 <h3>Hur vet jag vilka sensorer min telefon har?</h3>
 <p>Öppna <b>Inställningar → Diagnostik</b> – alla sensorer som din telefon saknar kommer att markeras som frånvarande. Du kommer också att ha informerats
 under introduktionen.</p>
 <h3>Vad händer om min enhet saknar nödvändiga sensorer?</h3>
-<p>Sky Map växlar över till manuellt läge. Du kan fortfarande utforska himlen, men utan sensorerna finns det
+<p>SkyLuz växlar över till manuellt läge. Du kan fortfarande utforska himlen, men utan sensorerna finns det
 inget sätt för någon app att visa din riktning.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Felsökning</h2>
@@ -175,8 +175,8 @@ inget sätt för någon app att visa din riktning.</p>]]></string>
 • Kontrollera <b>diagnostiksidan (Inställningar → Diagnostik</b>) för att bekräfta att din enhet har en kompass och en accelerometer<br/>
 • Prova åttatalskalibreringen: vifta med telefonen långsamt i en stor, mjuk åttatorsform</p>
 <h3>Kartan pekar åt fel håll eller är felaktig</h3>
-<p>Sky Map behöver tre saker för att visa rätt stjärnhimmel: riktningen som din telefon är vänd åt, din plats och den aktuella tiden. Om kartan ser fel ut är sannolikt en av dessa fel.</p>
-<p>• <b>Kompass (vanligaste orsaken):</b> Det här är ett hårdvaruproblem med din telefon – inte en bugg i Sky Map. Åttatalskalibreringen ber telefonens kompassensor att återställa sig internt, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt kompass</i>. Om du är nära ett metallföremål, en bilpanel eller ett magnetiskt telefonfodral kan kartan ändå visa fel efter kalibrering. Gå till en öppen yta och upprepa åttatalsrörelsen.<br/>
+<p>SkyLuz behöver tre saker för att visa rätt stjärnhimmel: riktningen som din telefon är vänd åt, din plats och den aktuella tiden. Om kartan ser fel ut är sannolikt en av dessa fel.</p>
+<p>• <b>Kompass (vanligaste orsaken):</b> Det här är ett hårdvaruproblem med din telefon – inte en bugg i SkyLuz. Åttatalskalibreringen ber telefonens kompassensor att återställa sig internt, men <i>en kalibrerad kompass är inte nödvändigtvis en exakt kompass</i>. Om du är nära ett metallföremål, en bilpanel eller ett magnetiskt telefonfodral kan kartan ändå visa fel efter kalibrering. Gå till en öppen yta och upprepa åttatalsrörelsen.<br/>
 • <b>Plats:</b> Ge platsbehörighet via <b>Appinställningar → Behörigheter</b>. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta dina koordinater. Ett säkert tecken på att plats saknas är att Polaris visas rakt ovanför.<br/>
 • <b>Tid:</b> Mindre vanligt, men en felaktig tidszon förskjuter hela stjärnhimlen. Kontrollera diagnostiksidan (<b>Inställningar → Diagnostik</b>) för att bekräfta att enhetens tid och tidszon är korrekta.</p>
 <h3>Kartan hackar</h3>
@@ -188,6 +188,6 @@ inget sätt för någon app att visa din riktning.</p>]]></string>
 <p>Om du fortfarande har problem, skicka e-post till oss på <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – en skärmdump av din diagnostiksida är till stor hjälp.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Teleskopanvändare – Pekarläge</h2>
-<p>Gå till <b>Inställningar → Sensorer</b> och ändra <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar Sky Map vad telefonens <i>långsida</i> pekar mot, i stället för vad skärmen är vänd mot.</p>
+<p>Gå till <b>Inställningar → Sensorer</b> och ändra <b>Visningsriktning</b> till <b>Pekarläge</b>. I det här läget visar SkyLuz vad telefonens <i>långsida</i> pekar mot, i stället för vad skärmen är vänd mot.</p>
 <p>På så sätt kan du montera telefonen längs sidan på ett teleskoprör så att skärmen är vinkelrät mot röret medan kartan fortfarande följer vad teleskopet är riktat mot.</p>]]></string>
 </resources>

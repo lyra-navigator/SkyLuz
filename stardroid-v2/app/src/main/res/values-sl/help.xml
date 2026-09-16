@@ -3,18 +3,18 @@
     <!-- tm:omitted name="help_home_link" reason="identical_to_source" -->
 
     <string name="help_intro" translation_description="Help section: introduction and quick start. Please do not change the markup"><![CDATA[<h2>Uvod in hiter začetek</h2>
-<p>Dvignite telefon in skozenj glejte kot skozi okno v vesolje. Sky Map uporablja senzorje vašega telefona
+<p>Dvignite telefon in skozenj glejte kot skozi okno v vesolje. SkyLuz uporablja senzorje vašega telefona
  za sledenje kam gledate in sprotno posodabljanje zemljevida zvezd.</p>
-<blockquote>Vsi telefoni ne zmorejo poganjati aplikacije Sky Map! Glejte razdelek o strojni opremi spodaj.</blockquote>
+<blockquote>Vsi telefoni ne zmorejo poganjati aplikacije SkyLuz! Glejte razdelek o strojni opremi spodaj.</blockquote>
 <h3>Če je to vaša prva uporaba:</h3>
-<p>1. Ko se prikaže poziv, dovolite dostop do lokacije – Sky Map potrebuje vašo približno lokacijo, da prikaže pravilno nebo za kraj, kjer se nahajate.<br/>
+<p>1. Ko se prikaže poziv, dovolite dostop do lokacije – SkyLuz potrebuje vašo približno lokacijo, da prikaže pravilno nebo za kraj, kjer se nahajate.<br/>
 2. Usmerite telefon proti nebu v poljubni smeri.<br/>
 3. Zemljevid se bo premaknil in se ujemal s tem, kam gledate.</p>]]></string>
 
     <string name="help_navigating" translation_description="Help section: navigating the sky, automatic and manual modes. Please do not change the markup"><![CDATA[<h2>Krmarjenje po nebu</h2>
 Dotaknite se zaslona, da prikažete kontrolnike in zaslonski prikazovalnik (zgoraj desno).
 <h3>Samodejni način</h3>
-<p>V samodejnem načinu (privzeto) Sky Map uporablja kompas, merilnik pospeška in žiroskop
+<p>V samodejnem načinu (privzeto) SkyLuz uporablja kompas, merilnik pospeška in žiroskop
 vašega telefona za prikaz tistega, kar je v
 smeri, v katero kaže vaš telefon. Preprosto premikajte telefon in zemljevid sledi.</p>
 <p>Uporabite ščipanje z dvema prstoma za približevanje in oddaljevanje.</p>
@@ -29,7 +29,7 @@ smeri, v katero kaže vaš telefon. Preprosto premikajte telefon in zemljevid sl
     <!-- Symbol map will go here-->
 
     <string name="help_layers" translation_description="Help section: the visible layers of the sky map. Please do not change the markup"><![CDATA[<h2>Plasti</h2>
-<p>Sky Map prikazuje nebo v plasteh, ki jih je mogoče neodvisno vklopiti ali izklopiti
+<p>SkyLuz prikazuje nebo v plasteh, ki jih je mogoče neodvisno vklopiti ali izklopiti
 z gumbi za plasti na levi strani. Pritisnite in držite ali tapnite gumb <b>Plasti</b> na
 dnu, da odprete stikala za dodatne plasti.</p>
 <br/>
@@ -64,7 +64,7 @@ preklopi na pravo velikost, ko dovolj povečate, da je ta večja od obeh.</p>
 <blockquote>Načina povesta različni stvari. <b>Glifi</b> povedo, da je Jupiter velikan in
 Pluton majhen. <b>Prava velikost</b> pokaže, da sta Sonce in Luna z Zemlje videti skoraj
 popolnoma enako velika — zato popolni sončni mrk sploh deluje in ga lahko opazujete.</blockquote>
-<blockquote>Sky Map prikazuje geometrijsko obzorje — popolnoma ravno in neovirano.
+<blockquote>SkyLuz prikazuje geometrijsko obzorje — popolnoma ravno in neovirano.
 Objekti tik nad njim so v praksi lahko še vedno skriti za stavbami, hribi ali drevesi.</blockquote>]]></string>
 
     <string name="help_info_cards" translation_description="Help section: the object info cards. Please do not change the markup"><![CDATA[<h2>Informacijske kartice</h2>
@@ -87,9 +87,9 @@ Informacijske kartice so na voljo za več sto objektov, vključno z zvezdami, pl
 • <b>Zvezdoverdje</b> — npr. \"Orion\", \"Kasiopeja\"<br/>
 • <b>Predmete globokega neba</b> — npr. \"M31\", \"Galaksija Andromeda\", \"Plejade\"<br/>
 • <b>Koordinate</b> — rektascenzijo in deklinacijo, npr. \"5h 55m, 7° 24\'\" (za znak za stopinjo lahko uporabite črko \'o\')</p>
-<p><b>V samodejnem načinu:</b> po izbiri rezultata Sky Map prikaže ciljni krog in smerno puščico. Sledite puščici tako, da obračate telefon — krog spremeni barvo, ko predmet preide v vaše vidno polje. Tapnite <b>Prekliči</b> (ali pritisnite Nazaj), da zapustite iskanje.</p>
+<p><b>V samodejnem načinu:</b> po izbiri rezultata SkyLuz prikaže ciljni krog in smerno puščico. Sledite puščici tako, da obračate telefon — krog spremeni barvo, ko predmet preide v vaše vidno polje. Tapnite <b>Prekliči</b> (ali pritisnite Nazaj), da zapustite iskanje.</p>
 <p><b>V ročnem načinu:</b> zemljevid preprosto skoči in centrira predmet.</p>
-<blockquote>Iščete lahko tudi predmete, ki jih Sky Map ne prikaže, na primer Evropo, eno od Jupitrovih lun.
+<blockquote>Iščete lahko tudi predmete, ki jih SkyLuz ne prikaže, na primer Evropo, eno od Jupitrovih lun.
 V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote>]]></string>
 
     <string name="help_time_travel" translation_description="Help section: the time travel feature. Please do not change the markup"><![CDATA[<h2>Potovanje skozi čas</h2>
@@ -109,7 +109,7 @@ V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote
     <string name="help_night_vision" translation_description="Help section: night vision mode. Please do not change the markup"><![CDATA[<h2>Način za nočni vid</h2>
 <p>Če opazujete nebo na prostem, vam način za nočni vid pomaga ohraniti vid v temi. Vklopite ga s tasterjem <b>Nočni način</b> na dnu zaslona.</p>
 <br/>
-<p>V načinu za nočni vid Sky Map preklopi zaslon na temno rdeče tone in zatemni zaslon. Možnost <b>Samodejno zatemnjevanje zaslona</b> v <b>Nastavitvah</b> vam nudi dodaten nadzor nad tem, kako temen bo zaslon.</p>]]></string>
+<p>V načinu za nočni vid SkyLuz preklopi zaslon na temno rdeče tone in zatemni zaslon. Možnost <b>Samodejno zatemnjevanje zaslona</b> v <b>Nastavitvah</b> vam nudi dodaten nadzor nad tem, kako temen bo zaslon.</p>]]></string>
 
     <string name="help_other" translation_description="Help section: other options"><![CDATA[<h1>Druge funkcije</h1>
         <p>Druge funkcije najdete v meniju z možnostmi (…) spodaj desno.</p>]]></string>
@@ -121,25 +121,25 @@ V tem primeru vas bo iskanje usmerilo na matični predmet (Jupiter).</blockquote
 Uporabite gumb <b>Najdi</b>, da poiščete tisti objekt na nebu.</p>]]></string>
 
     <string name="help_location" translation_description="Help section: setting your observing location. Please do not change the markup"><![CDATA[<h2>Nastavitev lokacije</h2>
-<p>Sky Map potrebuje vašo približno lokacijo za prikaz pravilnega neba. Privzeto uporablja lokacijske storitve vaše naprave (mobilno omrežje ali GPS).</p>
+<p>SkyLuz potrebuje vašo približno lokacijo za prikaz pravilnega neba. Privzeto uporablja lokacijske storitve vaše naprave (mobilno omrežje ali GPS).</p>
 <br/>
 <p>Če dostop do lokacije ni na voljo ali jo raje nastavite ročno, tapnite gumb <b>Vnesi lokacijo ročno</b> in vnesite <b>ime kraja</b> ali <b>zemljepisno širino in dolžino</b> v stopinjah.</p>
 <blockquote>Za pretvorbo imen krajev v koordinate je potrebna internetna povezava.</blockquote>
-<p>Če ste aplikaciji Sky Map v preteklosti zavrnili dovoljenje za lokacijo, boste morda morali to ponovno omogočiti v <b>Nastavitvah aplikacije → Dovoljenja</b> v vaši napravi.</p>
-<blockquote>Če aplikaciji ne omogočite dostopa, bo Sky Map privzeto predpostavil, da se nahajate na koordinatah (0, 90) – na severnem polu!</blockquote>]]></string>
+<p>Če ste aplikaciji SkyLuz v preteklosti zavrnili dovoljenje za lokacijo, boste morda morali to ponovno omogočiti v <b>Nastavitvah aplikacije → Dovoljenja</b> v vaši napravi.</p>
+<blockquote>Če aplikaciji ne omogočite dostopa, bo SkyLuz privzeto predpostavil, da se nahajate na koordinatah (0, 90) – na severnem polu!</blockquote>]]></string>
 
     <string name="help_diagnostics" translation_description="Help section: the diagnostics page. Please do not change the markup"><![CDATA[<h2>Diagnostika</h2>
-    <p>Ta stran prikazuje različne podatke o vašem telefonu in aplikaciji Sky Map, ki so lahko uporabni pri odpravljanju težav. Najdete jo pod možnostjo <b>Nastavitve → Diagnostika</b>.</p>
+    <p>Ta stran prikazuje različne podatke o vašem telefonu in aplikaciji SkyLuz, ki so lahko uporabni pri odpravljanju težav. Najdete jo pod možnostjo <b>Nastavitve → Diagnostika</b>.</p>
     <br/>
     <p>Ko poročate o težavi, tapnite gumb za skupno rabo na vrhu strani, da nam te podatke pošljete po e-pošti na naslov <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>. Poročilo lahko pred pošiljanjem preberete in uredite.</p>]]></string>
 
     <string name="help_calibrate" translation_description="Help section: the calibrate page. Please do not change the markup"><![CDATA[<h2>Umerjanje</h2>
-    Občasno morate umeriti kompas svojega telefona – ta stran vam prikazuje, kako. Sky Map vas bo
+    Občasno morate umeriti kompas svojega telefona – ta stran vam prikazuje, kako. SkyLuz vas bo
     tudi opozoril, če vaš kompas potrebuje umerjanje.
     <blockquote><b>POMEMBNO:</b> Umerjen kompas NE pomeni <b>natančnega</b> kompasa.
     Umerjanje služi le ponastavitvi kompasa v napravi. Še vedno je lahko nenatančen zaradi bližnjih
     magnetnih motenj ali preprosto slabe strojne opreme. Skoraj vse težave z natančnostjo so posledica
-    strojne opreme telefona in <b>nimajo nikakršne veze s programom Sky Map</b>. Sky Map vam le
+    strojne opreme telefona in <b>nimajo nikakršne veze s programom SkyLuz</b>. SkyLuz vam le
     prikazuje tisto, kar mu sporoča telefon.</blockquote>
     <br/>
     <p>Za več pomoči si oglejte spodnji razdelek o odpravljanju težav.</p>]]></string>
@@ -147,7 +147,7 @@ Uporabite gumb <b>Najdi</b>, da poiščete tisti objekt na nebu.</p>]]></string>
     <string name="help_misc" translation_description="Help section: miscellaneous"><![CDATA[<h1>Razno in odpravljanje težav</h1>]]></string>
 
     <string name="help_hardware" translation_description="Help section: hardware and sensor requirements. Please do not change the markup"><![CDATA[<h2>Strojne zahteve</h2>
-<p>Vse naprave ne podpirajo v celoti aplikacije Sky Map!</p>
+<p>Vse naprave ne podpirajo v celoti aplikacije SkyLuz!</p>
  <br/>
  <p>Vsaj potrebujejo telefon z:</p>
 <p>• Senzorjem magnetnega polja (kompasom) – ki določa, v katero smer gledate<br/>
@@ -155,14 +155,14 @@ Uporabite gumb <b>Najdi</b>, da poiščete tisti objekt na nebu.</p>]]></string>
 <p>Idealno pa tudi:</p>
 <p>• Žiroskopom – to bo zgladilo gibanje in zmanjšalo zatikanje</p>
 <blockquote><b>Telefonski kompasi so znani po tem, da so nezanesljivi.</b>
-Če se vam zdi zvezdni zemljevid napačen, gre skoraj vedno za težavo s strojno opremo telefonskega kompasa – in ne za napako v aplikaciji Sky Map.
-Sky Map bere natančno to, kar sporoča senzor vašega telefona; nima načina za samodejno popravljanje napačne ali zamaknjene meritve.
+Če se vam zdi zvezdni zemljevid napačen, gre skoraj vedno za težavo s strojno opremo telefonskega kompasa – in ne za napako v aplikaciji SkyLuz.
+SkyLuz bere natančno to, kar sporoča senzor vašega telefona; nima načina za samodejno popravljanje napačne ali zamaknjene meritve.
 Glejte Odpravljanje težav spodaj.</blockquote>
 <h3>Kakovem, katere senzorje ima moj telefon?</h3>
 <p>Odprite <b>Nastavitve → Diagnostika</b> – vsi senzorji, ki jih vaš telefon nima, bodo označeni kot manjkajoči. O tem ste bili obveščeni tudi
 med vadnico.</p>
 <h3>Kaj če moji napravi manjkajo zahtevani senzorji?</h3>
-<p>Sky Map preklopi v ročni način. Nebo lahko še vedno raziskujete, vendar brez senzorjev
+<p>SkyLuz preklopi v ročni način. Nebo lahko še vedno raziskujete, vendar brez senzorjev
 nobena aplikacija ne more prikazati vaše smeri.</p>]]></string>
 
     <string name="help_troubleshooting" translation_description="Help section: troubleshooting a map that does not move or points the wrong way. Please do not change the markup"><![CDATA[<h2>Odpravljanje težav</h2>
@@ -171,8 +171,8 @@ nobena aplikacija ne more prikazati vaše smeri.</p>]]></string>
 • Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite, ali ima vaša naprava kompas in merilnik pospeška<br/>
 • Preizkusite kretnjo umerjanja v obliki številke 8: telefon počasi pomikajte v velikem, enakomernem vzorcu osmic</p>
 <h3>Zemljevid kaže v napačno smer ali je nenatančen</h3>
-<p>Aplikacija Sky Map za prikaz pravilnega neba potrebuje tri stvari: smer, v katero je obrnjen vaš telefon, vašo lokacijo in trenutni čas. Če je videti, da je zemljevid napačen, je ena od teh stvari verjetno napačna.</p>
-<p>• <b>Kompas (najpogostejši vzrok):</b> To je težava s strojno opremo vašega telefona in ne hrošč v aplikaciji Sky Map. Kretnja umerjanja v obliki številke 8 zahteva, da telefon interno ponastavi tipalo kompasa, vendar <i>umerjen kompas ni nujno tudi natančen</i>. Če ste v bližini kovinskega predmeta, armaturne plošče avtomobila ali magnetnega ovitka za telefon, je lahko zemljevid napačen tudi po umerjanju. Premaknite se na odprto območje in ponovite kretnjo v obliki številke 8.<br/>
+<p>Aplikacija SkyLuz za prikaz pravilnega neba potrebuje tri stvari: smer, v katero je obrnjen vaš telefon, vašo lokacijo in trenutni čas. Če je videti, da je zemljevid napačen, je ena od teh stvari verjetno napačna.</p>
+<p>• <b>Kompas (najpogostejši vzrok):</b> To je težava s strojno opremo vašega telefona in ne hrošč v aplikaciji SkyLuz. Kretnja umerjanja v obliki številke 8 zahteva, da telefon interno ponastavi tipalo kompasa, vendar <i>umerjen kompas ni nujno tudi natančen</i>. Če ste v bližini kovinskega predmeta, armaturne plošče avtomobila ali magnetnega ovitka za telefon, je lahko zemljevid napačen tudi po umerjanju. Premaknite se na odprto območje in ponovite kretnjo v obliki številke 8.<br/>
 • <b>Lokacija:</b> Dovoljenje za lokacijo dodelite prek možnosti <b>Nastavitve aplikacije → Dovoljenja</b>. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite svoje koordinate. Značilen znak manjkajoče lokacije je, da je Severnica vidna neposredno nad glavo.<br/>
 • <b>Čas:</b> Manj pogosto, vendar napačen časovni pas premakne celotno nebo. Preverite stran z diagnostiko (<b>Nastavitve → Diagnostika</b>), da potrdite, ali sta čas in časovni pas vaše naprave pravilna.</p>
 <h3>Zemljevid trese</h3>
@@ -184,6 +184,6 @@ nobena aplikacija ne more prikazati vaše smeri.</p>]]></string>
 <p>Če se še vedno zataknete, nam pišite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a> – posnetek zaslona vaše strani z diagnostiko je zelo v pomoč.</p>]]></string>
 
     <string name="help_pointer_mode" translation_description="Help section: pointer mode for telescope users. Please do not change the markup"><![CDATA[<h2>Uporabniki teleskopov – način kazalca</h2>
-<p>V meniju <b>Nastavitve → Senzorji</b> spremenite <b>Smer prikaza</b> v <b>Način kazalca</b>. V tem načinu Sky Map prikazuje, kam kaže <i>dolgi rob</i> telefona, in ne tisto, kamor je usmerjen zaslon.</p>
+<p>V meniju <b>Nastavitve → Senzorji</b> spremenite <b>Smer prikaza</b> v <b>Način kazalca</b>. V tem načinu SkyLuz prikazuje, kam kaže <i>dolgi rob</i> telefona, in ne tisto, kamor je usmerjen zaslon.</p>
 <p>To vam omogoča, da telefon namestite ob stran cevi teleskopa, tako da je zaslon pravokoten na cev, medtem ko zemljevid še vedno sledi temu, kam je usmerjen teleskop.</p>]]></string>
 </resources>

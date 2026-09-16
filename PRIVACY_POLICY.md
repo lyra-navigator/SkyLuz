@@ -4,17 +4,17 @@
 
 ## Who is responsible for your data
 
-Sky Map is published and operated by **Penterakt LLC**, which is the data controller for any
+SkyLuz is published and operated by **Penterakt LLC**, which is the data controller for any
 personal data processed through the app. Questions about this policy, or about data the app may
 hold about you, go to [skymapdevs@gmail.com](mailto:skymapdevs@gmail.com).
 
-Sky Map is open-source and community-built. Contributors to the project do not receive or
+SkyLuz is open-source and community-built. Contributors to the project do not receive or
 process your data; where this policy says "we", it means Penterakt LLC.
 
 ## Analytics
 
-Sky Map uses **Firebase Analytics** (provided by Google) to help us understand how people
-use the app. This applies only to the Google Play Store version of Sky Map. The F-Droid
+SkyLuz uses **Firebase Analytics** (provided by Google) to help us understand how people
+use the app. This applies only to the Google Play Store version of SkyLuz. The F-Droid
 version collects no analytics data whatsoever. We use this information to improve the app and no
 other purpose. The data is aggregated and anonymized by Google before we receive it. Even so,
 we do not share the data with any third parties.
@@ -64,16 +64,16 @@ If you do not wish to share analytics data, you can opt out at any time via **Se
 Enable analytics**. Disabling analytics suppresses all data collection, including Firebase's
 own automatic events.
 
-Otherwise, thank you for helping make Sky Map better.
+Otherwise, thank you for helping make SkyLuz better.
 
 For more information on Firebase Analytics see https://firebase.google.com/support/privacy.
 
 ## Backup
 
-Sky Map uses Android's built-in backup: your app settings, including your saved location if
+SkyLuz uses Android's built-in backup: your app settings, including your saved location if
 you entered or granted one, are eligible for Google's encrypted cloud backup and for
 device-to-device transfer when you set up a new phone. This is intentional — it means your
 saved location and preferences carry over automatically to a new device. This data is handled
 by Android's backup system, not by Penterakt LLC or Firebase Analytics, and only Google
-and (for device transfer) you have access to it. You can turn off backup for Sky Map, along
+and (for device transfer) you have access to it. You can turn off backup for SkyLuz, along
 with any app, from your device's system backup settings.
