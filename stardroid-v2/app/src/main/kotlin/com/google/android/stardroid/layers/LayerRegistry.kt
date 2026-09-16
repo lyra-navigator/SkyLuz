@@ -11,6 +11,7 @@ package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.astronomy.Ephemeris
 import com.google.android.stardroid.catalog.CatalogRepository
+import com.google.android.stardroid.catalog.CustomFigureRepository
 import com.google.android.stardroid.catalog.LocaleSpec
 import com.google.android.stardroid.data.satellites.SatelliteElements
 import com.google.android.stardroid.math.LatLong
@@ -41,6 +42,7 @@ class LayerRegistry(
                 CatalogLayers.DEEP_SKY_LAYER_ID,
                 SolarSystemLayer.LAYER_ID,
                 MeteorShowerLayer.LAYER_ID,
+                CustomFiguresLayer.LAYER_ID,
                 GridLayer.LAYER_ID,
                 HorizonLayer.LAYER_ID,
                 EclipticLayer.LAYER_ID,
@@ -88,6 +90,7 @@ class LayerRegistry(
             settings: Settings,
             satelliteElements: Flow<SatelliteElements>,
             satellitesEnabled: Boolean,
+            customFigures: CustomFigureRepository? = null,
         ): LayerRegistry =
             LayerRegistry(
                 CatalogLayers.create(catalog, locale) +
@@ -97,6 +100,8 @@ class LayerRegistry(
                         SatelliteLayer(satelliteElements, clock, location)
                             .takeIf { satellitesEnabled },
                         MeteorShowerLayer(catalog, locale, clock),
+                        // The user's own constellations; null only in tests that don't build it.
+                        customFigures?.let { CustomFiguresLayer(it) },
                         GridLayer(strings),
                         EclipticLayer(strings),
                         HorizonLayer(clock, location, strings),
