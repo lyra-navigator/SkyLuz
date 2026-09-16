@@ -83,6 +83,8 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
 import com.google.android.stardroid.ui.diagnostics.GpsStatus
 import com.google.android.stardroid.ui.diagnostics.NetworkStatus
+import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
+import com.google.android.stardroid.ui.draw.MyConstellationsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
@@ -335,6 +337,23 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private val constellationDrawViewModel: ConstellationDrawViewModel by viewModels {
+        viewModelFactory {
+            initializer {
+                ConstellationDrawViewModel(
+                    customFigures = catalogAccess::customFigureRepository,
+                    catalog = catalogAccess::repository,
+                )
+            }
+        }
+    }
+
+    private val myConstellationsViewModel: MyConstellationsViewModel by viewModels {
+        viewModelFactory {
+            initializer { MyConstellationsViewModel(catalogAccess::customFigureRepository) }
+        }
+    }
+
     private val startupViewModel: StartupViewModel by viewModels {
         viewModelFactory {
             initializer {
@@ -492,6 +511,8 @@ class MainActivity : ComponentActivity() {
                     galleryViewModel = galleryViewModel,
                     diagnosticsViewModel = diagnosticsViewModel,
                     calibrationViewModel = calibrationViewModel,
+                    constellationDrawViewModel = constellationDrawViewModel,
+                    myConstellationsViewModel = myConstellationsViewModel,
                     sensorPresence = sensorPresence,
                     sensorWarningSuppressed = sensorWarningSuppressed,
                     onWelcomeFinished = startupViewModel::completeWarmWelcome,

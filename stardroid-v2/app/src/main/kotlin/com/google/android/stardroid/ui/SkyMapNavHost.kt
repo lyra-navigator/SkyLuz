@@ -35,6 +35,9 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
+import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
+import com.google.android.stardroid.ui.draw.MyConstellationsScreen
+import com.google.android.stardroid.ui.draw.MyConstellationsViewModel
 import com.google.android.stardroid.ui.gallery.GalleryScreen
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.help.HelpScreen
@@ -63,6 +66,7 @@ object Routes {
     const val DIAGNOSTICS = "diagnostics"
     const val HELP = "help"
     const val WHATS_NEW = "whatsnew"
+    const val MY_CONSTELLATIONS = "my_constellations"
     const val CALIBRATION = "calibration/{userInitiated}"
 
     fun calibration(userInitiated: Boolean) = "calibration/$userInitiated"
@@ -110,6 +114,8 @@ fun SkyMapNavHost(
     galleryViewModel: GalleryViewModel,
     diagnosticsViewModel: DiagnosticsViewModel,
     calibrationViewModel: CompassCalibrationViewModel,
+    constellationDrawViewModel: ConstellationDrawViewModel,
+    myConstellationsViewModel: MyConstellationsViewModel,
     sensorPresence: SensorPresence,
     sensorWarningSuppressed: Boolean,
     onWelcomeFinished: () -> Unit,
@@ -146,6 +152,8 @@ fun SkyMapNavHost(
                 // The map keeps collecting the calibration nudge (v1 ran the monitor for
                 // the map activity's life).
                 calibrationViewModel,
+                constellationDrawViewModel,
+                onOpenMyConstellations = { navController.navigate(Routes.MY_CONSTELLATIONS) },
                 sensorWarningSuppressed = sensorWarningSuppressed,
                 onOpenSettings = { navController.navigate(Routes.SETTINGS) },
                 onOpenGallery = { navController.navigate(Routes.GALLERY) },
@@ -295,6 +303,13 @@ fun SkyMapNavHost(
 
         composable(Routes.HELP) {
             HelpScreen(nightMode = nightMode, onBack = { navController.popBackStack() })
+        }
+
+        composable(Routes.MY_CONSTELLATIONS) {
+            MyConstellationsScreen(
+                myConstellationsViewModel,
+                onBack = { navController.popBackStack() },
+            )
         }
 
         composable(Routes.WHATS_NEW) {
