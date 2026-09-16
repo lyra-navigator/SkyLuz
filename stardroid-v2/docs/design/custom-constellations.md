@@ -72,6 +72,43 @@ visibility toggle, delete, export → `saf` file picker writing `{culture: "skyl
 constellations: [...]}` (same shape as `source-data/constellations/iau.json`), import =
 reverse. Export/import is the share story; no server, no accounts, files are portable data.
 
+### 4b. "Constellations" tab: starter challenges + Find game (the app's center)
+
+A first-class tab (bottom bar, center position) with two sections:
+
+**Starter challenges** ("constellations to find"): ship-with-the-app challenges
+(`assets/challenges/skyluz_starter.json`), each anchored to a REAL catalog field:
+
+```json
+{
+  "id": "challenge/turtle",
+  "name": "Turtle",
+  "bonus": {"id": "challenge/turtle_crown", "name": "Turtle with a crown"},
+  "center": {"ra": 88.8, "dec": 7.4},   // real field, e.g. Betelgeuse region
+  "radiusDeg": 20,                       // camera slew target + example fit
+  "example": "assets/challenges/art/turtle.webp",
+  "solution": {"strokes": [[[88.8, 7.4], [84.0, -1.2], ...]]},
+  "toleranceDeg": 2.0
+}
+```
+
+- Tap "Start" → the map slews to `center` (existing search fly-to path), draw mode activates
+  with the challenge's tolerance; the example picture floats as a dismissible overlay card
+  (webp drawn from the catalog icon style — Turtle 🐢, crowned variant 👑, Canaille 🐕).
+- The player taps stars; **snap is biased to the challenge's solution stars** (a tap within
+  `toleranceDeg` of a solution vertex counts as that vertex — forgiving, kid-friendly), but
+  any star may be used (free drawing allowed, like real sky cultures).
+- Completion = strokes cover all solution vertices (snap-count) → confetti + saved into
+  "My constellations" with the challenge's art attached. Bonus challenge unlocks on completion.
+
+**Find mode (the real-constellation game):** pick a target from the IAU set (or get a random
+one within the current view): the map shows the field WITHOUT the figure lines; the player
+taps the stars they think belong; scoring compares each tap against the IAU strokes' vertices
+(same `toleranceDeg` semantics — hits / misses / completeness %), then reveals the real figure
+with a score card. Reuses exactly the draw-mode primitives (tap→direction, snap, stroke
+collection); the only new logic is scoring against `catalog.figures(kind)` data. Streaks and
+a per-culture "found N/89" counter live in the tab.
+
 ### 5. Modules & purity
 
 - Inverse projection → `:render:api` (pure, testable).
