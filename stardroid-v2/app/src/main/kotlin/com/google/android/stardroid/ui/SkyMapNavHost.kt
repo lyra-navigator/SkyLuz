@@ -54,6 +54,7 @@ import com.google.android.stardroid.ui.onboarding.WelcomeScreen
 import com.google.android.stardroid.ui.search.SearchViewModel
 import com.google.android.stardroid.ui.settings.SettingsScreen
 import com.google.android.stardroid.ui.settings.SettingsViewModel
+import com.google.android.stardroid.update.UpdateViewModel
 import com.google.android.stardroid.ui.timetravel.TimeTravelViewModel
 import kotlinx.coroutines.launch
 
@@ -111,6 +112,7 @@ fun SkyMapNavHost(
     objectInfoViewModel: ObjectInfoViewModel,
     locationViewModel: LocationViewModel,
     settingsViewModel: SettingsViewModel,
+    updateViewModel: UpdateViewModel,
     galleryViewModel: GalleryViewModel,
     diagnosticsViewModel: DiagnosticsViewModel,
     calibrationViewModel: CompassCalibrationViewModel,
@@ -216,6 +218,7 @@ fun SkyMapNavHost(
         composable(Routes.SETTINGS) {
             SettingsScreen(
                 settingsViewModel,
+                updateViewModel,
                 onBack = { navController.popBackStack() },
                 onOpenDiagnostics = { navController.navigate(Routes.DIAGNOSTICS) },
             )

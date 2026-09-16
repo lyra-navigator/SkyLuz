@@ -114,6 +114,7 @@ import com.google.android.stardroid.layers.GridLayer
 import com.google.android.stardroid.layers.HorizonLayer
 import com.google.android.stardroid.layers.LayerParameter
 import com.google.android.stardroid.layers.MeteorShowerLayer
+import com.google.android.stardroid.layers.CustomFiguresLayer
 import com.google.android.stardroid.layers.SatelliteLayer
 import com.google.android.stardroid.layers.SolarSystemLayer
 import com.google.android.stardroid.render.api.LayerId
@@ -1302,6 +1303,7 @@ private fun layerName(id: LayerId): Int =
         CatalogLayers.DEEP_SKY_LAYER_ID -> R.string.layer_deep_sky
         SolarSystemLayer.LAYER_ID -> R.string.layer_solar_system
         MeteorShowerLayer.LAYER_ID -> R.string.layer_meteor_showers
+        CustomFiguresLayer.LAYER_ID -> R.string.layer_custom_figures
         SatelliteLayer.LAYER_ID -> R.string.layer_satellites
         GridLayer.LAYER_ID -> R.string.layer_grid
         HorizonLayer.LAYER_ID -> R.string.layer_horizon
@@ -1348,6 +1350,7 @@ private fun layerIcon(id: LayerId): Int =
         CatalogLayers.DEEP_SKY_LAYER_ID -> R.drawable.ic_layer_deep_sky
         SolarSystemLayer.LAYER_ID -> R.drawable.ic_layer_solar_system
         MeteorShowerLayer.LAYER_ID -> R.drawable.ic_layer_meteor_showers
+        CustomFiguresLayer.LAYER_ID -> R.drawable.ic_draw_constellation
         SatelliteLayer.LAYER_ID -> R.drawable.ic_layer_satellites
         GridLayer.LAYER_ID -> R.drawable.ic_layer_grid
         HorizonLayer.LAYER_ID -> R.drawable.ic_layer_horizon

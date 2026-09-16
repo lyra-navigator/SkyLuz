@@ -1,0 +1,156 @@
+{
+ "culture": "skyluz_starter",
+ "challenges": [
+  {
+   "id": "challenge/turtle",
+   "name": "Turtle",
+   "center": [
+    83.25,
+    -1.66
+   ],
+   "radiusDeg": 22,
+   "example": "challenges/art/turtle.webp",
+   "strokes": [
+    [
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      84.75,
+      -2.6
+     ],
+     [
+      84.0,
+      -1.2
+     ],
+     [
+      81.0,
+      -7.81
+     ],
+     [
+      78.6,
+      -8.2
+     ],
+     [
+      82.95,
+      -0.3
+     ]
+    ],
+    [
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      88.8,
+      7.41
+     ]
+    ]
+   ],
+   "toleranceDeg": 4.0
+  },
+  {
+   "id": "challenge/turtle_crown",
+   "name": "Turtle with a crown",
+   "center": [
+    83.25,
+    -1.66
+   ],
+   "radiusDeg": 22,
+   "example": "challenges/art/turtle_crown.webp",
+   "strokes": [
+    [
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      84.75,
+      -2.6
+     ],
+     [
+      84.0,
+      -1.2
+     ],
+     [
+      81.0,
+      -7.81
+     ],
+     [
+      78.6,
+      -8.2
+     ],
+     [
+      82.95,
+      -0.3
+     ]
+    ],
+    [
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      88.8,
+      7.41
+     ]
+    ]
+   ],
+   "toleranceDeg": 4.0,
+   "unlocksAfter": "challenge/turtle",
+   "bonus": true
+  },
+  {
+   "id": "challenge/canaille",
+   "name": "Canaille",
+   "center": [
+    83.34,
+    2.11
+   ],
+   "radiusDeg": 18,
+   "example": "challenges/art/canaille.webp",
+   "strokes": [
+    [
+     [
+      85.2,
+      -1.94
+     ],
+     [
+      84.0,
+      -1.2
+     ],
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      83.7,
+      9.49
+     ]
+    ],
+    [
+     [
+      84.0,
+      -1.2
+     ],
+     [
+      81.3,
+      6.35
+     ]
+    ],
+    [
+     [
+      82.95,
+      -0.3
+     ],
+     [
+      82.65,
+      5.95
+     ]
+    ]
+   ],
+   "toleranceDeg": 4.0
+  }
+ ]
+}

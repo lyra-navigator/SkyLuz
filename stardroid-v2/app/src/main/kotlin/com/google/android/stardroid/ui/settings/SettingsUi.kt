@@ -60,6 +60,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.stardroid.R
 import com.google.android.stardroid.analytics.AnalyticsEvents
 import com.google.android.stardroid.astronomy.ViewDirectionMode
+import androidx.compose.runtime.LaunchedEffect
+import com.google.android.stardroid.BuildConfig
+import com.google.android.stardroid.update.UpdateState
+import com.google.android.stardroid.update.UpdateViewModel
 import com.google.android.stardroid.settings.AutoDimness
 import com.google.android.stardroid.settings.FontSize
 import com.google.android.stardroid.settings.OneEuroEaseOff
@@ -75,6 +79,7 @@ import com.google.android.stardroid.ui.common.topBarWindowInsets
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel,
+    updateViewModel: UpdateViewModel,
     onBack: () -> Unit,
     onOpenDiagnostics: () -> Unit,
 ) {
@@ -235,6 +240,50 @@ fun SettingsScreen(
                     onClick = {
                         viewModel.logMenuItem(AnalyticsEvents.DIAGNOSTICS_OPENED_LABEL)
                         onOpenDiagnostics()
+                    },
+                )
+
+                // SkyLuz: in-app update check (GitHub Releases). Nothing auto-installs;
+                // the row opens the APK link in the browser for a user-side install.
+                val context = LocalContext.current
+                val updateState by updateViewModel.state.collectAsStateWithLifecycle()
+                var updateRequested by remember { mutableStateOf(false) }
+                if (updateRequested) {
+                    LaunchedEffect(updateState) {
+                        when (val s = updateState) {
+                            is UpdateState.Available -> {
+                                updateViewModel.openDownload { url ->
+                                    context.startActivity(
+                                        Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url)),
+                                    )
+                                }
+                                updateRequested = false
+                            }
+                            is UpdateState.Error, UpdateState.UpToDate -> updateRequested = false
+                            else -> Unit
+                        }
+                    }
+                }
+                NavigationRow(
+                    title =
+                        when (val s = updateState) {
+                            is UpdateState.Available -> "Update available: v${s.release.version}"
+                            UpdateState.UpToDate -> "You're up to date ✓"
+                            is UpdateState.Error -> "Check failed — tap to retry"
+                            UpdateState.Checking -> "Checking…"
+                            UpdateState.Idle -> "Check for updates"
+                        },
+                    summary =
+                        when (val s = updateState) {
+                            is UpdateState.Available -> "Tap to get the new version"
+                            UpdateState.UpToDate -> "SkyLuz v${BuildConfig.VERSION_NAME} is the latest release"
+                            is UpdateState.Error -> "Network problem; try again later"
+                            UpdateState.Checking -> "Looking on github.com/lyra-navigator/SkyLuz"
+                            UpdateState.Idle -> "SkyLuz v${BuildConfig.VERSION_NAME} · checks GitHub Releases"
+                        },
+                    onClick = {
+                        updateViewModel.check()
+                        updateRequested = true
                     },
                 )
             }

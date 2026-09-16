@@ -91,7 +91,7 @@ class CatalogAccess
         private var registry: LayerRegistry? = null
 
         /** Builds the full layer set over [repository] on first use; process-cached. */
-        suspend fun layerRegistry(): LayerRegistry {
+        suspend fun layerRegistry(drawDraft: kotlinx.coroutines.flow.Flow<com.google.android.stardroid.ui.draw.DrawState>? = null): LayerRegistry {
             val repository = repository()
             return withContext(Dispatchers.IO) {
                 registryMutex.withLock {
@@ -116,6 +116,7 @@ class CatalogAccess
                             satellitesEnabled =
                                 experimentConfig.isEnabled(Experiment.SATELLITES),
                             customFigures = customFigureRepository(),
+                            drawDraft = drawDraft,
                         ).also { registry = it }
                 }
             }

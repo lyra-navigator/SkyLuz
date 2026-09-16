@@ -39,11 +39,11 @@ object SourceDataLoader {
     private const val UNIVERSAL = "universal"
 
     /**
-     * Stars at or above this magnitude are excluded from the bundled pack, matching what v1
-     * shipped (v1's `StarAttributeCalculator.MAX_MAGNITUDE = 5.6f`). The full `stars.csv` is
-     * retained as seed data for a future expanded-catalog pack.
+     * Stars at or above this magnitude are excluded from the bundled pack. SkyLuz raises v1's
+     * 5.6 cap to 6.5: the full `stars.csv` (5,998 stars to mag 6.5) ships, so the sky carries
+     * the fainter stars v1's data cap hid.
      */
-    const val BUNDLED_STAR_MAX_MAGNITUDE = 5.6
+    const val BUNDLED_STAR_MAX_MAGNITUDE = 6.5
 
     fun load(sourceDir: Path): CatalogData {
         val objects = linkedMapOf<String, ObjectRow>()

@@ -91,6 +91,7 @@ class LayerRegistry(
             satelliteElements: Flow<SatelliteElements>,
             satellitesEnabled: Boolean,
             customFigures: CustomFigureRepository? = null,
+            drawDraft: Flow<com.google.android.stardroid.ui.draw.DrawState>? = null,
         ): LayerRegistry =
             LayerRegistry(
                 CatalogLayers.create(catalog, locale) +
@@ -101,7 +102,11 @@ class LayerRegistry(
                             .takeIf { satellitesEnabled },
                         MeteorShowerLayer(catalog, locale, clock),
                         // The user's own constellations; null only in tests that don't build it.
-                        customFigures?.let { CustomFiguresLayer(it) },
+                        // Wrapped with the live draw preview so in-progress strokes render.
+                        customFigures?.let { repo ->
+                            val base = CustomFiguresLayer(repo)
+                            drawDraft?.let { LiveDrawLayer(base, it) } ?: base
+                        },
                         GridLayer(strings),
                         EclipticLayer(strings),
                         HorizonLayer(clock, location, strings),

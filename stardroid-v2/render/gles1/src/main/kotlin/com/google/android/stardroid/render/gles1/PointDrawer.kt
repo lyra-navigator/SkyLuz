@@ -74,16 +74,21 @@ internal object PointDrawer {
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY)
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, buffers.vertices)
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, buffers.colors)
-        // TODO(device verification, D31): GLES1 permits GL_SMOOTH_POINT_SIZE_RANGE to be [1, 1],
-        //   which would collapse every smoothed star to 1px on such hardware (the emulator won't
-        //   show it). Query the range and skip GL_POINT_SMOOTH for runs above the supported max.
+        // GL_SMOOTH rounds points to circles only when the driver supports it; on hardware
+        // whose smooth range caps at 1px (D31's TODO), smoothed runs render as hard squares —
+        // the "pixelated stars" report. Such runs draw unsmoothed at the aliased range's max.
         gl.glEnable(GL10.GL_POINT_SMOOTH)
         for (run in buffers.sizeRuns) {
-            gl.glPointSize(run.sizePx)
+            val clamped = run.sizePx.coerceIn(MIN_POINT_PX, ALIASED_POINT_MAX_PX)
+            gl.glPointSize(clamped)
             gl.glDrawArrays(GL10.GL_POINTS, run.offset, run.count)
         }
         gl.glDisable(GL10.GL_POINT_SMOOTH)
         gl.glDisableClientState(GL10.GL_COLOR_ARRAY)
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY)
     }
+
+    /** Points never shrink below this (a 1px dot reads as a dead pixel, not a star). */
+    const val ALIASED_POINT_MAX_PX = 4f
+    private const val MIN_POINT_PX = 1f
 }

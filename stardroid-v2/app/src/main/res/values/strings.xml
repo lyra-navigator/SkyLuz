@@ -595,4 +595,5 @@ readings to SkyLuz.</blockquote>
     <!-- SkyLuz: constellation draw mode + library (custom-constellations.md). -->
     <string name="draw_constellation_button" translation_description="Overflow sheet row that enters constellation draw mode">Draw a constellation</string>
     <string name="my_constellations_button" translation_description="Overflow sheet row that opens the saved-custom-constellation library">My constellations</string>
+    <string name="layer_custom_figures" translation_description="Layer-toggle row for the user's own drawn constellations">My constellations (drawn)</string>
 </resources>
