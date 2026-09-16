@@ -12,6 +12,9 @@ package com.google.android.stardroid
 import android.app.Application
 import com.google.android.stardroid.astronomy.MeeusEphemeris
 import com.google.android.stardroid.catalog.CatalogRepository
+import com.google.android.stardroid.catalog.CustomFigureRepository
+import com.google.android.stardroid.data.CustomFigureDatabase
+import com.google.android.stardroid.data.RoomCustomFigureRepository
 import com.google.android.stardroid.data.RoomCatalogRepository
 import com.google.android.stardroid.data.SkyMapDatabaseFactory
 import com.google.android.stardroid.layers.LayerRegistry
@@ -67,6 +70,23 @@ class CatalogAccess
                 }
             }
 
+        private val customMutex = Mutex()
+        private var customFigures: CustomFigureRepository? = null
+
+        /**
+         * The user's own constellation store (custom-constellations.md): a separate user-owned
+         * Room DB, so app updates that replace the catalog pack can never destroy drawings.
+         */
+        suspend fun customFigureRepository(): CustomFigureRepository =
+            withContext(Dispatchers.IO) {
+                customMutex.withLock {
+                    customFigures
+                        ?: RoomCustomFigureRepository(
+                            CustomFigureDatabase.create(application).customFigureDao(),
+                        ).also { customFigures = it }
+                }
+            }
+
         private val registryMutex = Mutex()
         private var registry: LayerRegistry? = null
 
@@ -95,6 +115,7 @@ class CatalogAccess
                                 ),
                             satellitesEnabled =
                                 experimentConfig.isEnabled(Experiment.SATELLITES),
+                            customFigures = customFigureRepository(),
                         ).also { registry = it }
                 }
             }
