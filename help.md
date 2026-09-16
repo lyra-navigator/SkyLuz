@@ -1,21 +1,21 @@
-# Sky Map Help
+# SkyLuz Help
 
-Sky Map turns your Android device into a window on the night sky. Point it in any direction and
+SkyLuz turns your Android device into a window on the night sky. Point it in any direction and
 you'll see a real-time star map of what's there — stars, planets, constellations, and more.
 
 ---
 
 ## Introduction and Quick Start
 
-Hold your phone up and look through it like a window into space. Sky Map uses your phone's compass,
+Hold your phone up and look through it like a window into space. SkyLuz uses your phone's compass,
 accelerometer, and gyroscope to track where you're pointing and update the map in real time.
 
-> Not all phones are capable of running Sky Map!
+> Not all phones are capable of running SkyLuz!
 > 
 > [See the requirements section below.](#hardware-requirements)
 
 If this is your first time:
-1. Allow location access when prompted — Sky Map needs your approximate location to draw the
+1. Allow location access when prompted — SkyLuz needs your approximate location to draw the
    right sky for where you are
 2. Point your phone at the sky in any direction
 3. The map will move to match where you're pointing
@@ -26,7 +26,7 @@ If this is your first time:
 ## Navigating the Sky
 
 ### Automatic Mode
-In Automatic Mode (the default), Sky Map uses your phone's sensors to show whatever is in the
+In Automatic Mode (the default), SkyLuz uses your phone's sensors to show whatever is in the
 direction your phone is pointing. Just move your phone around and the map follows.
 
 ### Manual Mode
@@ -41,7 +41,7 @@ Manual mode is handy when you want to explore the sky without holding your phone
 
 ## Visible Layers
 
-Sky Map organizes what it shows into layers, each of which can be toggled on or off independently.
+SkyLuz organizes what it shows into layers, each of which can be toggled on or off independently.
 Tap the screen to reveal the layer controls on the side — they glow orange when a layer is on
 and appear dim when off.
 
@@ -55,7 +55,7 @@ and appear dim when off.
 | Ecliptic & RA/Dec Grid  | The Ecliptic is the Sun's annual path through the sky |
 | Horizon         | The horizon line and cardinal direction labels (N, S, E, W)                                                     |
 
-> **Worth knowing:** Sky Map shows the geometric horizon — a perfectly flat, unobstructed view.
+> **Worth knowing:** SkyLuz shows the geometric horizon — a perfectly flat, unobstructed view.
 > Objects just above it may still be hidden by buildings, hills, or trees in practice.
 
 ---
@@ -79,7 +79,7 @@ Tap the magnifying glass icon to search for anything in the sky. You can search 
 - **Messier objects** — e.g. "M31", "Andromeda Galaxy", "Pleiades"
 - **Comets and meteor showers** — by name
 
-**In Automatic Mode:** after selecting a result, Sky Map shows a targeting circle and a directional
+**In Automatic Mode:** after selecting a result, SkyLuz shows a targeting circle and a directional
 arrow. Follow the arrow by rotating your phone — the circle changes from blue to red, then orange
 when the object is within your field of view. Tap the **✕** to exit search.
 
@@ -145,7 +145,7 @@ to jump to Search mode and locate that object in your current sky map.
 If you're outside doing real observing, Night Vision mode helps preserve your dark-adapted
 eyesight. Toggle it from the action bar by tapping the eye-shaped **Night Vision** icon.
 
-In Night Vision mode, Sky Map:
+In Night Vision mode, SkyLuz:
 - Switches the display to deep red tones
 - Significantly dims the screen
 - Reduces button backlights
@@ -157,7 +157,7 @@ gives you additional control over how dark the screen gets.
 
 ## Setting Your Location
 
-Sky Map needs your approximate location to draw the correct sky. By default it uses your device's
+SkyLuz needs your approximate location to draw the correct sky. By default it uses your device's
 location services (mobile network or GPS). If you don't it will place you at the North Pole (or in
 older versions at (0, 0) which is in the
 middle of the ocean !)
@@ -167,7 +167,7 @@ and either:
 - Enter a **place name** (requires an internet connection to look up the coordinates), or
 - Enter a **latitude and longitude** directly in degrees (no internet needed)
 
-If you've previously denied Sky Map location permission, you may need to re-enable it in your
+If you've previously denied SkyLuz location permission, you may need to re-enable it in your
 device's **App Settings → Permissions**.
 
 ---
@@ -175,7 +175,7 @@ device's **App Settings → Permissions**.
 ## Telescope Users — Pointer Mode
 
 Under **Settings → Sensor Settings**, change the **View Direction** to **Pointer Mode**. In this
-mode, Sky Map shows what the *long edge* of the phone is pointing at, rather than what the screen
+mode, SkyLuz shows what the *long edge* of the phone is pointing at, rather than what the screen
 is facing.
 
 This lets you mount your phone along the side of a telescope tube so the screen is perpendicular
@@ -193,7 +193,7 @@ to the tube while the map still tracks what the telescope is aimed at.
   **Settings → Sensor Settings (Experts)**.
 - **No gyroscope?** If your phone lacks a gyroscope, enable **Disable Gyro** in Sensor Settings
   to use an alternative sensor mode.
-- **Magnetic correction:** Sky Map can apply a magnetic declination correction so the map aligns
+- **Magnetic correction:** SkyLuz can apply a magnetic declination correction so the map aligns
   with True North rather than Magnetic North. Toggle this under **Settings → Location**. In some
   parts of the world the difference can be 20 degrees or more. You can manually adjust this
   further if your phone's compass is wonky.
@@ -201,7 +201,7 @@ to the tube while the map still tracks what the telescope is aimed at.
 ---
 
 ## Hardware requirements
-Not all devices can fully support Sky Map! At the very least you need
+Not all devices can fully support SkyLuz! At the very least you need
 a phone with
 - A magnetic field sensor (aka a Compass) - to tell which direction you're
 facing.
@@ -211,17 +211,17 @@ Ideally:
 - A gyroscope - this will smooth out the motion and make it less
 jerky.
 
-> Phone compasses are notoriously troublesome. If Sky Map is not showing the sky accurately it's
-> almost always a hardware issue with the compass, not an issue with Sky Map. See the
+> Phone compasses are notoriously troublesome. If SkyLuz is not showing the sky accurately it's
+> almost always a hardware issue with the compass, not an issue with SkyLuz. See the
 > troubleshooting section for some things that might help.
 
 ### How do I know which sensors my phone has?
-If you open Sky Map's diagnostics page any sensors that you 
+If you open SkyLuz's diagnostics page any sensors that you 
 don't have will show up as "--,--,--". You should also have been informed
 during the 'welcome' flow (which you can redo via the 'tutorial' item in the menu).
 
 ### What if my devices is missing required sensors?
-Sky Map will fall back into 'manual mode'. You can still explore
+SkyLuz will fall back into 'manual mode'. You can still explore
 the sky, but without the sensors there is no way any app can show
 you your direction.
 
@@ -238,10 +238,10 @@ See [troubleshooting.md](troubleshooting.md) for full details. Here's a quick re
 
 ### The map is pointing the wrong way or is inaccurate
 
-Sky Map needs three things to show the correct sky: the direction your phone is facing, your
+SkyLuz needs three things to show the correct sky: the direction your phone is facing, your
 location, and the current time. If the map looks wrong, one of these is likely off.
 
-- **Compass:** The most common cause — a hardware issue, not a Sky Map bug. Try calibrating
+- **Compass:** The most common cause — a hardware issue, not a SkyLuz bug. Try calibrating
   (figure-8 gesture), move away from metal objects, and remove any cases that might interfere
   with the compass. A manual compass offset is available under
   **Settings → Sensor Settings (Experts)** for compasses with a consistent error.

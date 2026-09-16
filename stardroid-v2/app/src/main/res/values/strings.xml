@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">Sky Map</string>
+    <string name="app_name" translation_description="The application name, shown under the launcher icon and in the app switcher.">SkyLuz</string>
 
     <!-- Launch splash banner. -->
     <string name="splash_version" translation_description="Version line under the app name on the launch splash. %1$s is the app version name, e.g. 1.2.3">v%1$s</string>
@@ -98,7 +98,7 @@
     <string name="night_mode" translation_description="Label for the toggle switching the display to a dim red night-vision-preserving mode.">Night mode</string>
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">Switch to manual mode</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">Switch to auto mode</string>
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">This device has no compass or motion sensors, so Sky Map can\'t follow where you point it. Drag the map by hand instead.</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">This device has no compass or motion sensors, so SkyLuz can\'t follow where you point it. Drag the map by hand instead.</string>
     <string name="no_sensor_warning_dismiss" translation_description="Button that dismisses the missing-sensors warning dialog.">OK</string>
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
@@ -136,8 +136,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">Camera shutter time</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">Share the sky</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">Share this sky</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">See what you\'re looking at — get Sky Map free</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">See what you\'re looking at — get Sky Map free: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">See what you\'re looking at — get SkyLuz free</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">See what you\'re looking at — get SkyLuz free: %1$s</string>
     <!--
       Untranslatable: the link in the share text and stamped on shared images. The same for every
       flavor, because it addresses the *recipient*, whose platform and store we do not know — a
@@ -244,7 +244,7 @@
     <string name="label_size_hint_message" translation_description="Snackbar shown once, the first time the user zooms in a long way. Explains that the text labels naming stars and other objects stay the same size however far you zoom, and that their size is changed in the app\'s Settings screen instead. Shown with an action button that opens Settings.">Label size doesn\'t change with zoom — set it in Settings</string>
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">Settings</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user. The permission is optional - the app works fully without it - and the title must not imply otherwise">Location (Optional)</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">Sky Map uses your approximate location to show the correct night sky. This permission is optional — you may refuse it and enter your location manually instead, or decide later. If you decide later, the map will not be accurate until your location has been set.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app uses it, that it is optional, and what happens without it">SkyLuz uses your approximate location to show the correct night sky. This permission is optional — you may refuse it and enter your location manually instead, or decide later. If you decide later, the map will not be accurate until your location has been set.</string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Grant Permission</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Enter Manually</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Later</string>
@@ -252,7 +252,7 @@
     <string name="location_permanently_denied_message" translation_description="Body text explaining that location permission was permanently denied and how to fix it">Location permission was permanently denied. Open App Settings to re-enable it.</string>
     <string name="location_open_settings" translation_description="Button that opens the system app settings page so the user can re-grant location permission">Open App Settings</string>
     <string name="location_acquiring_title" translation_description="Title of dialog shown while acquiring the user\'s location automatically">Finding your location…</string>
-    <string name="location_acquiring_message" translation_description="Body text of dialog shown when Sky Map has been waiting a while for the device GPS or network location">Still trying to find your location…</string>
+    <string name="location_acquiring_message" translation_description="Body text of dialog shown when SkyLuz has been waiting a while for the device GPS or network location">Still trying to find your location…</string>
     <string name="location_keep_waiting" translation_description="Button to keep waiting for an automatic location fix">Keep Waiting</string>
     <string name="location_manual_entry_title" translation_description="Title of the dialog where the user types their location manually">Enter Your Location</string>
     <string name="location_place_name_hint" translation_description="Placeholder text in the place name input field">City or place name</string>
@@ -306,7 +306,7 @@
     <string name="settings_section_sensors" translation_description="Preferences category heading for sensor settings">Sensors</string>
     <string name="settings_section_other" translation_description="Preferences category heading for miscellaneous settings such as the usage statistics opt-out">Other</string>
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
-    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make SkyLuz better by sending anonymous data to Google Analytics</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">Sensor, location and performance details</string>
     <string name="settings_tap_to_identify" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
     <string name="settings_tap_to_identify_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
@@ -326,7 +326,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">How much night mode dims the screen</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">System Default</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">Very Dim</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">Classic</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">Classic</string>
     <string name="settings_sky_gradient" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Show sky gradient</string>
     <string name="settings_sky_gradient_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">Use legacy sensors</string>
@@ -361,15 +361,15 @@
     <string name="diagnostics_button" translation_description="Map-screen button that opens the diagnostics screen">Diagnostics</string>
     <string name="diagnostics_title" translation_description="Title bar text for the diagnostics screen">Diagnostics</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">Send to developers</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map diagnostics report</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map diagnostics. Please describe the problem above this line. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz diagnostics report</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz diagnostics. Please describe the problem above this line. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">Recent Log</string>
     <string name="diagnostics_section_general" translation_description="Section heading in the diagnostics screen for general device information">General</string>
     <string name="diagnostics_device" translation_description="Row label in the diagnostics screen for the device model name">Device</string>
     <string name="diagnostics_phone_format" translation_description="Format for phone info in diagnostics: model (hardware) language. %1$s is model, %2$s is hardware, %3$s is language">%1$s (%2$s) %3$s</string>
     <string name="diagnostics_android_version" translation_description="Row label in the diagnostics screen for the Android OS version">Android version</string>
-    <string name="diagnostics_sky_map_version" translation_description="Row label in the diagnostics screen for the Sky Map app version">Sky Map version</string>
-    <string name="diagnostics_sky_map_version_format" translation_description="Format for the Sky Map version row in diagnostics: version name (version code) [build flavor]. %1$s is version name, %2$d is version code, %3$s is the build flavor label (e.g. Gms or F-Droid)" translatable="false">%1$s (%2$d) [%3$s]</string>
+    <string name="diagnostics_sky_map_version" translation_description="Row label in the diagnostics screen for the SkyLuz app version">SkyLuz version</string>
+    <string name="diagnostics_sky_map_version_format" translation_description="Format for the SkyLuz version row in diagnostics: version name (version code) [build flavor]. %1$s is version name, %2$d is version code, %3$s is the build flavor label (e.g. Gms or F-Droid)" translatable="false">%1$s (%2$d) [%3$s]</string>
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">Graphics</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">Renderer</string>
     <string name="diagnostics_gl_version" translation_description="Row label in the diagnostics screen for the OpenGL graphics driver version">OpenGL</string>
@@ -434,14 +434,14 @@
     <string name="calibration_accuracy_low" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Poor</string>
     <string name="calibration_accuracy_medium" translation_description="Sensor calibration level shown in the calibration screen">Calibration: OK</string>
     <string name="calibration_accuracy_high" translation_description="Sensor calibration level shown in the calibration screen">Calibration: Good</string>
-    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in Sky Map but included for completeness">Calibration: No contact</string>
+    <string name="calibration_accuracy_no_contact" translation_description="Sensor calibration level shown when the sensor has no contact - unlikely to appear in SkyLuz but included for completeness">Calibration: No contact</string>
     <string name="calibration_do_not_show_again" translation_description="Checkbox label in the compass calibration screen to suppress future automatic appearances">Do not show this again</string>
     <string name="calibration_what_to_do"
         translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[
 Your phone\'s compass sensor is reporting poor calibration. The figure-8 motion (<a href="%s">watch a demonstration</a>) prompts your phone\'s
- hardware to reset its compass sensor — Sky Map has no control over this process.<br/><br/>
+ hardware to reset its compass sensor — SkyLuz has no control over this process.<br/><br/>
 <blockquote><b>Calibrated does not mean accurate.</b> The figure-8 gesture helps reset the sensor, but it cannot remove interference from nearby metal objects,
-car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not Sky Map.</blockquote>
+car dashboards, or phone cases. If the map is still off after calibrating, those external sources are the most likely cause — not SkyLuz.</blockquote>
 Move to an open area away from metal and try again.
     ]]></string>
     <string name="calibration_what_to_do_user"
@@ -450,8 +450,8 @@ Your phone is reporting its compass calibration status as shown above.<br/><br/>
 If necessary, perform the figure-8 motion (<a href="%s">watch a demonstration</a>) to prompt your phone\'s hardware to recalibrate its compass sensor.<br/><br/>
 <blockquote><b>Important:</b> calibration helps the sensor reset itself internally. It does not mean the compass is necessarily accurate!
 Local magnetic interference (metal objects, car dashboards, phone cases) can still cause your phone\'s compass to send inaccurate
-readings to Sky Map.</blockquote>
-<b>If the map isn\'t showing positions correctly the problem is likely your phone - not Sky Map!</b>
+readings to SkyLuz.</blockquote>
+<b>If the map isn\'t showing positions correctly the problem is likely your phone - not SkyLuz!</b>
     ]]></string>
     <string name="calibration_low_accuracy_toast" translation_description="Brief toast shown when compass accuracy is low and the user has disabled the calibration screen">Your phone\'s compass is reporting low accuracy</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">Sensors have high accuracy</string>
@@ -477,7 +477,7 @@ readings to Sky Map.</blockquote>
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 light-years</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 light-years across</string>
     <string name="warm_welcome_slide3_title" translation_description="Title for the third slide of the Warm Welcome onboarding">Sensors &amp; Calibration</string>
-    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">Sky Map uses your phone\'s sensors to align with the stars.</string>
+    <string name="warm_welcome_slide3_desc" translation_description="Description for the third slide of the Warm Welcome onboarding">SkyLuz uses your phone\'s sensors to align with the stars.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[Your device seems to be missing the required sensors needed for automatic tracking. Don\'t worry—you can still explore the entire cosmos in <b>Manual Mode</b>!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[To keep things accurate, give your phone a quick <b>figure-8</b> wave every once in a while.]]></string>
     <string name="warm_welcome_skip" translation_description="Button to skip the Warm Welcome onboarding">Skip</string>
@@ -527,7 +527,7 @@ readings to Sky Map.</blockquote>
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">Add widget</string>
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">Dismiss widget suggestion</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">Add the widget from your home screen</string>
-    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">Your launcher doesn\'t support adding widgets from an app. Touch and hold your home screen, choose Widgets, then find Sky Map.</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">Your launcher doesn\'t support adding widgets from an app. Touch and hold your home screen, choose Widgets, then find SkyLuz.</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">Got it</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% illuminated</string>
 
@@ -565,12 +565,12 @@ readings to Sky Map.</blockquote>
 
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">Notifications</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">SkyLuz only notifies about rare sky events, at most once a day. Everything is off until you turn it on.</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">Meteor shower peaks</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">About a dozen a year, on the evening of the peak</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">Tonight\'s sky digest</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">One summary after sunset, skipped on quiet nights</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for Sky Map</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Notifications are blocked for SkyLuz</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">Tap to allow them in system settings</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">Meteor shower peaks</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">About a dozen a year, on the evening of the peak</string>

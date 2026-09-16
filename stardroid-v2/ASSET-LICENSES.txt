@@ -31,25 +31,22 @@
 # Brand identity. Original Penterakt LLC artwork, All Rights Reserved.
 # These are the files a clone would have to copy to pass itself off as Sky Map, and the
 # basis for a store takedown when one does.
+
+
+
+[gpl]
+
+# SkyLuz fork: original replacement artwork (procedural PIL generations + hand-drawn
+# vector layers). Functional artwork shipping under GPLv3 like the code — nothing here
+# is reserved; the Penterakt brand assets were replaced, not copied.
 res/drawable/ic_launcher_background.xml
 res/drawable/ic_launcher_foreground.xml
 res/drawable/ic_launcher_monochrome.xml
 res/mipmap-anydpi-v26/ic_launcher.xml
 res/mipmap-anydpi-v26/ic_launcher_round.xml
-
-# Notification status icon — the launcher mark reduced to a monochrome glyph.
 res/drawable/ic_stat_skymap.xml
-
-# The welcome/onboarding backdrop: original composed artwork, not a sky photograph.
 res/drawable-nodpi/welcome_sky_bg.webp
-
-# Sky-marker icon set (D62). Original artwork generated from tools/icons/, replacing the
-# Apache-2.0 glyphs carried over from v1. Generated from tools/icons/generate_icons.py;
-# the SVG masters in tools/icons/dso/ are reserved too and carry their own notice.
 assets/catalog/icons/*.webp
-
-
-[gpl]
 # Functional UI artwork drawn for Sky Map and released under GPLv3 with the source.
 # These are utility glyphs — a gear, a magnifier, a chevron. Reserving rights over them
 # would be unenforceable in substance and would obstruct legitimate forks for no gain.

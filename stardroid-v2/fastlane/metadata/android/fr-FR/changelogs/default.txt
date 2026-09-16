@@ -1,4 +1,4 @@
-Nouveau Sky Map a été entièrement reconstruit — nouveau moteur, nouvelle interface utilisateur, plus précis.
+Nouveau SkyLuz a été entièrement reconstruit — nouveau moteur, nouvelle interface utilisateur, plus précis.
 
 Nouveau La Lune, les éclipses et les planètes sont positionnées et chronométrées avec précision.
 

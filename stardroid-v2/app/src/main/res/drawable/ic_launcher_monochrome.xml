@@ -1,36 +1,28 @@
 <!--
-  Sky Map v2 launcher icon — monochrome / themed-icon layer (Android 13+).
-  Branding asset: All Rights Reserved, (c) 2026 Penterakt LLC (see branding/LICENSE.md).
-  Option M1: a single silhouette of the gold star nested INSIDE an open magnifier
-  ring, with clear space between them so the two shapes never merge into a blob
-  when the OS tints them one flat color. Color here is arbitrary — the system
-  uses only the alpha as a mask.
+  SkyLuz launcher icon — monochrome (themed icons / Android 13+).
+  Original artwork for the SkyLuz fork (GPLv3 project). Simplified
+  silhouette: Vega with spikes plus the Lyra parallelogram outline.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <group
-        android:translateX="4"
-        android:translateY="4"
-        android:scaleX="0.125"
-        android:scaleY="0.125">
-        <!-- star framed inside the ring -->
-        <path
-            android:fillColor="#FFFFFFFF"
-            android:pathData="M360,240L388.2,321.2 474.1,322.9 405.6,374.8 430.5,457.1 360,408 289.5,457.1 314.4,374.8 245.9,322.9 331.8,321.2z" />
-        <!-- lens ring -->
-        <path
-            android:fillColor="#00000000"
-            android:strokeColor="#FFFFFFFF"
-            android:strokeWidth="46"
-            android:pathData="M160,360a200,200 0,1 0,400 0a200,200 0,1 0,-400 0z" />
-        <!-- handle, clears the ring -->
-        <path
-            android:strokeColor="#FFFFFFFF"
-            android:strokeWidth="80"
-            android:strokeLineCap="round"
-            android:pathData="M518,518L660,660" />
-    </group>
+    <path
+        android:pathData="M38.5,38.5 L47.5,63.5 L60.5,64.5 L66.5,54 L56.5,44.5 Z M47.5,63.5 L54.5,77.5 L60.5,64.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M47.5,63.5h2.2v2.2h-2.2z M60.5,64.5h2.2v2.2h-2.2z M66.5,54h2v2h-2z M56.5,44.5h2v2h-2z"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M38.5,31.5 L39.9,36.1 L44.5,34.7 L41.3,38.5 L44.5,42.3 L39.9,40.9 L38.5,45.5 L37.1,40.9 L32.5,42.3 L35.7,38.5 L32.5,34.7 L37.1,36.1 Z"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M38.5,27 L38.5,31 M38.5,46 L38.5,50 M34,38.5 L31,38.5 M46,38.5 L50,38.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
 </vector>

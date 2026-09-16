@@ -69,7 +69,7 @@
     <string name="settings_cancel">Отмена</string>
     <string name="settings_section_sensors">Настройки матрицы</string>
     <string name="enable_analytics">Отправить статистику использования</string>
-    <string name="enable_analytics_desc">Сделайте Sky Map лучше, отправив анонимные данные в Google Analytics</string>
+    <string name="enable_analytics_desc">Сделайте SkyLuz лучше, отправив анонимные данные в Google Analytics</string>
     <string name="settings_tap_in_auto_mode">Карточки в автоматическом режиме</string>
     <string name="settings_tap_in_auto_mode_summary">
     Показывать информационные карточки при нажатии на объекты в автоматическом (сенсорном) режиме
@@ -82,7 +82,7 @@
     <string name="diagnostics_section_general">Общие</string>
     <string name="diagnostics_device">Устройство</string>
     <string name="diagnostics_android_version">Версия Android</string>
-    <string name="diagnostics_sky_map_version">Версия Sky Map</string>
+    <string name="diagnostics_sky_map_version">Версия SkyLuz</string>
     <string name="diagnostics_section_sensors">Датчики</string>
     <string name="diagnostics_accelerometer">Акселерометр</string>
     <string name="diagnostics_compass">Компас</string>

@@ -97,7 +97,7 @@
     <string name="night_mode">ナイトモード</string>
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">マニュアルモードに切り替える</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">自動モードに切り替える</string>
-    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">このデバイスにはコンパスまたはモーションセンサーがないため、Sky Mapはデバイスを向けた方向に追従できません。代わりに、手動でマップをドラッグしてください。</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">このデバイスにはコンパスまたはモーションセンサーがないため、SkyLuzはデバイスを向けた方向に追従できません。代わりに、手動でマップをドラッグしてください。</string>
     <!-- tm:omitted name="no_sensor_warning_dismiss" reason="identical_to_source" -->
 
     <!-- The map HUD (map-hud.md, D65): the top-right pointing readout shown with the chrome. -->
@@ -135,8 +135,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">カメラシャッター時間</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">空を共有</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">この空を共有</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">見ているものを確認 — Sky Mapを無料で入手</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">見ているものを確認 — Sky Mapを無料で入手: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">見ているものを確認 — SkyLuzを無料で入手</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">見ているものを確認 — SkyLuzを無料で入手: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">オーバーレイ</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">並べて表示</string>
@@ -238,7 +238,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">設定</string>
     <string name="location_permission_dialog_title">位置情報が必要です</string>
     <string name="location_permission_dialog_message">
-    Sky Mapは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。
+    SkyLuzは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。
     </string>
     <string name="location_permission_grant">許可を与える</string>
     <string name="location_permission_enter_manually">手動で入力</string>
@@ -321,7 +321,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">ナイトモードでの画面の暗さ</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">システムのデフォルト</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">非常に暗い</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">クラシック</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">クラシック</string>
     <string name="settings_sky_gradient">空のグラデーションを表示</string>
     <string name="settings_sky_gradient_summary">太陽の近くは空を青くし、反対側は暗くします</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">レガシーセンサーを使用</string>
@@ -361,8 +361,8 @@
     <string name="diagnostics_button">診断</string>
     <string name="diagnostics_title">診断</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">開発者に送信</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map 診断レポート</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map 診断。この行より上に問題点を記述してください。 ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz 診断レポート</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz 診断。この行より上に問題点を記述してください。 ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">最近のログ</string>
     <string name="diagnostics_section_general">一般</string>
     <string name="diagnostics_device">デバイス</string>
@@ -436,11 +436,11 @@
     <string name="calibration_accuracy_high">キャリブレーション: 良好</string>
     <string name="calibration_accuracy_no_contact">キャリブレーション: 接触なし</string>
     <string name="calibration_do_not_show_again">これを再び表示しない</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[お使いのスマートフォンのコンパスセンサーは、キャリブレーションが不十分であると報告しています。8の字を描く動き（<a href="%s">デモンストレーションを見る</a>）は、スマートフォンのハードウェアにコンパスセンサーをリセットするよう促します。Sky Mapはこのプロセスを制御できません。<br/><br/><blockquote><b>キャリブレーション済み＝正確ではありません。</b>8の字ジェスチャーはセンサーのリセットに役立ちますが、近くの金属物、車のダッシュボード、またはスマートフォンのケースからの干渉を取り除くことはできません。キャリブレーション後もマップがずれている場合、Sky Mapではなく、これらの外部要因が最も可能性の高い原因です。</blockquote>金属から離れた開けた場所に移動して、もう一度お試しください。]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[お使いのスマートフォンのコンパスセンサーは、キャリブレーションが不十分であると報告しています。8の字を描く動き（<a href="%s">デモンストレーションを見る</a>）は、スマートフォンのハードウェアにコンパスセンサーをリセットするよう促します。SkyLuzはこのプロセスを制御できません。<br/><br/><blockquote><b>キャリブレーション済み＝正確ではありません。</b>8の字ジェスチャーはセンサーのリセットに役立ちますが、近くの金属物、車のダッシュボード、またはスマートフォンのケースからの干渉を取り除くことはできません。キャリブレーション後もマップがずれている場合、SkyLuzではなく、これらの外部要因が最も可能性の高い原因です。</blockquote>金属から離れた開けた場所に移動して、もう一度お試しください。]]></string>
     <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[お使いのスマートフォンのコンパスのキャリブレーション状態は、上記のとおり報告されています。<br/><br/>
 必要に応じて、8の字を描くように動かして（<a href="%s">デモンストレーションを見る</a>）、スマートフォンのハードウェアにコンパスセンサーの再キャリブレーションを促してください。<br/><br/>
-<blockquote><b>重要:</b> キャリブレーションは、センサーが内部的にリセットされるのを助けます。これは、コンパスが必ずしも正確であることを意味するものではありません！局所的な磁気干渉（金属製の物体、車のダッシュボード、スマートフォンのケースなど）により、スマートフォンのコンパスがSky Mapに不正確な測定値を送信する可能性があります。</blockquote>
-<b>地図が正しく位置を表示しない場合、問題はお使いのスマートフォンにある可能性が高く、Sky Mapではありません！</b>]]></string>
+<blockquote><b>重要:</b> キャリブレーションは、センサーが内部的にリセットされるのを助けます。これは、コンパスが必ずしも正確であることを意味するものではありません！局所的な磁気干渉（金属製の物体、車のダッシュボード、スマートフォンのケースなど）により、スマートフォンのコンパスがSkyLuzに不正確な測定値を送信する可能性があります。</blockquote>
+<b>地図が正しく位置を表示しない場合、問題はお使いのスマートフォンにある可能性が高く、SkyLuzではありません！</b>]]></string>
     <string name="calibration_low_accuracy_toast">スマートフォンのコンパスの精度が低下しています</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">センサーの精度が高いです</string>
 
@@ -467,7 +467,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500光年</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">直径11光年</string>
     <string name="warm_welcome_slide3_title">センサーとキャリブレーション</string>
-    <string name="warm_welcome_slide3_desc">Sky Mapはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
+    <string name="warm_welcome_slide3_desc">SkyLuzはお使いのスマートフォンのセンサーを使って星と位置を合わせます。</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[お使いのデバイスには、自動追跡に必要なセンサーが搭載されていないようです。ご心配なく。<b>手動モード</b>で宇宙全体を探索できます！]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[精度を保つために、時々スマートフォンを素早く<b>8の字</b>に振ってください。]]></string>
     <string name="warm_welcome_skip">スキップ</string>
@@ -517,7 +517,7 @@
     <string name="moon_widget_promo_add" translation_description="Button that adds the moon-phase widget to the home screen via the system dialog">ウィジェットを追加</string>
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">ウィジェットの提案を非表示にする</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">ホーム画面からウィジェットを追加</string>
-    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">お使いのランチャーは、アプリからのウィジェット追加に対応していません。ホーム画面を長押しして、「ウィジェット」を選択し、Sky Mapを見つけてください。</string>
+    <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">お使いのランチャーは、アプリからのウィジェット追加に対応していません。ホーム画面を長押しして、「ウィジェット」を選択し、SkyLuzを見つけてください。</string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">了解</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% 輝面</string>
 
@@ -555,12 +555,12 @@
 
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">通知</string>
-    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">Sky Map は、1日に多くても1回、珍しい天文現象についてのみ通知します。すべての通知は、ユーザーがオンにするまでオフになっています。</string>
+    <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">SkyLuz は、1日に多くても1回、珍しい天文現象についてのみ通知します。すべての通知は、ユーザーがオンにするまでオフになっています。</string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">流星群のピーク</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">年に約12回、ピークの夜に通知</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">今夜の空の概要</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">日没後に1回概要を通知、静かな夜はスキップ</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Mapの通知がブロックされています</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">SkyLuzの通知がブロックされています</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">タップしてシステム設定で許可してください</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">流星群のピーク</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">年に約12回、ピークの夜に通知</string>

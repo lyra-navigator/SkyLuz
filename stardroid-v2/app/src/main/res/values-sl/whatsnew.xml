@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Pozdravite novi Sky Map</h1>
-<h2>Sky Map je bil popolnoma prenovljen</h2>
-<p>To je največja posodobitev v zgodovini Sky Mapa.<br/><br/>Gre za povsem novo aplikacijo od znotraj — nov pogon za upodabljanje, nov astronomski pogon, nov vmesnik — zgrajena od začetka, da bo hitrejša, natančnejša in prijetnejša za oči. Tukaj je, kaj je izboljšano:</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Pozdravite novi SkyLuz</h1>
+<h2>SkyLuz je bil popolnoma prenovljen</h2>
+<p>To je največja posodobitev v zgodovini SkyLuza.<br/><br/>Gre za povsem novo aplikacijo od znotraj — nov pogon za upodabljanje, nov astronomski pogon, nov vmesnik — zgrajena od začetka, da bo hitrejša, natančnejša in prijetnejša za oči. Tukaj je, kaj je izboljšano:</p>
 <h2>Natančnejše</h2>
-<p>Luna je zdaj postavljena točno tam, kjer jo <em>vi</em> vidite na nebu, ne tam, kjer bi se prikazala iz središča Zemlje — popravek do celotne stopinje, dveh širin Lune. Tudi mrki in konjunkcije se zgodijo ob pravi minuti: Sonce in Luna zdaj izhajata iz popolnih analitičnih izračunov namesto iz grobih približkov klasičnega Sky Mapa, ki so lahko odstopali za pol ure.</p>
+<p>Luna je zdaj postavljena točno tam, kjer jo <em>vi</em> vidite na nebu, ne tam, kjer bi se prikazala iz središča Zemlje — popravek do celotne stopinje, dveh širin Lune. Tudi mrki in konjunkcije se zgodijo ob pravi minuti: Sonce in Luna zdaj izhajata iz popolnih analitičnih izračunov namesto iz grobih približkov klasičnega SkyLuza, ki so lahko odstopali za pol ure.</p>
 <h2>Sončni sistem, ki izgleda resnično</h2>
 <p>Lunina faza je izračunana iz njene prave geometrije, ne izbrana iz osmih vnaprej pripravljenih slik kot prej. Meja med svetlobo in temo pade točno tja, kamor mora, vsako noč, in mož na Luni se ne vrti več, ko mesec mineva. Venera in Merkur zdaj prav tako kažeta faze, nabrekata od majhnega polnega diska do širokega srpa, ko se približujeta Zemlji, Mars pa prevzame svojo grbasto fazo. Povečajte in opazujte, kako se spreminjajo. Imate možnost prikazati planete kot glife, približno razvrščene po njihovi dejanski fizični velikosti, ali preklopiti na njihove <em>dejanske</em> velikosti na nebu. Sonce in Luna sta približno velikosti vaše konice prsta na iztegnjeni roki, medtem ko se planeti kažejo le kot pikice, dokler ne povečate.</p>
 <h2>Dotaknite se česar koli, da izveste več</h2>
@@ -22,12 +22,12 @@
 <h2>Jasnejše glede vaše zasebnosti</h2>
 <p>Zaslon s pogoji in Pomoč zdaj natančno pojasnjujeta, za kaj se uporablja vsako dovoljenje naprave, in aplikacija ne zahteva več dovoljenja za oglaševalski ID, ki ga nikoli ni potrebovala.</p>
 <h2>¡Hola! Bonjour!</h2>
-<p>Sky Map zdaj govori 28 jezikov, v celoti prevedenih.</p>
+<p>SkyLuz zdaj govori 28 jezikov, v celoti prevedenih.</p>
 <h2>In to je šele začetek...</h2>
 <p>Kmalu prihaja veliko dolgo pričakovanih funkcij.</p>]]></string>
-    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podprite Sky Map</h1>
-<p>Sky Map je brezplačna in odprtokodna programska oprema. Če se vam zdi uporabna, podprite razvoj na naši strani <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> ali nam <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">kupite kavo</a>.</p>]]></string>
+    <string name="whats_new_support" translation_description="HTML paragraph inviting users to support the project, shown in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Podprite SkyLuz</h1>
+<p>SkyLuz je brezplačna in odprtokodna programska oprema. Če se vam zdi uporabna, podprite razvoj na naši strani <a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project">GitHub</a> ali nam <a href="https://buymeacoffee.com/skymapdevs?utm_source=skymap&amp;utm_medium=app&amp;utm_campaign=whatsnew">kupite kavo</a>.</p>]]></string>
     <string name="beta_user_help_text" translation_description="Usually-empty HTML content shown to beta testers asking for feedback, appended in the What's new dialog and the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h1>Preizkusite novo glajenje senzorjev</h1>
-<p>Zamenjali smo način, kako Sky Map umirja pogled, ko držite telefon pri miru – manj bi se moral tresti in bolje slediti premikanju. Za beta preizkuševalce je vklopljeno privzeto, da lahko zberemo povratne informacije iz resničnih naprav. Če opazite zakasnitev, tresenje ali karkoli drugega, kar se vam zdi narobe, nam to sporočite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
+<p>Zamenjali smo način, kako SkyLuz umirja pogled, ko držite telefon pri miru – manj bi se moral tresti in bolje slediti premikanju. Za beta preizkuševalce je vklopljeno privzeto, da lahko zberemo povratne informacije iz resničnih naprav. Če opazite zakasnitev, tresenje ali karkoli drugega, kar se vam zdi narobe, nam to sporočite na <a href="mailto:skymapdevs@gmail.com">skymapdevs@gmail.com</a>.</p>
 <p>To lahko kadar koli izklopite v razdelku <b>Nastavitve → Senzorji → Gladko gibanje senzorjev</b>, če raje uporabljate surove podatke senzorjev.</p>]]></string>
 </resources>

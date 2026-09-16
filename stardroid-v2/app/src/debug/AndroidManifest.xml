@@ -9,6 +9,6 @@
         <activity
             android:name=".testscene.RendererTestActivity"
             android:exported="true"
-            android:label="Sky Map v2 (renderer test)" />
+            android:label="SkyLuz v2 (renderer test)" />
     </application>
 </manifest>

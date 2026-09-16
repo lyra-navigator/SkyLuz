@@ -1,4 +1,4 @@
-# Sky Map — Troubleshooting & FAQ
+# SkyLuz — Troubleshooting & FAQ
 
 For a general feature overview, see [help.md](help.md).
 
@@ -6,14 +6,14 @@ For a general feature overview, see [help.md](help.md).
 
 ## The map is pointing in the wrong direction or is inaccurate
 
-Sky Map needs three things to show the correct sky: the direction your phone is facing, where you
+SkyLuz needs three things to show the correct sky: the direction your phone is facing, where you
 are on the planet, and the current time. If the map looks wrong, one of these is likely off.
 
 ### Phone direction (the most common cause by far)
 
-Sky Map reads direction data from your phone's built-in compass sensor (magnetometer). If the
+SkyLuz reads direction data from your phone's built-in compass sensor (magnetometer). If the
 sensor gives a wrong reading, the map will point the wrong way — and that is a phone hardware
-issue, not a Sky Map bug. Sky Map cannot automatically correct what the sensor reports; the v1
+issue, not a SkyLuz bug. SkyLuz cannot automatically correct what the sensor reports; the v1
 app offers a manual offset in Settings for phones with a consistent directional error (v2
 doesn't have this option yet).
 
@@ -21,7 +21,7 @@ doesn't have this option yet).
 and accuracy are two different things:
 
 - **Calibration** (the figure-8 gesture) asks your phone's hardware to normalize its sensor
-  internally. It removes distortions caused by the phone's own components. Sky Map has no control
+  internally. It removes distortions caused by the phone's own components. SkyLuz has no control
   over this process — it is handled entirely by the phone.
 - **Accuracy** is whether that normalised sensor is actually pointing in the right direction. A
   calibrated compass is not necessarily an accurate one.
@@ -43,7 +43,7 @@ sitting next to a source of interference — it just reports what it measures.
 **Things to try, in order:**
 
 1. **Move to open ground.** Go somewhere flat and away from buildings, vehicles, and metal
-   structures. If the map improves, magnetic interference was the cause — not Sky Map.
+   structures. If the map improves, magnetic interference was the cause — not SkyLuz.
 2. **Perform the figure-8 gesture** — wave your phone slowly in a large, smooth figure-8 shape.
    You may need to repeat several times. The compass accuracy indicator in the calibration dialog
    shows whether the phone has accepted the calibration.
@@ -56,25 +56,25 @@ sitting next to a source of interference — it just reports what it measures.
    option isn't currently available in the v2 app.
 
 > **If a recent phone update broke your compass:** this is unfortunately common. Android updates
-> and manufacturer firmware patches can reset or alter how the sensor is calibrated. Sky Map's
+> and manufacturer firmware patches can reset or alter how the sensor is calibrated. SkyLuz's
 > sensor code has barely changed in years — if it worked before a system update, the update is
-> almost certainly what changed, not Sky Map.
+> almost certainly what changed, not SkyLuz.
 
 ### Location
 
-Sky Map must know where on Earth you are to draw the correct sky. Without location access, v1
+SkyLuz must know where on Earth you are to draw the correct sky. Without location access, v1
 defaults to 0° latitude / 0° longitude — a point in the ocean; v2 defaults to Greenwich, UK
 (51.48°N, 0°). Either way, the map will look completely wrong anywhere else.
 
 **Telltale symptom:** Polaris (the Pole Star) appearing near the horizon rather than high in the
-northern sky almost always means Sky Map doesn't know your location.
+northern sky almost always means SkyLuz doesn't know your location.
 
 To fix:
 
-- Grant location permission. Open **Settings → Apps → Sky Map → Permissions** and enable
+- Grant location permission. Open **Settings → Apps → SkyLuz → Permissions** and enable
   **Location**. If you declined the permission on first launch, this is the most likely cause.
-- Check Sky Map's own location screen to see a map of your current location — this is the easiest
-  way to confirm that Sky Map has your location set correctly. In v1, this is **Location
+- Check SkyLuz's own location screen to see a map of your current location — this is the easiest
+  way to confirm that SkyLuz has your location set correctly. In v1, this is **Location
   Settings**; in v2, tap **Location** on the map screen.
 - Open the **Diagnostics** page and confirm the latitude and longitude shown there are correct for
   where you are. In v1, Diagnostics is in the overflow menu; in v2, it's under **Settings**.
@@ -83,7 +83,7 @@ See also: [Google's guide to app permissions](https://support.google.com/googlep
 
 ### Time
 
-Sky Map uses your device's clock and time zone. An incorrect time zone in particular can shift the
+SkyLuz uses your device's clock and time zone. An incorrect time zone in particular can shift the
 entire sky by several hours — making it look completely wrong even with a good compass and correct
 location.
 
@@ -117,7 +117,7 @@ car dashboard or magnetic case.
 This is the crucial distinction most guides skip:
 
 - Android reports compass *calibration status* as Unknown → Unreliable → Low → Medium → High.
-  Sky Map displays this status and shows a warning when it is below Medium.
+  SkyLuz displays this status and shows a warning when it is below Medium.
 - Calibration status reflects internal consistency, not pointing accuracy. A sensor with
   "Accuracy: High" simply means the phone is confident in its own internal calibration — it says
   nothing about whether the phone is free from external interference.
@@ -133,7 +133,7 @@ calibration. On the v1 app, the manual compass offset (**Settings → Sensor Set
 (Experts)**) is the best available workaround for these devices; v2 doesn't offer one yet. No
 app can compensate for a fundamentally poor sensor.
 
-> Sky Map can only display what your phone reports. If the phone's compass is biased, the map
+> SkyLuz can only display what your phone reports. If the phone's compass is biased, the map
 > will be biased by the same amount. This is a physical property of mobile hardware, not a
 > software problem.
 
@@ -144,7 +144,7 @@ app can compensate for a fundamentally poor sensor.
 Tap anywhere outside the card, or use the back gesture/button, to dismiss it.
 
 If you're using the older "classic" 3-button Android navigation (rather than gesture navigation),
-Sky Map runs full screen, so the on-screen Back/Home/Recents buttons aren't rendered at all. Swipe
+SkyLuz runs full screen, so the on-screen Back/Home/Recents buttons aren't rendered at all. Swipe
 up from the very bottom of the screen to bring the navigation bar into view, then tap Back to
 close the card.
 
@@ -173,7 +173,7 @@ close the card.
 
 ## Do I need an internet connection?
 
-No. Sky Map works fully offline. An internet connection is only needed to:
+No. SkyLuz works fully offline. An internet connection is only needed to:
 
 - Look up a location by place name (you can enter lat/long directly instead)
 - Load Hubble Gallery images (previously cached images may still be available offline)

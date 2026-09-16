@@ -155,7 +155,7 @@ class SatelliteRefreshWorker(
             Log.e(
                 TAG,
                 "CelesTrak returned 301: the element-set URL is outdated and no retry will " +
-                    "fix it. Sky Map needs a release with the new URL.",
+                    "fix it. SkyLuz needs a release with the new URL.",
             )
         } else {
             Log.w(

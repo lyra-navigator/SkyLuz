@@ -1,4 +1,4 @@
-Neu Sky Map wurde komplett neu aufgebaut – neue Engine, neue Benutzeroberfläche, präziser.
+Neu SkyLuz wurde komplett neu aufgebaut – neue Engine, neue Benutzeroberfläche, präziser.
 
 Neu Der Mond, Finsternisse und Planeten sind präzise positioniert und zeitlich korrekt.
 

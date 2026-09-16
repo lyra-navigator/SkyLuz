@@ -1,4 +1,4 @@
-Novità Sky Map è stato completamente ricostruito — nuovo motore, nuova interfaccia utente, più preciso.
+Novità SkyLuz è stato completamente ricostruito — nuovo motore, nuova interfaccia utente, più preciso.
 
 Novità La Luna, le eclissi e i pianeti sono posizionati e sincronizzati con precisione.
 

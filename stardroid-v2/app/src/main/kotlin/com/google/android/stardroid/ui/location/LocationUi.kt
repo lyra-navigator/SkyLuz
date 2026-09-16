@@ -452,7 +452,7 @@ fun ManualLocationEntryDialog(
 }
 
 /**
- * v1 `LocationPermissionRationaleDialogFragment`: why Sky Map wants the location, with
+ * v1 `LocationPermissionRationaleDialogFragment`: why SkyLuz wants the location, with
  * grant / enter-manually / later exits.
  */
 @Composable

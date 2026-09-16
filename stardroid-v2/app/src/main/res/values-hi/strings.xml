@@ -100,7 +100,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">मैन्युअल मोड पर स्विच करें</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">ऑटो मोड पर स्विच करें</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    इस डिवाइस में कंपास या मोशन सेंसर नहीं हैं, इसलिए Sky Map यह ट्रैक नहीं कर सकता कि आप इसे कहाँ इंगित करते हैं। इसके बजाय, मैप को हाथ से खींचें।
+    इस डिवाइस में कंपास या मोशन सेंसर नहीं हैं, इसलिए SkyLuz यह ट्रैक नहीं कर सकता कि आप इसे कहाँ इंगित करते हैं। इसके बजाय, मैप को हाथ से खींचें।
     </string>
     <string name="no_sensor_warning_dismiss">ठीक है</string>
 
@@ -138,8 +138,8 @@
     <string name="ar_shutter_slider" translation_description="Accessibility label for the temporary developer slider setting the camera\'s manual shutter (exposure) time in through-camera mode.">कैमरा शटर समय</string>
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">आकाश साझा करें</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">इस आकाश को साझा करें</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">आप क्या देख रहे हैं, उसे देखें — Sky Map मुफ़्त में प्राप्त करें: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">आप क्या देख रहे हैं, उसे देखें — SkyLuz मुफ़्त में प्राप्त करें</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">आप क्या देख रहे हैं, उसे देखें — SkyLuz मुफ़्त में प्राप्त करें: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">ओवरले</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">साथ-साथ</string>
@@ -241,7 +241,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">सेटिंग्स</string>
     <string name="location_permission_dialog_title">स्थान आवश्यक है</string>
     <string name="location_permission_dialog_message">
-    Sky Map को सही रात के आकाश को दिखाने के लिए आपके अनुमानित स्थान की आवश्यकता है। आप अनुमति दे सकते हैं, अपना स्थान मैन्युअल रूप से दर्ज कर सकते हैं, या बाद में निर्णय ले सकते हैं। यदि आप बाद में निर्णय लेते हैं, तो आपका स्थान सेट होने तक नक्शा सटीक नहीं होगा।
+    SkyLuz को सही रात के आकाश को दिखाने के लिए आपके अनुमानित स्थान की आवश्यकता है। आप अनुमति दे सकते हैं, अपना स्थान मैन्युअल रूप से दर्ज कर सकते हैं, या बाद में निर्णय ले सकते हैं। यदि आप बाद में निर्णय लेते हैं, तो आपका स्थान सेट होने तक नक्शा सटीक नहीं होगा।
     </string>
     <string name="location_permission_grant">अनुमति दें</string>
     <string name="location_permission_enter_manually">मैन्युअल रूप से दर्ज करें</string>
@@ -306,7 +306,7 @@
     <string name="settings_section_sensors">सेंसर सेटिंग्स (विशेषज्ञ)</string>
     <string name="settings_section_other">अन्य</string>
     <string name="enable_analytics">उपयोग आंकड़े भेजें</string>
-    <string name="enable_analytics_desc">Google Analytics को अनाम डेटा भेजकर Sky Map को बेहतर बनाएं</string>
+    <string name="enable_analytics_desc">Google Analytics को अनाम डेटा भेजकर SkyLuz को बेहतर बनाएं</string>
     <string name="settings_diagnostics_summary" translation_description="Summary for the settings row that opens the diagnostics screen, which shows technical sensor, location and performance readouts useful when reporting a problem">सेंसर, स्थान और प्रदर्शन विवरण</string>
     <string name="settings_tap_to_identify">टैप पर जानकारी दिखाएं</string>
     <string name="settings_tap_to_identify_summary">आकाशीय पिंडों के बारे में जानने के लिए उन्हें टैप करें</string>
@@ -328,7 +328,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">नाइट मोड स्क्रीन को कितना मंद करता है</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">सिस्टम डिफ़ॉल्ट</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">बहुत मंद</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">क्लासिक</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">क्लासिक</string>
     <string name="settings_sky_gradient">आकाश ग्रेडिएंट दिखाएं</string>
     <string name="settings_sky_gradient_summary">सूर्य के पास आकाश को नीला और विपरीत ओर गहरा करता है</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">पुराने सेंसर का उपयोग करें</string>
@@ -372,14 +372,14 @@
     <string name="diagnostics_button">डायग्नोस्टिक्स</string>
     <string name="diagnostics_title">डायग्नोस्टिक्स</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">डेवलपर्स को भेजें</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">Sky Map डायग्नोस्टिक्स रिपोर्ट</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- Sky Map डायग्नोस्टिक्स। कृपया इस लाइन के ऊपर समस्या का वर्णन करें। ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">SkyLuz डायग्नोस्टिक्स रिपोर्ट</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- SkyLuz डायग्नोस्टिक्स। कृपया इस लाइन के ऊपर समस्या का वर्णन करें। ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">हाल का लॉग</string>
     <string name="diagnostics_section_general">सामान्य</string>
     <string name="diagnostics_device">डिवाइस</string>
     <!-- tm:omitted name="diagnostics_phone_format" reason="identical_to_source" -->
     <string name="diagnostics_android_version">Android संस्करण</string>
-    <string name="diagnostics_sky_map_version">Sky Map संस्करण</string>
+    <string name="diagnostics_sky_map_version">SkyLuz संस्करण</string>
     <!-- tm:omitted name="diagnostics_sky_map_version_format" reason="identical_to_source" -->
     <string name="diagnostics_section_graphics" translation_description="Section heading in the diagnostics screen for graphics/GPU information">ग्राफिक्स</string>
     <string name="diagnostics_gl_renderer" translation_description="Row label in the diagnostics screen for the name of the graphics processor (GPU) drawing the sky">रेंडरर</string>
@@ -447,8 +447,8 @@
     <string name="calibration_accuracy_high">अंशांकन: अच्छा</string>
     <string name="calibration_accuracy_no_contact">अंशांकन: कोई संपर्क नहीं</string>
     <string name="calibration_do_not_show_again">इसे फिर से न दिखाएं</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[आपके फ़ोन का कंपास सेंसर खराब कैलिब्रेशन की रिपोर्ट कर रहा है। आठ के आकार की गति (<a href="%s">डेमो देखें</a>) आपके फ़ोन के हार्डवेयर को उसके कंपास सेंसर को रीसेट करने के लिए प्रेरित करती है — Sky Map का इस प्रक्रिया पर कोई नियंत्रण नहीं है।<br/><br/><blockquote><b>कैलिब्रेटेड का मतलब सटीक नहीं है।</b> आठ के आकार की यह गति सेंसर को रीसेट करने में मदद करती है, लेकिन यह आस-पास की धातु की वस्तुओं, कार के डैशबोर्ड या फ़ोन केस से होने वाले हस्तक्षेप को दूर नहीं कर सकती। यदि कैलिब्रेट करने के बाद भी मैप गलत है, तो वे बाहरी स्रोत ही सबसे संभावित कारण हैं — Sky Map नहीं।</blockquote>धातु से दूर किसी खुले क्षेत्र में जाएँ और फिर से प्रयास करें।]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[आपका फ़ोन ऊपर दिखाए अनुसार अपनी कंपास कैलिब्रेशन स्थिति की रिपोर्ट कर रहा है।<br/><br/>यदि आवश्यक हो, तो अपने फ़ोन के हार्डवेयर को उसके कंपास सेंसर को पुनः कैलिब्रेट करने के लिए प्रेरित करने हेतु 8-आकार की गति करें (<a href="%s">प्रदर्शन देखें</a>)।<br/><br/><blockquote><b>महत्वपूर्ण:</b> कैलिब्रेशन सेंसर को आंतरिक रूप से स्वयं को रीसेट करने में मदद करता है। इसका मतलब यह नहीं है कि कंपास आवश्यक रूप से सटीक है!<br/>स्थानीय चुंबकीय हस्तक्षेप (धातु की वस्तुएं, कार डैशबोर्ड, फ़ोन केस) अभी भी आपके फ़ोन के कंपास को Sky Map पर गलत रीडिंग भेजने का कारण बन सकता है।</blockquote><b>यदि मानचित्र सही ढंग से स्थिति नहीं दिखा रहा है तो समस्या संभवतः आपके फ़ोन की है - Sky Map की नहीं!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[आपके फ़ोन का कंपास सेंसर खराब कैलिब्रेशन की रिपोर्ट कर रहा है। आठ के आकार की गति (<a href="%s">डेमो देखें</a>) आपके फ़ोन के हार्डवेयर को उसके कंपास सेंसर को रीसेट करने के लिए प्रेरित करती है — SkyLuz का इस प्रक्रिया पर कोई नियंत्रण नहीं है।<br/><br/><blockquote><b>कैलिब्रेटेड का मतलब सटीक नहीं है।</b> आठ के आकार की यह गति सेंसर को रीसेट करने में मदद करती है, लेकिन यह आस-पास की धातु की वस्तुओं, कार के डैशबोर्ड या फ़ोन केस से होने वाले हस्तक्षेप को दूर नहीं कर सकती। यदि कैलिब्रेट करने के बाद भी मैप गलत है, तो वे बाहरी स्रोत ही सबसे संभावित कारण हैं — SkyLuz नहीं।</blockquote>धातु से दूर किसी खुले क्षेत्र में जाएँ और फिर से प्रयास करें।]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[आपका फ़ोन ऊपर दिखाए अनुसार अपनी कंपास कैलिब्रेशन स्थिति की रिपोर्ट कर रहा है।<br/><br/>यदि आवश्यक हो, तो अपने फ़ोन के हार्डवेयर को उसके कंपास सेंसर को पुनः कैलिब्रेट करने के लिए प्रेरित करने हेतु 8-आकार की गति करें (<a href="%s">प्रदर्शन देखें</a>)।<br/><br/><blockquote><b>महत्वपूर्ण:</b> कैलिब्रेशन सेंसर को आंतरिक रूप से स्वयं को रीसेट करने में मदद करता है। इसका मतलब यह नहीं है कि कंपास आवश्यक रूप से सटीक है!<br/>स्थानीय चुंबकीय हस्तक्षेप (धातु की वस्तुएं, कार डैशबोर्ड, फ़ोन केस) अभी भी आपके फ़ोन के कंपास को SkyLuz पर गलत रीडिंग भेजने का कारण बन सकता है।</blockquote><b>यदि मानचित्र सही ढंग से स्थिति नहीं दिखा रहा है तो समस्या संभवतः आपके फ़ोन की है - SkyLuz की नहीं!</b>]]></string>
     <string name="calibration_low_accuracy_toast">आपके फ़ोन का कंपास कम सटीकता बता रहा है</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">सेंसर में उच्च सटीकता है</string>
 
@@ -481,7 +481,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">6,500 प्रकाश-वर्ष</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">11 प्रकाश-वर्ष चौड़ा</string>
     <string name="warm_welcome_slide3_title">सेंसर और कैलिब्रेशन</string>
-    <string name="warm_welcome_slide3_desc">Sky Map आपके फ़ोन के सेंसर का उपयोग करके तारों के साथ संरेखित होता है।</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz आपके फ़ोन के सेंसर का उपयोग करके तारों के साथ संरेखित होता है।</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[आपके डिवाइस में स्वचालित ट्रैकिंग के लिए आवश्यक सेंसर नहीं हैं। चिंता न करें—आप अभी भी <b>मैनुअल मोड</b> में पूरे ब्रह्मांड का अन्वेषण कर सकते हैं!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[सटीकता बनाए रखने के लिए, अपने फ़ोन को कभी-कभी एक त्वरित <b>आठ के आकार</b> में हिलाएँ।]]></string>
     <string name="warm_welcome_skip">छोड़ें</string>
@@ -534,7 +534,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">विजेट सुझाव खारिज करें</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">विजेट को अपनी होम स्क्रीन से जोड़ें</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    आपका लॉन्चर किसी ऐप से विजेट जोड़ने का समर्थन नहीं करता है। अपनी होम स्क्रीन को स्पर्श करके रखें, विजेट चुनें, फिर Sky Map ढूंढें।
+    आपका लॉन्चर किसी ऐप से विजेट जोड़ने का समर्थन नहीं करता है। अपनी होम स्क्रीन को स्पर्श करके रखें, विजेट चुनें, फिर SkyLuz ढूंढें।
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">समझ गया</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% प्रकाशित</string>
@@ -576,13 +576,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">सूचनाएँ</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map केवल दुर्लभ खगोलीय घटनाओं के बारे में सूचित करता है, दिन में ज़्यादा से ज़्यादा एक बार। जब तक आप इसे चालू नहीं करते, सब कुछ बंद रहता है।
+    SkyLuz केवल दुर्लभ खगोलीय घटनाओं के बारे में सूचित करता है, दिन में ज़्यादा से ज़्यादा एक बार। जब तक आप इसे चालू नहीं करते, सब कुछ बंद रहता है।
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">उल्का वर्षा का चरम</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">साल में लगभग एक दर्जन, चरम की शाम को</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">आज रात के आकाश का सार</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">सूर्यास्त के बाद एक सारांश, शांत रातों में छोड़ा गया</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">Sky Map के लिए सूचनाएँ अवरुद्ध हैं</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">SkyLuz के लिए सूचनाएँ अवरुद्ध हैं</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">सिस्टम सेटिंग्स में उन्हें अनुमति देने के लिए टैप करें</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">उल्का वर्षा का चरम</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">साल में लगभग एक दर्जन, चरम की शाम को</string>

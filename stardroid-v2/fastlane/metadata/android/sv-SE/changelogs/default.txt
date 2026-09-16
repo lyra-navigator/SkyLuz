@@ -1,4 +1,4 @@
-Nytt Sky Map är helt ombyggd — ny motor, nytt gränssnitt, mer exakt.
+Nytt SkyLuz är helt ombyggd — ny motor, nytt gränssnitt, mer exakt.
 
 Nytt Månen, förmörkelser och planeter visas med exakt position och tid.
 

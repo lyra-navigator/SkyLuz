@@ -1,4 +1,4 @@
-Nové Sky Map je kompletně přestavěná — nový engine, nové uživatelské rozhraní, přesnější.
+Nové SkyLuz je kompletně přestavěná — nový engine, nové uživatelské rozhraní, přesnější.
 
 Nové Měsíc, zatmění a planety jsou umístěny a časovány přesně.
 

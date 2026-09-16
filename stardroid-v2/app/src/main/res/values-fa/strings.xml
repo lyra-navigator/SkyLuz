@@ -100,7 +100,7 @@
     <string name="switch_to_manual" translation_description="Tooltip and accessibility label for the button that switches the map from auto (sensor-driven) mode to manual (drag) mode.">تغییر به حالت دستی</string>
     <string name="switch_to_auto" translation_description="Tooltip and accessibility label for the button that switches the map from manual (drag) mode to auto (sensor-driven) mode.">تغییر به حالت خودکار</string>
     <string name="no_sensor_warning" translation_description="Warning shown when the device lacks the motion sensors needed to point the map at the sky automatically.">
-    این دستگاه قطب‌نما یا حسگر حرکتی ندارد، بنابراین Sky Map نمی‌تواند جهتی را که به آن اشاره می‌کنید دنبال کند. به جای آن، نقشه را به صورت دستی بکشید.
+    این دستگاه قطب‌نما یا حسگر حرکتی ندارد، بنابراین SkyLuz نمی‌تواند جهتی را که به آن اشاره می‌کنید دنبال کند. به جای آن، نقشه را به صورت دستی بکشید.
     </string>
     <string name="no_sensor_warning_dismiss">باشه</string>
 
@@ -143,8 +143,8 @@
     <string name="share_button" translation_description="Overflow-menu row that captures the current sky view as an image and opens the system share sheet.">اشتراک
 گذاری آسمان</string>
     <string name="share_chooser_title" translation_description="Title of the system share sheet when sharing a captured sky image.">اشتراک‌گذاری این آسمان</string>
-    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید</string>
-    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ببینید به چه چیزی نگاه می‌کنید — Sky Map را رایگان دریافت کنید: %1$s</string>
+    <string name="share_invitation" translation_description="Short invitation stamped on the footer of shared sky images, above the store link.">ببینید به چه چیزی نگاه می‌کنید — SkyLuz را رایگان دریافت کنید</string>
+    <string name="share_text" translation_description="Text accompanying a shared sky image in apps that accept both an image and text. %1$s is the app-store link.">ببینید به چه چیزی نگاه می‌کنید — SkyLuz را رایگان دریافت کنید: %1$s</string>
     <!-- tm:omitted name="share_store_link" reason="identical_to_source" -->
     <string name="share_layout_overlay" translation_description="Caption of the share-layout choice that draws the star map over the camera photo, as seen on screen.">هم‌پوشانی</string>
     <string name="share_layout_side_by_side" translation_description="Caption of the share-layout choice that puts the camera photo and the star map next to each other.">کنار هم</string>
@@ -246,7 +246,7 @@
     <string name="label_size_hint_action" translation_description="Action button on the label size snackbar; opens the app\'s Settings screen, where the user can change how large the sky labels are">تنظیمات</string>
     <string name="location_permission_dialog_title">مکان مورد نیاز است</string>
     <string name="location_permission_dialog_message">
-    Sky Map برای نمایش آسمان شب صحیح به موقعیت تقریبی شما نیاز دارد. می‌توانید اجازه را بدهید، موقعیت خود را به صورت دستی وارد کنید، یا بعداً تصمیم بگیرید. اگر بعداً تصمیم بگیرید، نقشه تا زمانی که موقعیت شما تنظیم نشود دقیق نخواهد بود.
+    SkyLuz برای نمایش آسمان شب صحیح به موقعیت تقریبی شما نیاز دارد. می‌توانید اجازه را بدهید، موقعیت خود را به صورت دستی وارد کنید، یا بعداً تصمیم بگیرید. اگر بعداً تصمیم بگیرید، نقشه تا زمانی که موقعیت شما تنظیم نشود دقیق نخواهد بود.
     </string>
     <string name="location_permission_grant">اعطای اجازه</string>
     <string name="location_permission_enter_manually">وارد کردن دستی</string>
@@ -331,7 +331,7 @@
     <string name="settings_auto_dimness_summary" translation_description="Summary for the night-mode screen dimming preference">میزان کم‌نور شدن صفحه در حالت شب</string>
     <string name="settings_auto_dimness_system" translation_description="Screen dimming option: leave brightness on the system setting">پیش‌فرض سیستم</string>
     <string name="settings_auto_dimness_dim" translation_description="Screen dimming option: dimmest screen setting">بسیار کم‌نور</string>
-    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness Sky Map used for its first 15 years">کلاسیک</string>
+    <string name="settings_auto_dimness_classic" translation_description="Screen dimming option: the hand-tuned brightness SkyLuz used for its first 15 years">کلاسیک</string>
     <string name="settings_sky_gradient">نمایش گرادیان آسمان</string>
     <string name="settings_sky_gradient_summary">آسمان را نزدیک خورشید آبی و در طرف مقابل تیره رنگ می‌کند</string>
     <string name="settings_disable_gyro" translation_description="Preference title for switching from the gyroscope to the legacy compass + accelerometer sensor pipeline">استفاده از حسگرهای قدیمی</string>
@@ -375,8 +375,8 @@
     <string name="diagnostics_button">عیب یابی</string>
     <string name="diagnostics_title">عیب یابی</string>
     <string name="diagnostics_share" translation_description="Accessibility label for the diagnostics screen button that emails these details to the developers">ارسال به توسعه‌دهندگان</string>
-    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">گزارش عیب‌یابی Sky Map</string>
-    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- عیب‌یابی Sky Map. لطفاً مشکل را بالای این خط توضیح دهید. ---</string>
+    <string name="diagnostics_share_subject" translation_description="Subject line of the email a user sends from the diagnostics screen">گزارش عیب‌یابی SkyLuz</string>
+    <string name="diagnostics_report_header" translation_description="First line of the emailed diagnostics report, telling the user where to type their problem description. Keep it on one line.">--- عیب‌یابی SkyLuz. لطفاً مشکل را بالای این خط توضیح دهید. ---</string>
     <string name="diagnostics_section_recent_log" translation_description="Section heading, in the emailed diagnostics report only (not shown on screen), for the app's own recent log lines">گزارش‌های اخیر</string>
     <string name="diagnostics_section_general">عمومی</string>
     <string name="diagnostics_device">وسیله</string>
@@ -456,8 +456,8 @@
     <string name="calibration_accuracy_high">کالیبراسیون: خوب</string>
     <string name="calibration_accuracy_no_contact">کالیبراسیون: بدون اتصال</string>
     <string name="calibration_do_not_show_again">دوباره این را نمایش نده</string>
-    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[حسگر قطب‌نمای تلفن شما کالیبراسیون ضعیفی را گزارش می‌کند. حرکت به شکل عدد ۸ (<a href="%s">تماشای یک نمایش</a>) سخت‌افزار تلفن شما را وادار می‌کند تا حسگر قطب‌نمای خود را بازنشانی کند — Sky Map هیچ کنترلی بر این فرآیند ندارد.<br/><br/><blockquote><b>کالیبره شده به معنای دقیق بودن نیست.</b> حرکت به شکل عدد ۸ به بازنشانی حسگر کمک می‌کند، اما نمی‌تواند تداخل ناشی از اشیاء فلزی نزدیک، داشبورد خودرو یا قاب‌های تلفن را از بین ببرد. اگر پس از کالیبراسیون، نقشه همچنان نادرست است، این منابع خارجی محتمل‌ترین علت هستند — نه Sky Map.</blockquote>به یک منطقه باز و دور از فلزات بروید و دوباره امتحان کنید.]]></string>
-    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[گوشی شما وضعیت کالیبراسیون قطب‌نمای خود را همانطور که در بالا نشان داده شده است، گزارش می‌کند.<br/><br/>در صورت لزوم، حرکت عدد ۸ را انجام دهید (<a href="%s">مشاهده یک نمایش</a>) تا سخت‌افزار گوشی شما را وادار به کالیبره مجدد حسگر قطب‌نمای خود کند.<br/><br/><blockquote><b>مهم:</b> کالیبراسیون به حسگر کمک می‌کند تا خود را به صورت داخلی بازنشانی کند. این به معنای دقیق بودن قطب‌نما نیست!<br/>تداخل مغناطیسی محلی (اشیاء فلزی، داشبورد خودرو، قاب گوشی) همچنان می‌تواند باعث شود قطب‌نمای گوشی شما اطلاعات نادرستی را به Sky Map ارسال کند.</blockquote><b>اگر نقشه موقعیت‌ها را به درستی نشان نمی‌دهد، مشکل احتمالاً از گوشی شماست - نه از Sky Map!</b>]]></string>
+    <string name="calibration_what_to_do" translation_description="Information for the user on how to calibrate the compass when the screen auto-opens. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[حسگر قطب‌نمای تلفن شما کالیبراسیون ضعیفی را گزارش می‌کند. حرکت به شکل عدد ۸ (<a href="%s">تماشای یک نمایش</a>) سخت‌افزار تلفن شما را وادار می‌کند تا حسگر قطب‌نمای خود را بازنشانی کند — SkyLuz هیچ کنترلی بر این فرآیند ندارد.<br/><br/><blockquote><b>کالیبره شده به معنای دقیق بودن نیست.</b> حرکت به شکل عدد ۸ به بازنشانی حسگر کمک می‌کند، اما نمی‌تواند تداخل ناشی از اشیاء فلزی نزدیک، داشبورد خودرو یا قاب‌های تلفن را از بین ببرد. اگر پس از کالیبراسیون، نقشه همچنان نادرست است، این منابع خارجی محتمل‌ترین علت هستند — نه SkyLuz.</blockquote>به یک منطقه باز و دور از فلزات بروید و دوباره امتحان کنید.]]></string>
+    <string name="calibration_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they open the calibration screen. Placeholder is the video URL. Please do not change the &lt; and &gt; markup - the &lt;blockquote&gt; renders as a highlighted callout"><![CDATA[گوشی شما وضعیت کالیبراسیون قطب‌نمای خود را همانطور که در بالا نشان داده شده است، گزارش می‌کند.<br/><br/>در صورت لزوم، حرکت عدد ۸ را انجام دهید (<a href="%s">مشاهده یک نمایش</a>) تا سخت‌افزار گوشی شما را وادار به کالیبره مجدد حسگر قطب‌نمای خود کند.<br/><br/><blockquote><b>مهم:</b> کالیبراسیون به حسگر کمک می‌کند تا خود را به صورت داخلی بازنشانی کند. این به معنای دقیق بودن قطب‌نما نیست!<br/>تداخل مغناطیسی محلی (اشیاء فلزی، داشبورد خودرو، قاب گوشی) همچنان می‌تواند باعث شود قطب‌نمای گوشی شما اطلاعات نادرستی را به SkyLuz ارسال کند.</blockquote><b>اگر نقشه موقعیت‌ها را به درستی نشان نمی‌دهد، مشکل احتمالاً از گوشی شماست - نه از SkyLuz!</b>]]></string>
     <string name="calibration_low_accuracy_toast">قطب‌نمای تلفن شما دقت پایینی را گزارش می‌کند</string>
     <string name="calibration_complete_toast" translation_description="Toast shown when the compass reaches high accuracy and the auto-opened calibration screen closes itself">حسگرها دقت بالایی دارند</string>
 
@@ -490,7 +490,7 @@
     <string name="warm_welcome_card_distance" translation_description="Distance to the Crab Nebula on the sample info card on the second Warm Welcome slide">۶,۵۰۰ سال نوری</string>
     <string name="warm_welcome_card_size" translation_description="Size of the Crab Nebula on the sample info card on the second Warm Welcome slide">۱۱ سال نوری عرض</string>
     <string name="warm_welcome_slide3_title">حسگرها و کالیبراسیون</string>
-    <string name="warm_welcome_slide3_desc">Sky Map از حسگرهای گوشی شما برای تراز کردن با ستارگان استفاده می‌کند.</string>
+    <string name="warm_welcome_slide3_desc">SkyLuz از حسگرهای گوشی شما برای تراز کردن با ستارگان استفاده می‌کند.</string>
     <string name="warm_welcome_slide3_no_sensors" translation_description="Fallback message on the third Warm Welcome slide when sensors are missing. Please do not change the &lt; and &gt; markup"><![CDATA[به نظر می‌رسد دستگاه شما حسگرهای لازم برای ردیابی خودکار را ندارد. نگران نباشید—شما همچنان می‌توانید کل کیهان را در <b>حالت دستی</b> کاوش کنید!]]></string>
     <string name="warm_welcome_slide3_compass_calib" translation_description="Compass calibration advice on the third Warm Welcome slide. Please do not change the &lt; and &gt; markup"><![CDATA[برای حفظ دقت، هر از گاهی گوشی خود را یک تکان سریع <b>به شکل ۸</b> بدهید.]]></string>
     <string name="warm_welcome_skip">رد کردن</string>
@@ -551,7 +551,7 @@
     <string name="moon_widget_promo_dismiss" translation_description="Accessibility label for the button that permanently dismisses the widget offer row">رد کردن پیشنهاد ویجت</string>
     <string name="moon_widget_pin_unsupported_title" translation_description="Title of the fallback dialog when the launcher cannot add widgets directly">ویجت را از صفحه اصلی خود اضافه کنید</string>
     <string name="moon_widget_pin_unsupported_body" translation_description="Body of the fallback dialog explaining how to add the widget manually">
-    لانچر شما از افزودن ویجت‌ها از طریق یک برنامه پشتیبانی نمی‌کند. صفحه اصلی خود را لمس کرده و نگه دارید، ویجت‌ها را انتخاب کنید، سپس Sky Map را پیدا کنید.
+    لانچر شما از افزودن ویجت‌ها از طریق یک برنامه پشتیبانی نمی‌کند. صفحه اصلی خود را لمس کرده و نگه دارید، ویجت‌ها را انتخاب کنید، سپس SkyLuz را پیدا کنید.
     </string>
     <string name="moon_widget_pin_unsupported_ok" translation_description="Confirmation button of the manual widget-adding instructions dialog">فهمیدم</string>
     <string name="moon_widget_preview_illumination" translation_description="Representative illumination line shown in the widget picker\'s preview of the moon-phase widget">83% روشن</string>
@@ -593,13 +593,13 @@
     <!-- Sky-event notifications (D77). -->
     <string name="settings_section_notifications" translation_description="Settings section header for notification preferences">اعلان‌ها</string>
     <string name="settings_notifications_intro" translation_description="Introduction under the notifications settings header, stating how rarely the app notifies">
-    Sky Map فقط رویدادهای نادر آسمانی را اطلاع‌رسانی می‌کند، حداکثر یک بار در روز. همه چیز خاموش است تا زمانی که شما آن را روشن کنید.
+    SkyLuz فقط رویدادهای نادر آسمانی را اطلاع‌رسانی می‌کند، حداکثر یک بار در روز. همه چیز خاموش است تا زمانی که شما آن را روشن کنید.
     </string>
     <string name="settings_shower_alerts" translation_description="Preference title: notify on the evening a meteor shower reaches its annual peak">اوج بارش‌های شهابی</string>
     <string name="settings_shower_alerts_summary" translation_description="Explanation of the meteor-shower notification preference">حدود دوازده مورد در سال، در غروب روز اوج</string>
     <string name="settings_tonight_digest" translation_description="Preference title: a single evening notification summarizing what\'s visible tonight">خلاصه آسمان امشب</string>
     <string name="settings_tonight_digest_summary" translation_description="Explanation of the tonight-digest notification preference">یک خلاصه پس از غروب آفتاب، در شب‌های آرام نادیده گرفته می‌شود</string>
-    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">اعلان‌ها برای Sky Map مسدود شده‌اند</string>
+    <string name="settings_notifications_blocked" translation_description="Warning row shown when the user enabled notifications in the app but blocked them at the system level">اعلان‌ها برای SkyLuz مسدود شده‌اند</string>
     <string name="settings_notifications_blocked_action" translation_description="Hint under the blocked-notifications warning; tapping opens the system settings page">برای فعال کردن آن‌ها در تنظیمات سیستم ضربه بزنید</string>
     <string name="channel_showers_name" translation_description="Name of the meteor-shower notification channel, shown in the system\'s notification settings">اوج بارش‌های شهابی</string>
     <string name="channel_showers_description" translation_description="Description of the meteor-shower notification channel in the system\'s notification settings">حدود دوازده مورد در سال، در غروب روز اوج</string>
