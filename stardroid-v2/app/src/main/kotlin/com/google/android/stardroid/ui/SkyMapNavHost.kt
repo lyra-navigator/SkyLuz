@@ -163,6 +163,7 @@ fun SkyMapNavHost(
                 constellationDrawViewModel,
                 challengeTabViewModel,
                 findGameViewModel,
+                updateViewModel,
                 onOpenMyConstellations = { navController.navigate(Routes.MY_CONSTELLATIONS) },
                 onOpenConstellationsTab = { navController.navigate(Routes.CONSTELLATIONS_TAB) },
                 sensorWarningSuppressed = sensorWarningSuppressed,

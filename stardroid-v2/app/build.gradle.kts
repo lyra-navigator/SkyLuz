@@ -19,8 +19,8 @@ android {
     namespace = "com.google.android.stardroid"
     defaultConfig {
         applicationId = "org.digitalfleet.skyluz"
-        versionCode = 2006
-        versionName = "2.4.0"
+        versionCode = 2007
+        versionName = "2.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // D95: CI passes -PskipGlBenchmarks=true, which the D19 perf gate reads to skip
         // itself. Set through the DSL rather than
