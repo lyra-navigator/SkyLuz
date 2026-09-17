@@ -328,6 +328,7 @@ fun SkyMapNavHost(
         composable(Routes.CONSTELLATIONS_TAB) {
             ConstellationsTabScreen(
                 challengeTabViewModel,
+                findGameViewModel,
                 onBack = { navController.popBackStack() },
             )
         }

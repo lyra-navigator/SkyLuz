@@ -374,7 +374,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private val findGameViewModel: FindGameViewModel by viewModels {
-        viewModelFactory { initializer { FindGameViewModel(catalogAccess::repository) } }
+        viewModelFactory { initializer { FindGameViewModel(applicationContext, catalogAccess::repository) } }
     }
 
     private val startupViewModel: StartupViewModel by viewModels {

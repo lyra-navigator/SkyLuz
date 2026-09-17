@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.google.android.stardroid.challenge.Challenge
 import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.Vector3
@@ -106,6 +107,86 @@ fun FindTapOverlay(
         heightPx = heightPx,
         color = Color(0xFF8FD0FF),
         connect = false,
+        modifier = modifier,
+    )
+}
+
+/**
+ * The constellation AS DISCOVERED (Catalyst, 2.7.0 feedback #2): only the solution vertices
+ * the player has found are drawn, and consecutive found vertices along each real stroke are
+ * linked — the figure literally draws itself as it is discovered. Used by both challenge and
+ * find sessions (gold, matching the draw-mode stroke color).
+ */
+@Composable
+fun ChallengeFoundOverlay(
+    strokes: List<List<RaDec>>,
+    coveredIndices: Set<Int>,
+    vertices: List<RaDec>,
+    camera: SkyCamera,
+    widthPx: Int,
+    heightPx: Int,
+    modifier: Modifier = Modifier,
+) {
+    Canvas(modifier.fillMaxSize()) {
+        if (coveredIndices.isEmpty() || widthPx <= 0 || heightPx <= 0) return@Canvas
+        val projection = SkyProjection(camera, Viewport(widthPx, heightPx, 1f))
+        val color = Color(0xFFFFD94D)
+        val dotted = mutableSetOf<Int>()
+        for (stroke in strokes) {
+            // Walk the stroke's consecutive pairs; link only when BOTH ends are found.
+            for (i in 0 until stroke.size - 1) {
+                val aIdx = vertices.indexOf(stroke[i])
+                val bIdx = vertices.indexOf(stroke[i + 1])
+                if (aIdx in coveredIndices && bIdx in coveredIndices) {
+                    val a = projection.worldToScreen(stroke[i].toGeocentricVector())
+                    val b = projection.worldToScreen(stroke[i + 1].toGeocentricVector())
+                    if (a != null && b != null) {
+                        drawLine(
+                            color,
+                            Offset(a.xPx, a.yPx),
+                            Offset(b.xPx, b.yPx),
+                            strokeWidth = 5f,
+                            cap = StrokeCap.Round,
+                        )
+                    }
+                    dotted += aIdx
+                    dotted += bIdx
+                }
+            }
+            // Isolated single covered vertex at a stroke end still gets its dot.
+            for (p in stroke) {
+                val idx = vertices.indexOf(p)
+                if (idx in coveredIndices) dotted += idx
+            }
+        }
+        for (idx in dotted) {
+            projection.worldToScreen(vertices[idx].toGeocentricVector())?.let {
+                val p = Offset(it.xPx, it.yPx)
+                drawCircle(color.copy(alpha = 0.35f), radius = 14f * 1.9f, center = p)
+                drawCircle(color, radius = 14f, center = p)
+                drawCircle(Color.White, radius = 14f * 0.35f, center = p)
+            }
+        }
+    }
+}
+
+/** Challenge convenience overload: reads the solution strokes/vertices from the challenge. */
+@Composable
+fun ChallengeFoundOverlay(
+    challenge: Challenge,
+    coveredIndices: Set<Int>,
+    camera: SkyCamera,
+    widthPx: Int,
+    heightPx: Int,
+    modifier: Modifier = Modifier,
+) {
+    ChallengeFoundOverlay(
+        strokes = challenge.strokes,
+        coveredIndices = coveredIndices,
+        vertices = challenge.vertices,
+        camera = camera,
+        widthPx = widthPx,
+        heightPx = heightPx,
         modifier = modifier,
     )
 }

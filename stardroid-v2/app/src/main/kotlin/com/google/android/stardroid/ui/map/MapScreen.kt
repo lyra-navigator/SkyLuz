@@ -118,13 +118,13 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.DrawModeChrome
+import com.google.android.stardroid.ui.draw.ChallengeFoundOverlay
 import com.google.android.stardroid.ui.draw.DrawTapOverlay
 import com.google.android.stardroid.ui.draw.FindTapOverlay
 import com.google.android.stardroid.ui.draw.TipZoneOverlay
 import com.google.android.stardroid.challenge.ChallengeTabViewModel
 import com.google.android.stardroid.challenge.FindGame
 import com.google.android.stardroid.challenge.FindGameViewModel
-import com.google.android.stardroid.challenge.FindModeChrome
 import com.google.android.stardroid.update.UpdateState
 import com.google.android.stardroid.update.UpdateViewModel
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
@@ -227,11 +227,10 @@ fun MapScreen(
     // Constellation draw mode (custom-constellations.md): session state, not saveable —
     // rotation mid-draw would drop an unsaved stroke, which is acceptable for a sky sketch.
     var drawMode by rememberSaveable { mutableStateOf(false) }
-    // Find mode: the map hides the IAU lines and routes taps to the find game. The picker
-    // sheet and the session both count as "active" (taps are ignored in both).
-    var findPicking by rememberSaveable { mutableStateOf(false) }
+    // Find mode: a session started from the Constellations tab plays on the map (the old
+    // picker sheet is gone — see/start/stop live in the tab, same as challenges).
     val findSession by findGameViewModel.session.collectAsStateWithLifecycle()
-    val findActive = findPicking || findSession != null
+    val findActive = findSession != null
     // Challenge play: a challenge started in the tab is played on the map sky.
     val challengeSession by challengeTabViewModel.session.collectAsStateWithLifecycle()
     // Launch update check: silent unless a newer release exists; the banner sits at the top
@@ -286,13 +285,15 @@ fun MapScreen(
     }
     // v1: the hardware BACK key ends an active search.
     BackHandler(enabled = searchTarget != null) { searchViewModel.cancelSearch() }
-    // In play modes (challenge / find), BACK ends the session instead of leaving the map.
-    BackHandler(enabled = challengeSession != null) { challengeTabViewModel.cancel() }
+    // In play modes (challenge / find), BACK ends the session and restores normal map mode.
+    BackHandler(enabled = challengeSession != null) {
+        challengeTabViewModel.cancel()
+        layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+    }
     BackHandler(enabled = findSession != null) {
         layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
         findGameViewModel.cancel()
     }
-    BackHandler(enabled = findPicking) { findPicking = false }
 
     // While a play mode is live, EVERY sky tap belongs to the game: this opaque surface sits
     // above the GL surface and below the HUDs, swallows taps (so the identify/"know more"
@@ -307,6 +308,31 @@ fun MapScreen(
         if (tapFeedback != null) {
             delay(700)
             tapFeedback = null
+        }
+    }
+
+    // 2.7.0 feedback #7: during ANY play mode the IAU constellation lines are off by default
+    // (the user's rule from draw mode, extended); they return the moment the session ends.
+    // Only touch the layer when the state would actually change — setEnabled is idempotent,
+    // but the log entry would spam on every recomposition.
+    var challengeLinesDisabled by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(challengeSession) {
+        if (challengeSession != null && !challengeLinesDisabled) {
+            layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
+            challengeLinesDisabled = true
+        } else if (challengeSession == null && challengeLinesDisabled) {
+            layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+            challengeLinesDisabled = false
+        }
+    }
+    var findLinesDisabled by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(findSession) {
+        if (findSession != null && !findLinesDisabled) {
+            layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
+            findLinesDisabled = true
+        } else if (findSession == null && findLinesDisabled) {
+            layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+            findLinesDisabled = false
         }
     }
 
@@ -735,9 +761,20 @@ fun MapScreen(
                         .padding(horizontal = 16.dp, vertical = 8.dp),
             )
         }
-        // Challenge play HUD: compact counter + Tip (slew to the zone + highlight) + exit.
+        // Challenge play HUD: compact counter + Tip (slew to the zone + highlight) + exit,
+        // plus the discovered-shape overlay (found vertices linked — 2.7.0 feedback #2).
         challengeSession?.let { active ->
             var tipShown by remember { mutableStateOf(false) }
+            // The constellation as discovered so far: each solution stroke with only its
+            // covered vertices drawn, consecutive covered vertices linked.
+            ChallengeFoundOverlay(
+                challenge = active.challenge,
+                coveredIndices = active.coveredIndices,
+                camera = camera,
+                widthPx = screenSize.width,
+                heightPx = screenSize.height,
+                modifier = Modifier.matchParentSize(),
+            )
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier =
@@ -773,7 +810,11 @@ fun MapScreen(
                             mapViewModel.aimAt(target.toGeocentricVector(), challengeTabViewModel.tipRadiusDeg(active.challenge))
                             tipShown = true
                         }) { Text("Tip") }
-                        FilledTonalIconButton(onClick = { challengeTabViewModel.cancel() }) {
+                        FilledTonalIconButton(onClick = {
+                            // Stop restores normal map mode: lines back on, chrome free.
+                            layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+                            challengeTabViewModel.cancel()
+                        }) {
                             Icon(Icons.Filled.Close, contentDescription = "End challenge")
                         }
                     }
@@ -790,30 +831,68 @@ fun MapScreen(
                 )
             }
         }
-        // Find mode: picker (or live HUD) + tap markers. IAU lines were forced off at entry;
-        // any exit path (stop / reveal / ✕) restores them.
+        // Find mode: the SAME play experience as challenges (2.7.0 feedback #1) — compact HUD
+        // (counter + Tip + exit), tip zone, discovered-line overlay, cyan tap markers.
         if (findActive) {
-            var findTipShown by remember { mutableStateOf(false) }
-            FindModeChrome(
-                viewModel = findGameViewModel,
-                onExit = {
-                    findPicking = false
-                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
-                },
-                onRevealLines = {
-                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
-                },
-                onTip = {
-                    // Tip: slew to the figure's zone and highlight it (lines stay hidden).
-                    findSession?.let { active ->
-                        val c = FindGame.center(active.figure)
-                        mapViewModel.aimAt(c.toGeocentricVector(), FindGame.radiusDeg(active.figure))
-                        findTipShown = true
-                    }
-                },
-                modifier = Modifier.matchParentSize(),
-            )
             findSession?.let { active ->
+                var findTipShown by remember { mutableStateOf(false) }
+                val figureStrokes = active.figure.strokes
+                // Discovered lines: solution strokes with only covered vertices linked.
+                ChallengeFoundOverlay(
+                    strokes = figureStrokes,
+                    coveredIndices = active.coveredIndices,
+                    vertices = FindGame.vertices(active.figure),
+                    camera = camera,
+                    widthPx = screenSize.width,
+                    heightPx = screenSize.height,
+                    modifier = Modifier.matchParentSize(),
+                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier =
+                        Modifier
+                            .align(Alignment.TopCenter)
+                            .statusBarsPadding()
+                            .padding(horizontal = 12.dp)
+                            .fillMaxWidth(),
+                ) {
+                    Card(
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                        ) {
+                            Text(
+                                "Find: ${active.figureName}",
+                                style = MaterialTheme.typography.titleSmall,
+                                modifier = Modifier.weight(1f),
+                            )
+                            Text(
+                                "${active.progress.coveredVertices}/${active.progress.totalVertices}",
+                                style = MaterialTheme.typography.titleSmall,
+                            )
+                            if (active.progress.complete) {
+                                Text(
+                                    " 🎉",
+                                    style = MaterialTheme.typography.titleSmall,
+                                )
+                            }
+                            Button(onClick = {
+                                val c = FindGame.center(active.figure)
+                                mapViewModel.aimAt(c.toGeocentricVector(), FindGame.radiusDeg(active.figure))
+                                findTipShown = true
+                            }) { Text("Tip") }
+                            FilledTonalIconButton(onClick = {
+                                layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+                                findGameViewModel.cancel()
+                            }) {
+                                Icon(Icons.Filled.Close, contentDescription = "Stop find")
+                            }
+                        }
+                    }
+                }
                 if (findTipShown) {
                     TipZoneOverlay(
                         center = FindGame.center(active.figure),
@@ -824,14 +903,14 @@ fun MapScreen(
                         modifier = Modifier.matchParentSize(),
                     )
                 }
+                FindTapOverlay(
+                    viewModel = findGameViewModel,
+                    camera = camera,
+                    widthPx = screenSize.width,
+                    heightPx = screenSize.height,
+                    modifier = Modifier.matchParentSize(),
+                )
             }
-            FindTapOverlay(
-                viewModel = findGameViewModel,
-                camera = camera,
-                widthPx = screenSize.width,
-                heightPx = screenSize.height,
-                modifier = Modifier.matchParentSize(),
-            )
         }
         // Update-available banner (launch check): only when a newer release exists; tap opens
         // the APK in the browser, ✕ dismisses for the session.
@@ -1064,10 +1143,11 @@ fun MapScreen(
                 },
                 onStartFindMode = {
                     showOverflowSheet = false
-                    // Bare sky for guessing: IAU lines off for the session (restored on exit).
-                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
+                    // 2.7.0: find is now a section of the Constellations tab (same see/start/
+                    // stop flow as challenges). The IAU layer toggles off when a session
+                    // actually starts, and back on when it ends (map-side LaunchedEffects).
                     findGameViewModel.loadFigures()
-                    findPicking = true
+                    onOpenConstellationsTab()
                 },
                 onStartDrawMode = {
                     showOverflowSheet = false

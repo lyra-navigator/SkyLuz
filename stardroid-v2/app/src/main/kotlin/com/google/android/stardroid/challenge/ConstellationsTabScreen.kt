@@ -9,6 +9,7 @@
 
 package com.google.android.stardroid.challenge
 
+import android.content.Context
 import android.widget.ImageView
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -44,20 +45,26 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.viewinterop.AndroidView
 
 /**
- * The Constellations tab, Catalyst's 2.6.0 shape: ONE screen per challenge — art, info, and
- * a single action button that is **Start** when idle and **Stop** while the session runs.
- * Start arms the session and closes the tab (back to the sky instantly); the map shows the
- * HUD + Tip while the session is live. No intermediate "playing" window exists at all.
+ * The Constellations tab, Catalyst's 2.7.0 shape — challenges AND find in the SAME screen
+ * (feedback #1: "the interactions should be the same"). ONE screen per figure: art, info,
+ * progress counter, and a single action button that is **Start** when idle and **Stop** while
+ * the session runs. Start arms the session and closes the tab (back to the sky instantly);
+ * the map shows the HUD + Tip while the session is live.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ConstellationsTabScreen(
     viewModel: ChallengeTabViewModel,
+    findViewModel: FindGameViewModel,
     onBack: () -> Unit,
 ) {
     val entries by viewModel.entries.collectAsStateWithLifecycle()
     val session by viewModel.session.collectAsStateWithLifecycle()
+    val findPicks by findViewModel.picks.collectAsStateWithLifecycle()
+    val findSession by findViewModel.session.collectAsStateWithLifecycle()
     var openDetail by rememberSaveable { mutableStateOf<String?>(null) }
+    // "challenge:<id>" rows come from the pack; "find:<name>" rows from the IAU catalog.
+    val openIsFind = openDetail?.startsWith("find:") == true
 
     Scaffold(
         topBar = {
@@ -73,91 +80,91 @@ fun ConstellationsTabScreen(
             )
         },
     ) { padding ->
-        val active = session
+        val activeChallenge = session
+        val activeFind = findSession
         when {
-            // A session is live on the sky: the ONLY screen is its detail (Start/Stop merged).
             openDetail != null -> {
-                val entry = entries.firstOrNull { it.challenge.id == openDetail }
-                if (entry == null) {
-                    openDetail = null
-                } else {
-                    val isActive = active?.challenge?.id == entry.challenge.id
-                    Column(
-                        modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
-                    ) {
-                        ChallengeExampleImage(challenge = entry.challenge, modifier = Modifier.size(180.dp))
-                        Text(entry.challenge.name, style = MaterialTheme.typography.titleLarge)
-                        Text(
-                            if (isActive) {
-                                "Playing! ${active!!.progress.coveredVertices}/${active.progress.totalVertices} stars found. " +
-                                    "The sky map is behind this screen — press back to tap the stars."
-                            } else {
-                                "Connect the stars of this shape — they're all real stars in Orion's " +
-                                    "region. Start closes this screen: tap each star of the figure on the sky."
+                if (openIsFind) {
+                    val name = openDetail!!.removePrefix("find:")
+                    val pick = findPicks.firstOrNull { it.name == name }
+                    if (pick == null) {
+                        openDetail = null
+                    } else {
+                        val isActive = activeFind?.figureName == name
+                        val covered = ChallengeProgress.coveredIndices(
+                            findViewModel.findContext, "find:$name")
+                        FigureDetail(
+                            name = pick.name,
+                            starCount = FindGame.vertices(pick.figure).size,
+                            covered = covered.size,
+                            exampleAsset = null,
+                            instructions = "The lines are hidden on the sky. Tap each star you " +
+                                "think belongs to " + pick.name + ". Progress is saved as you go.",
+                            isActive = isActive,
+                            onStart = {
+                                findViewModel.start(pick)
+                                onBack()
                             },
-                            style = MaterialTheme.typography.bodyMedium,
+                            onStop = { findViewModel.cancel() },
                         )
-                        if (entry.complete) {
-                            Text("Complete ✓", color = MaterialTheme.colorScheme.primary)
-                        }
-                        Button(
-                            onClick = {
-                                if (isActive) {
-                                    viewModel.cancel()
-                                } else {
-                                    viewModel.start(entry.challenge)
-                                    // Back to the map instantly: the session lives on the map.
-                                    onBack()
-                                }
+                    }
+                } else {
+                    val id = openDetail!!
+                    val entry = entries.firstOrNull { it.challenge.id == id }
+                    if (entry == null) {
+                        openDetail = null
+                    } else {
+                        val isActive = activeChallenge?.challenge?.id == id
+                        FigureDetail(
+                            name = entry.challenge.name,
+                            starCount = entry.challenge.vertices.size,
+                            covered = entry.covered,
+                            exampleAsset = entry.challenge.exampleAsset,
+                            instructions =
+                                "Connect the stars of this shape — they're all real stars. " +
+                                    "Start closes this screen: tap each star of the figure on the sky.",
+                            isActive = isActive,
+                            onStart = {
+                                viewModel.start(entry.challenge)
+                                onBack()
                             },
-                            colors =
-                                if (isActive) {
-                                    ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
-                                } else {
-                                    ButtonDefaults.buttonColors()
-                                },
-                            modifier = Modifier.fillMaxWidth(),
-                        ) { Text(if (isActive) "Stop" else "Start") }
+                            onStop = { viewModel.cancel() },
+                        )
                     }
                 }
             }
-            // Browse list: See per row (opens the unified detail).
             else -> {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize().padding(padding),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
-                    items(entries.size) { i ->
-                        val entry = entries[i]
-                        Card(
-                            modifier =
-                                Modifier
-                                    .fillMaxWidth()
-                                    .padding(horizontal = 12.dp)
-                                    .clickable { openDetail = entry.challenge.id },
-                        ) {
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                modifier = Modifier.padding(12.dp),
-                            ) {
-                                ChallengeExampleImage(challenge = entry.challenge, modifier = Modifier.size(64.dp))
-                                Column(modifier = Modifier.weight(1f).padding(horizontal = 12.dp)) {
-                                    Text(
-                                        entry.challenge.name + if (entry.challenge.unlocksAfter != null) " ⭐" else "",
-                                        style = MaterialTheme.typography.titleMedium,
-                                    )
-                                    Text(
-                                        if (entry.complete) "Complete ✓" else "Tap to see",
-                                        style = MaterialTheme.typography.bodySmall,
-                                    )
-                                }
-                                if (entry.locked) {
-                                    Icon(Icons.Filled.Lock, contentDescription = "Locked")
-                                } else {
-                                    Button(onClick = { openDetail = entry.challenge.id }) { Text("See") }
-                                }
-                            }
+                    val challengeRows = entries.size
+                    val findRows = findPicks.size
+                    items(challengeRows + findRows) { i ->
+                        if (i < challengeRows) {
+                            val entry = entries[i]
+                            ProgressRow(
+                                title = entry.challenge.name + if (entry.challenge.unlocksAfter != null) " ⭐" else "",
+                                covered = entry.covered,
+                                total = entry.total,
+                                complete = entry.complete,
+                                locked = entry.locked,
+                                onClick = { openDetail = entry.challenge.id },
+                            )
+                        } else {
+                            val pick = findPicks[i - challengeRows]
+                            val key = "find:" + pick.name
+                            val covered =
+                                ChallengeProgress.coveredIndices(findViewModel.findContext, key).size
+                            ProgressRow(
+                                title = pick.name,
+                                covered = covered,
+                                total = FindGame.vertices(pick.figure).size,
+                                complete = ChallengeProgress.isComplete(
+                                    findViewModel.findContext, key),
+                                locked = false,
+                                onClick = { openDetail = key },
+                            )
                         }
                     }
                 }
@@ -166,10 +173,94 @@ fun ConstellationsTabScreen(
     }
 }
 
+/**
+ * The unified detail (2.7.0 feedback #2): example art + instructions + progress + a single
+ * Start/Stop button. Start closes the screen (the sky takes over); Stop ends the session.
+ */
+@Composable
+private fun FigureDetail(
+    name: String,
+    starCount: Int,
+    covered: Int,
+    exampleAsset: String?,
+    instructions: String,
+    isActive: Boolean,
+    onStart: () -> Unit,
+    onStop: () -> Unit,
+) {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        if (exampleAsset != null) {
+            ChallengeExampleImage(exampleAsset = exampleAsset, modifier = Modifier.size(180.dp))
+        }
+        Text(name, style = MaterialTheme.typography.titleLarge)
+        Text(
+            "$covered / $starCount stars found" + (if (covered >= starCount && starCount > 0) " — Complete ✓" else ""),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        Text(instructions, style = MaterialTheme.typography.bodyMedium)
+        Button(
+            onClick = { if (isActive) onStop() else onStart() },
+            colors =
+                if (isActive) {
+                    ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                } else {
+                    ButtonDefaults.buttonColors()
+                },
+            modifier = Modifier.fillMaxWidth(),
+        ) { Text(if (isActive) "Stop" else "Start") }
+    }
+}
+
+/** Browse row with live progress: "x/y stars found" (or Complete / Locked). */
+@Composable
+private fun ProgressRow(
+    title: String,
+    covered: Int,
+    total: Int,
+    complete: Boolean,
+    locked: Boolean,
+    onClick: () -> Unit,
+) {
+    Card(
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp)
+                .clickable(onClick = onClick),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(12.dp),
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(title, style = MaterialTheme.typography.titleMedium)
+                Text(
+                    when {
+                        complete -> "Complete ✓"
+                        locked -> "Locked"
+                        total > 0 && covered > 0 -> "$covered/$total stars found"
+                        else -> "Tap to see"
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            }
+            if (locked) {
+                Icon(Icons.Filled.Lock, contentDescription = "Locked")
+            } else {
+                Button(onClick = onClick) { Text("See") }
+            }
+        }
+    }
+}
+
 /** The challenge's example picture, loaded straight from assets. */
 @Composable
 private fun ChallengeExampleImage(
-    challenge: Challenge,
+    exampleAsset: String,
     modifier: Modifier = Modifier,
 ) {
     AndroidView(
@@ -177,7 +268,7 @@ private fun ChallengeExampleImage(
             ImageView(ctx).apply {
                 scaleType = ImageView.ScaleType.FIT_CENTER
                 runCatching {
-                    val stream = ctx.assets.open(challenge.exampleAsset.removePrefix("file:///android_asset/"))
+                    val stream = ctx.assets.open(exampleAsset.removePrefix("file:///android_asset/"))
                     android.graphics.BitmapFactory.decodeStream(stream)?.let { setImageBitmap(it) }
                     stream.close()
                 }
@@ -186,3 +277,7 @@ private fun ChallengeExampleImage(
         modifier = modifier,
     )
 }
+
+/** The find VM's Android context — public constructor property, read directly by the tab UI. */
+val FindGameViewModel.findContext: Context
+    get() = context

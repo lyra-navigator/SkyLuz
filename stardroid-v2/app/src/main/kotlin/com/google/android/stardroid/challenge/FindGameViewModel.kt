@@ -2,13 +2,14 @@
  * Copyright (c) 2026 The Digital Fleet (SkyLuz fork).
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the figures GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  */
 
 package com.google.android.stardroid.challenge
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.stardroid.catalog.CatalogRepository
@@ -26,11 +27,13 @@ import kotlinx.coroutines.launch
 
 /**
  * Find mode (custom-constellations.md §4b): hide a real IAU constellation's lines and ask the
- * player to tap its stars. Taps score live against the figure's vertices. The map forces the
- * constellations layer off while the session runs; "Reveal" turns it back on with the figure
- * highlighted by the player's taps still on screen.
+ * player to tap its stars — EXACTLY the challenge interaction (Catalyst, 2.7.0 feedback #1).
+ * Taps score live, each hit persists (ChallengeProgress), a stopped session keeps its found
+ * stars, and Start resumes from there. The map forces the constellations layer off while a
+ * session runs and restores it on exit.
  */
 class FindGameViewModel(
+    val context: Context,
     private val catalog: suspend () -> CatalogRepository,
 ) : ViewModel() {
     data class Pick(
@@ -43,6 +46,8 @@ class FindGameViewModel(
         val figure: Figure,
         val taps: List<RaDec>,
         val progress: ChallengeScorer.Progress,
+        /** Indices of solution vertices already covered (persisted between sessions). */
+        val coveredIndices: Set<Int> = emptySet(),
         /** True per tap when it covered a NEW solution vertex (a hit). */
         val hitFlags: List<Boolean> = emptyList(),
     ) {
@@ -52,10 +57,10 @@ class FindGameViewModel(
 
     /** The pick list: every IAU figure with its name. */
     private val _picks = MutableStateFlow<List<Pick>>(emptyList())
-    val picks: MutableStateFlow<List<Pick>> = _picks
+    val picks: StateFlow<List<Pick>> = _picks.asStateFlow()
 
     private val _session = MutableStateFlow<Session?>(null)
-    val session: MutableStateFlow<Session?> = _session
+    val session: StateFlow<Session?> = _session.asStateFlow()
 
     fun loadFigures() {
         if (_picks.value.isNotEmpty()) return
@@ -73,27 +78,43 @@ class FindGameViewModel(
     }
 
     fun start(pick: Pick) {
+        val key = progressKey(pick.name)
+        val vertices = FindGame.vertices(pick.figure)
+        val covered = ChallengeProgress.coveredIndices(context, key).filter { it < vertices.size }
         _session.value =
-            Session(pick.name, pick.figure, emptyList(), ChallengeScorer.Progress(0, FindGame.vertices(pick.figure).size, 0))
+            Session(
+                pick.name,
+                pick.figure,
+                covered.map { vertices[it] },
+                ChallengeScorer.Progress(covered.size, vertices.size, covered.size),
+                coveredIndices = covered.toSet(),
+            )
+    }
+
+    /** Replay from zero: clears the stored progress, then starts fresh. */
+    fun restart(pick: Pick) {
+        ChallengeProgress.clear(context, progressKey(pick.name))
+        start(pick)
     }
 
     fun cancel() {
+        // Progress persists per tap; stopping just ends the live session.
         _session.value = null
     }
 
-    /** User closed the picker with the ✕ (the map also restores the IAU lines layer). */
+    /** Kept for compatibility with earlier wiring (find-mode ✕). */
     fun cancelRequest() {
-        _session.value = null
+        cancel()
     }
 
     /** Reveal: end the session (the map re-enables the IAU lines so the figure shows). */
     fun reveal() {
-        _session.value = null
+        cancel()
     }
 
     /**
      * A tap during a running session: biased snap + scoring, with per-tap hit/miss feedback.
-     * Returns true when the tap was a HIT (covered a new solution vertex).
+     * Hits persist immediately (resume-ready). Returns true when the tap was a HIT.
      */
     fun onTap(
         xPx: Float,
@@ -105,15 +126,50 @@ class FindGameViewModel(
         val session = _session.value ?: return false
         val direction = IdentifyGeometry.screenToDirection(camera, widthPx, heightPx, xPx, yPx)
         val tapRaDec = RaDec.fromGeocentricVector(direction)
+        val vertices = FindGame.vertices(session.figure)
         val tolerance = TAP_TOLERANCE_DEG * camera.fovDeg / IdentifyGeometry.MAX_FOV_DEG
         val coveredBefore = session.progress.coveredVertices
-        val biased = ChallengeScorer.biasedSnap(FindGame.vertices(session.figure), tapRaDec, tolerance)
+        val biased = ChallengeScorer.biasedSnap(vertices, tapRaDec, tolerance)
         val newTaps = session.taps + (biased ?: tapRaDec)
         val progress = FindGame.score(session.figure, newTaps, tolerance)
         val isHit = progress.coveredVertices > coveredBefore
-        _session.value = session.copy(taps = newTaps, progress = progress, hitFlags = session.hitFlags + isHit)
+        var newCovered = session.coveredIndices
+        if (isHit) {
+            val coveredSet = session.coveredIndices.toMutableSet()
+            if (biased != null) {
+                for ((i, v) in vertices.withIndex()) {
+                    if (i in coveredSet) continue
+                    if (v == biased) {
+                        coveredSet += i
+                        break
+                    }
+                }
+            }
+            if (coveredSet == session.coveredIndices) {
+                // Snap missed but score advanced: persist the nearest uncovered in-tolerance vertex.
+                val tapDir = tapRaDec.toGeocentricVector()
+                var best = -1
+                var bestSep = Double.MAX_VALUE
+                for ((i, v) in vertices.withIndex()) {
+                    if (i in coveredSet) continue
+                    val sep = IdentifyGeometry.angularSeparationDeg(tapDir, v.toGeocentricVector())
+                    if (sep < tolerance && sep < bestSep) {
+                        bestSep = sep; best = i
+                    }
+                }
+                if (best >= 0) coveredSet += best
+            }
+            newCovered = coveredSet
+            val key = progressKey(session.figureName)
+            ChallengeProgress.setCoveredIndices(context, key, newCovered)
+            if (progress.complete) ChallengeProgress.setComplete(context, key, true)
+        }
+        _session.value =
+            Session(session.figureName, session.figure, newTaps, progress, newCovered, session.hitFlags + isHit)
         return isHit
     }
+
+    private fun progressKey(name: String) = "find:$name"
 
     companion object {
         const val TAP_TOLERANCE_DEG = 4.0
