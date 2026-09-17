@@ -43,7 +43,12 @@ class FindGameViewModel(
         val figure: Figure,
         val taps: List<RaDec>,
         val progress: ChallengeScorer.Progress,
-    )
+        /** True per tap when it covered a NEW solution vertex (a hit). */
+        val hitFlags: List<Boolean> = emptyList(),
+    ) {
+        val hits: Int get() = hitFlags.count { it }
+        val misses: Int get() = hitFlags.size - hits
+    }
 
     /** The pick list: every IAU figure with its name. */
     private val _picks = MutableStateFlow<List<Pick>>(emptyList())
@@ -86,21 +91,28 @@ class FindGameViewModel(
         _session.value = null
     }
 
+    /**
+     * A tap during a running session: biased snap + scoring, with per-tap hit/miss feedback.
+     * Returns true when the tap was a HIT (covered a new solution vertex).
+     */
     fun onTap(
         xPx: Float,
         yPx: Float,
         widthPx: Int,
         heightPx: Int,
         camera: SkyCamera,
-    ) {
-        val session = _session.value ?: return
+    ): Boolean {
+        val session = _session.value ?: return false
         val direction = IdentifyGeometry.screenToDirection(camera, widthPx, heightPx, xPx, yPx)
         val tapRaDec = RaDec.fromGeocentricVector(direction)
         val tolerance = TAP_TOLERANCE_DEG * camera.fovDeg / IdentifyGeometry.MAX_FOV_DEG
+        val coveredBefore = session.progress.coveredVertices
         val biased = ChallengeScorer.biasedSnap(FindGame.vertices(session.figure), tapRaDec, tolerance)
         val newTaps = session.taps + (biased ?: tapRaDec)
         val progress = FindGame.score(session.figure, newTaps, tolerance)
-        _session.value = session.copy(taps = newTaps, progress = progress)
+        val isHit = progress.coveredVertices > coveredBefore
+        _session.value = session.copy(taps = newTaps, progress = progress, hitFlags = session.hitFlags + isHit)
+        return isHit
     }
 
     companion object {

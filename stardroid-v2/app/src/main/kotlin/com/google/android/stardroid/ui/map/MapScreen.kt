@@ -27,6 +27,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculatePan
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.gestures.calculateRotation
@@ -164,6 +165,12 @@ private val ExpandedImageSaver =
         },
     )
 
+/** Instant hit/miss feedback after a challenge/find tap (auto-clears after ~700 ms). */
+private enum class TapFeedback {
+    HIT,
+    MISS,
+}
+
 /**
  * The map screen: the GL sky behind a Compose control overlay. Gestures reach [MapViewModel]
  * as v1-shaped deltas (`MapMover`); the camera and scene flows reach the GL surface through
@@ -279,6 +286,29 @@ fun MapScreen(
     }
     // v1: the hardware BACK key ends an active search.
     BackHandler(enabled = searchTarget != null) { searchViewModel.cancelSearch() }
+    // In play modes (challenge / find), BACK ends the session instead of leaving the map.
+    BackHandler(enabled = challengeSession != null) { challengeTabViewModel.cancel() }
+    BackHandler(enabled = findSession != null) {
+        layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+        findGameViewModel.cancel()
+    }
+    BackHandler(enabled = findPicking) { findPicking = false }
+
+    // While a play mode is live, EVERY sky tap belongs to the game: this opaque surface sits
+    // above the GL surface and below the HUDs, swallows taps (so the identify/"know more"
+    // path can never fire), while pan/zoom pass through to the camera. The session handlers
+    // below still receive their own taps via the gesture layer — this layer only guards the
+    // double-routing window.
+    val playModeActive = drawMode || findActive || challengeSession != null
+
+    // Instant hit/miss feedback after a challenge/find tap (auto-clears).
+    var tapFeedback by remember { mutableStateOf<TapFeedback?>(null) }
+    LaunchedEffect(tapFeedback) {
+        if (tapFeedback != null) {
+            delay(700)
+            tapFeedback = null
+        }
+    }
 
     // v1 ran SensorAccuracyMonitor for the life of the map activity: a badly calibrated
     // compass opens the calibration screen in its auto-dismissable form (or nudges via
@@ -528,8 +558,9 @@ fun MapScreen(
                         mapViewModel,
                         screenShortSidePx = { screenShortSidePx },
                         onTap = { offset ->
-                            chromeToggledByUser = true
+                            // Play modes own the tap: the identify/"know more" path must not fire.
                             if (drawMode) {
+                                if (chromeToggledByUser.not()) chromeToggledByUser = true
                                 // Draw mode: the tap records a stroke point instead of
                                 // identifying; camera gestures stay active (manual mode).
                                 scope.launch {
@@ -544,25 +575,38 @@ fun MapScreen(
                                 return@detectSkyGestures
                             }
                             if (findSession != null) {
-                                // Find mode: the tap scores against the hidden figure.
-                                findGameViewModel.onTap(
-                                    xPx = offset.x,
-                                    yPx = offset.y,
-                                    widthPx = screenSize.width,
-                                    heightPx = screenSize.height,
-                                    camera = camera,
-                                )
+                                // Find mode: the tap scores against the hidden figure; the
+                                // result (hit/miss) shows via the tap-marker + HUD updates.
+                                scope.launch {
+                                    val isHit =
+                                        findGameViewModel.onTap(
+                                            xPx = offset.x,
+                                            yPx = offset.y,
+                                            widthPx = screenSize.width,
+                                            heightPx = screenSize.height,
+                                            camera = camera,
+                                        )
+                                    tapFeedback = if (isHit) TapFeedback.HIT else TapFeedback.MISS
+                                }
                                 return@detectSkyGestures
                             }
                             if (challengeSession != null) {
                                 // Challenge play: the tap scores against the challenge.
-                                challengeTabViewModel.onTap(
-                                    xPx = offset.x,
-                                    yPx = offset.y,
-                                    widthPx = screenSize.width,
-                                    heightPx = screenSize.height,
-                                    camera = camera,
-                                )
+                                scope.launch {
+                                    val isHit =
+                                        challengeTabViewModel.onTap(
+                                            xPx = offset.x,
+                                            yPx = offset.y,
+                                            widthPx = screenSize.width,
+                                            heightPx = screenSize.height,
+                                            camera = camera,
+                                        )
+                                    tapFeedback = if (isHit) TapFeedback.HIT else TapFeedback.MISS
+                                }
+                                return@detectSkyGestures
+                            }
+                            if (playModeActive) {
+                                // A mode is arming/exiting — ignore sky taps entirely.
                                 return@detectSkyGestures
                             }
                             // Persisted, so later runs get v1's auto-hide: they have now seen
@@ -665,6 +709,32 @@ fun MapScreen(
         // MapChrome's per-zone `visible` below.
         val chromeShown =
             chromeVisible && searchTarget == null && !drawMode && !findActive && challengeSession == null
+        // Instant hit/miss toast: center-top, above everything, auto-clears (tapFeedback).
+        tapFeedback?.let { f ->
+            Text(
+                when (f) {
+                    TapFeedback.HIT -> "✅ Star found!"
+                    TapFeedback.MISS -> "❌ Not one of them — keep looking!"
+                },
+                style = MaterialTheme.typography.titleMedium,
+                color =
+                    when (f) {
+                        TapFeedback.HIT -> Color(0xFF7CE38B)
+                        TapFeedback.MISS -> Color(0xFFFF8A7A)
+                    },
+                modifier =
+                    Modifier
+                        .align(Alignment.TopCenter)
+                        .statusBarsPadding()
+                        .padding(top = 120.dp)
+                        // A soft dark pill so the text reads over any sky.
+                        .background(
+                            color = Color(0xCC101830),
+                            shape = RoundedCornerShape(20.dp),
+                        )
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+            )
+        }
         // Challenge play HUD: compact counter + Tip (slew to the zone + highlight) + exit.
         challengeSession?.let { active ->
             var tipShown by remember { mutableStateOf(false) }
@@ -1072,7 +1142,7 @@ fun MapScreen(
         val showingMoon by objectInfoViewModel.showingMoon.collectAsStateWithLifecycle()
         val lunarEclipse by objectInfoViewModel.lunarEclipse.collectAsStateWithLifecycle()
 
-        objectInfoCard?.let { info ->
+        objectInfoCard?.takeIf { !playModeActive }?.let { info ->
             ObjectInfoCard(
                 info = info,
                 riseSet = objectRiseSet,

@@ -23,11 +23,11 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -40,14 +40,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.ui.viewinterop.AndroidView
 
 /**
- * The Constellations tab (custom-constellations.md §4b), in the browse → detail → play shape
- * Catalyst specified: the list rows open a DETAIL screen ("See"); Start lives on the detail;
- * starting closes the screen so the sky is immediately playable; an active session shows the
- * stars-found counter and a Tip button (slew + zone highlight).
+ * The Constellations tab, Catalyst's 2.6.0 shape: ONE screen per challenge — art, info, and
+ * a single action button that is **Start** when idle and **Stop** while the session runs.
+ * Start arms the session and closes the tab (back to the sky instantly); the map shows the
+ * HUD + Tip while the session is live. No intermediate "playing" window exists at all.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,22 +62,10 @@ fun ConstellationsTabScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        when {
-                            session != null -> "In the sky — tap the stars"
-                            openDetail != null -> "Constellation"
-                            else -> "Constellations"
-                        },
-                    )
-                },
+                title = { Text(if (openDetail != null) "Constellation" else "Constellations") },
                 navigationIcon = {
                     IconButton(onClick = {
-                        when {
-                            session != null -> viewModel.cancel()
-                            openDetail != null -> openDetail = null
-                            else -> onBack()
-                        }
+                        if (openDetail != null) openDetail = null else onBack()
                     }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
@@ -87,37 +75,13 @@ fun ConstellationsTabScreen(
     ) { padding ->
         val active = session
         when {
-            // Playing: progress + Tip + the example art; the sky is behind this panel.
-            active != null -> {
-                Column(
-                    modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                ) {
-                    Text(active.challenge.name, style = MaterialTheme.typography.titleLarge)
-                    ChallengeExampleImage(challenge = active.challenge, modifier = Modifier.size(120.dp))
-                    LinearProgressIndicator(
-                        progress = { active.progress.fraction },
-                        modifier = Modifier.fillMaxWidth(),
-                    )
-                    Text("${active.progress.coveredVertices}/${active.progress.totalVertices} stars found")
-                    if (active.progress.complete) {
-                        Text(
-                            "Complete! Saved to My constellations 🎉",
-                            style = MaterialTheme.typography.titleSmall,
-                            color = MaterialTheme.colorScheme.primary,
-                        )
-                        Button(onClick = { viewModel.cancel() }) { Text("Done") }
-                    } else {
-                        Button(onClick = { viewModel.cancel() }) { Text("Give up") }
-                    }
-                }
-            }
-            // Detail screen: example art + Start.
+            // A session is live on the sky: the ONLY screen is its detail (Start/Stop merged).
             openDetail != null -> {
                 val entry = entries.firstOrNull { it.challenge.id == openDetail }
                 if (entry == null) {
                     openDetail = null
                 } else {
+                    val isActive = active?.challenge?.id == entry.challenge.id
                     Column(
                         modifier = Modifier.fillMaxSize().padding(padding).padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -125,8 +89,13 @@ fun ConstellationsTabScreen(
                         ChallengeExampleImage(challenge = entry.challenge, modifier = Modifier.size(180.dp))
                         Text(entry.challenge.name, style = MaterialTheme.typography.titleLarge)
                         Text(
-                            "Connect the stars of this shape — they're all real stars in Orion's " +
-                                "region. When you Start, the sky opens: tap each star of the figure.",
+                            if (isActive) {
+                                "Playing! ${active!!.progress.coveredVertices}/${active.progress.totalVertices} stars found. " +
+                                    "The sky map is behind this screen — press back to tap the stars."
+                            } else {
+                                "Connect the stars of this shape — they're all real stars in Orion's " +
+                                    "region. Start closes this screen: tap each star of the figure on the sky."
+                            },
                             style = MaterialTheme.typography.bodyMedium,
                         )
                         if (entry.complete) {
@@ -134,14 +103,26 @@ fun ConstellationsTabScreen(
                         }
                         Button(
                             onClick = {
-                                viewModel.start(entry.challenge)
+                                if (isActive) {
+                                    viewModel.cancel()
+                                } else {
+                                    viewModel.start(entry.challenge)
+                                    // Back to the map instantly: the session lives on the map.
+                                    onBack()
+                                }
                             },
+                            colors =
+                                if (isActive) {
+                                    ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                                } else {
+                                    ButtonDefaults.buttonColors()
+                                },
                             modifier = Modifier.fillMaxWidth(),
-                        ) { Text("Start") }
+                        ) { Text(if (isActive) "Stop" else "Start") }
                     }
                 }
             }
-            // Browse list: See (not Start) per row.
+            // Browse list: See per row (opens the unified detail).
             else -> {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize().padding(padding),
@@ -157,7 +138,7 @@ fun ConstellationsTabScreen(
                                     .clickable { openDetail = entry.challenge.id },
                         ) {
                             Row(
-                                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                                verticalAlignment = Alignment.CenterVertically,
                                 modifier = Modifier.padding(12.dp),
                             ) {
                                 ChallengeExampleImage(challenge = entry.challenge, modifier = Modifier.size(64.dp))

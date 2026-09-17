@@ -49,12 +49,17 @@ class ChallengeTabViewModel(
 
     private val completed = mutableSetOf<String>()
 
-    /** A running challenge session: taps so far + live progress. */
+    /** A running challenge session: taps so far + live progress + per-tap hit/miss. */
     data class Session(
         val challenge: Challenge,
         val taps: List<RaDec>,
         val progress: ChallengeScorer.Progress,
-    )
+        /** True per tap when it covered a NEW solution vertex (a hit). */
+        val hitFlags: List<Boolean> = emptyList(),
+    ) {
+        val hits: Int get() = hitFlags.count { it }
+        val misses: Int get() = hitFlags.size - hits
+    }
 
     private val _session = MutableStateFlow<Session?>(null)
     val session: StateFlow<Session?> = _session.asStateFlow()
@@ -116,6 +121,8 @@ class ChallengeTabViewModel(
     /**
      * A tap during a running session: biased snap to the solution vertex when within
      * tolerance, else the raw tap position. Progress updates; completion saves the figure.
+     * Returns true when the tap was a HIT (covered a new solution vertex) — the map shows
+     * the instant ✅/❌ feedback.
      */
     fun onTap(
         xPx: Float,
@@ -123,17 +130,20 @@ class ChallengeTabViewModel(
         widthPx: Int,
         heightPx: Int,
         camera: SkyCamera,
-    ) {
-        val session = _session.value ?: return
+    ): Boolean {
+        val session = _session.value ?: return false
         val direction = IdentifyGeometry.screenToDirection(camera, widthPx, heightPx, xPx, yPx)
         val tapRaDec = RaDec.fromGeocentricVector(direction)
         // Tolerance scales with FOV like draw mode, floored at the challenge's own tolerance.
         val scaled = IdentifyGeometry.TAP_THRESHOLD_DEGREES * camera.fovDeg / IdentifyGeometry.MAX_FOV_DEG
         val tolerance = maxOf(scaled, session.challenge.toleranceDeg)
+        val coveredBefore = session.progress.coveredVertices
         val biased = ChallengeScorer.biasedSnap(session.challenge.vertices, tapRaDec, tolerance)
         val newTaps = session.taps + (biased ?: tapRaDec)
         val progress = ChallengeScorer.progress(session.challenge.vertices, newTaps, tolerance)
-        _session.value = Session(session.challenge, newTaps, progress)
+        val isHit = progress.coveredVertices > coveredBefore
+        _session.value =
+            Session(session.challenge, newTaps, progress, session.hitFlags + isHit)
         if (progress.complete && !completed.contains(session.challenge.id)) {
             completed += session.challenge.id
             viewModelScope.launch {
@@ -144,6 +154,7 @@ class ChallengeTabViewModel(
                 refresh()
             }
         }
+        return isHit
     }
 
     /** The drawing-in-progress state for the live preview layer (the taps as one stroke). */
