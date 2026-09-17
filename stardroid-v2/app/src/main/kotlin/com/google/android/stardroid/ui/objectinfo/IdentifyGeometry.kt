@@ -9,13 +9,12 @@
 
 package com.google.android.stardroid.ui.objectinfo
 
-import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.render.api.SkyCamera
+import com.google.android.stardroid.render.api.SkyProjection
+import com.google.android.stardroid.render.api.Viewport
 import kotlin.math.acos
-import kotlin.math.min
-import kotlin.math.tan
 
 /**
  * The pure math behind tap-to-identify (v1 `CelestialHitTester`): a screen pixel becomes a sky
@@ -88,9 +87,12 @@ object IdentifyGeometry {
     }
 
     /**
-     * The unit geocentric direction under screen pixel ([xPx], [yPx]), top-left origin. Inverts
-     * `SkyProjection.worldToScreen` for points in front of the eye: NDC recovers the view-space
-     * ray via `tan(fov/2)` at the short viewport edge, un-rotated by the camera basis.
+     * The unit geocentric direction under screen pixel ([xPx], [yPx]), top-left origin.
+     * Delegates to [SkyProjection.screenToDirection] — the ONE inverse projection, shared
+     * with the GL backend and every overlay, so a tap lands exactly on the star the
+     * renderer drew (2.9.x: the hand-rolled basis here used the camera's raw `up`, and every
+     * divergence of that up from true orthogonality skewed off-center taps — de-centered
+     * constellation stars failed to register while centered ones hit).
      */
     fun screenToDirection(
         camera: SkyCamera,
@@ -98,21 +100,9 @@ object IdentifyGeometry {
         heightPx: Int,
         xPx: Float,
         yPx: Float,
-    ): Vector3 {
-        if (widthPx <= 0 || heightPx <= 0) return camera.lineOfSight.normalized()
-        val shortPx = min(widthPx, heightPx).toDouble()
-        val tanHalfFov = tan(camera.fovDeg * DEGREES_TO_RADIANS / 2.0)
-        val ndcX = 2.0 * xPx / widthPx - 1.0
-        // Screen y grows downward; NDC y grows upward.
-        val ndcY = 1.0 - 2.0 * yPx / heightPx
-        val look = camera.lineOfSight.normalized()
-        val up = camera.up.normalized()
-        // gluLookAt's s-axis: the camera's screen-right direction.
-        val right = (look cross up).normalized()
-        val rightOffset = ndcX * tanHalfFov * widthPx / shortPx
-        val upOffset = ndcY * tanHalfFov * heightPx / shortPx
-        return (look + right * rightOffset + up * upOffset).normalized()
-    }
+    ): Vector3 =
+        SkyProjection(camera, Viewport(widthPx, heightPx, 1f))
+            .screenToDirection(xPx, yPx) ?: camera.lineOfSight.normalized()
 
     /** Great-circle angle between two unit directions, degrees. */
     fun angularSeparationDeg(

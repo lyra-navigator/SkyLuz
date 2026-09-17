@@ -127,7 +127,14 @@ class FindGameViewModel(
         val direction = IdentifyGeometry.screenToDirection(camera, widthPx, heightPx, xPx, yPx)
         val tapRaDec = RaDec.fromGeocentricVector(direction)
         val vertices = FindGame.vertices(session.figure)
-        val tolerance = TAP_TOLERANCE_DEG * camera.fovDeg / IdentifyGeometry.MAX_FOV_DEG
+        // Same tolerance law as challenges (2.9.1): scales with FOV but floored — at high
+        // zoom a fixed 4°-scaled threshold would shrink until a tap on the drawn star dot
+        // itself missed.
+        val tolerance =
+            maxOf(
+                TAP_TOLERANCE_DEG * camera.fovDeg / IdentifyGeometry.MAX_FOV_DEG,
+                Challenge.DEFAULT_TOLERANCE_DEG,
+            )
         val coveredBefore = session.progress.coveredVertices
         val biased = ChallengeScorer.biasedSnap(vertices, tapRaDec, tolerance)
         val newTaps = session.taps + (biased ?: tapRaDec)
