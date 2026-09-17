@@ -73,6 +73,16 @@ class UpdateViewModel(
         }
     }
 
+    /**
+     * The launch-time check: fire-and-forget at app open. Silent on everything but a positive:
+     * errors and up-to-date results never surface (the Settings row remains the explicit,
+     * chatty path). Runs once per ViewModel instance — i.e. once per app process.
+     */
+    fun checkOnLaunch() {
+        if (_state.value != UpdateState.Idle) return
+        check()
+    }
+
     /** Opens the APK (or release page) in the user's browser. */
     fun openDownload(onOpen: (String) -> Unit) {
         val s = _state.value

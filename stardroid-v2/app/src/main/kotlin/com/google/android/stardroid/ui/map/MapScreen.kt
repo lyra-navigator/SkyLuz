@@ -9,7 +9,9 @@
 
 package com.google.android.stardroid.ui.map
 
+import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.opengl.GLSurfaceView
 import androidx.activity.compose.BackHandler
 import androidx.camera.view.PreviewView
@@ -25,6 +27,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculatePan
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.gestures.calculateRotation
 import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
@@ -37,11 +41,15 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarData
@@ -113,6 +121,8 @@ import com.google.android.stardroid.ui.draw.FindTapOverlay
 import com.google.android.stardroid.challenge.ChallengeTabViewModel
 import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.challenge.FindModeChrome
+import com.google.android.stardroid.update.UpdateState
+import com.google.android.stardroid.update.UpdateViewModel
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
@@ -170,6 +180,7 @@ fun MapScreen(
     constellationDrawViewModel: ConstellationDrawViewModel,
     challengeTabViewModel: ChallengeTabViewModel,
     findGameViewModel: FindGameViewModel,
+    updateViewModel: UpdateViewModel,
     onOpenMyConstellations: () -> Unit,
     onOpenConstellationsTab: () -> Unit,
     sensorWarningSuppressed: Boolean,
@@ -213,6 +224,10 @@ fun MapScreen(
     val findActive = findPicking || findSession != null
     // Challenge play: a challenge started in the tab is played on the map sky.
     val challengeSession by challengeTabViewModel.session.collectAsStateWithLifecycle()
+    // Launch update check: silent unless a newer release exists; the banner sits at the top
+    // until tapped (opens the APK) or dismissed.
+    LaunchedEffect(Unit) { updateViewModel.checkOnLaunch() }
+    val updateState by updateViewModel.state.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it. Settings, gallery,
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
@@ -700,6 +715,43 @@ fun MapScreen(
                 heightPx = screenSize.height,
                 modifier = Modifier.matchParentSize(),
             )
+        }
+        // Update-available banner (launch check): only when a newer release exists; tap opens
+        // the APK in the browser, ✕ dismisses for the session.
+        var updateBannerDismissed by rememberSaveable { mutableStateOf(false) }
+        if (!updateBannerDismissed) {
+            when (val u = updateState) {
+                is UpdateState.Available -> {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier =
+                            Modifier
+                                .align(Alignment.TopCenter)
+                                .statusBarsPadding()
+                                .padding(horizontal = 16.dp)
+                                .fillMaxWidth()
+                                .clickable {
+                                    updateViewModel.openDownload { url ->
+                                        context.startActivity(
+                                            Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url)),
+                                        )
+                                    }
+                                }
+                                .padding(8.dp),
+                    ) {
+                        Text(
+                            "SkyLuz v${u.release.version} available — tap to update",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.weight(1f),
+                        )
+                        IconButton(onClick = { updateBannerDismissed = true }) {
+                            Icon(Icons.Filled.Close, contentDescription = "Dismiss")
+                        }
+                    }
+                }
+                else -> Unit
+            }
         }
         // Constellation draw mode (custom-constellations.md): a top action bar; the sky takes
         // the taps, the camera gestures stay live. Hides the normal chrome entirely. The gold
