@@ -42,6 +42,7 @@ fun FindModeChrome(
     viewModel: FindGameViewModel,
     onExit: () -> Unit,
     onRevealLines: () -> Unit,
+    onTip: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val picks by viewModel.picks.collectAsStateWithLifecycle()
@@ -125,6 +126,10 @@ fun FindModeChrome(
                         (if (active.progress.complete) " — Found it! 🎉" else ""),
                     modifier = Modifier.padding(top = 4.dp),
                 )
+                Button(
+                    onClick = onTip,
+                    modifier = Modifier.padding(top = 8.dp),
+                ) { Text("Tip: show me where") }
                 if (active.progress.complete) {
                     Button(
                         onClick = {

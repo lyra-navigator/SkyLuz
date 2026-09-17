@@ -48,6 +48,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -118,7 +119,9 @@ import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.DrawModeChrome
 import com.google.android.stardroid.ui.draw.DrawTapOverlay
 import com.google.android.stardroid.ui.draw.FindTapOverlay
+import com.google.android.stardroid.ui.draw.TipZoneOverlay
 import com.google.android.stardroid.challenge.ChallengeTabViewModel
+import com.google.android.stardroid.challenge.FindGame
 import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.challenge.FindModeChrome
 import com.google.android.stardroid.update.UpdateState
@@ -662,41 +665,65 @@ fun MapScreen(
         // MapChrome's per-zone `visible` below.
         val chromeShown =
             chromeVisible && searchTarget == null && !drawMode && !findActive && challengeSession == null
-        // Challenge play HUD: name + progress + exit, plus the gold tap overlay.
+        // Challenge play HUD: compact counter + Tip (slew to the zone + highlight) + exit.
         challengeSession?.let { active ->
-            Card(
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                modifier = Modifier.matchParentSize().padding(top = 48.dp, start = 16.dp, end = 16.dp),
+            var tipShown by remember { mutableStateOf(false) }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier =
+                    Modifier
+                        .align(Alignment.TopCenter)
+                        .statusBarsPadding()
+                        .padding(horizontal = 12.dp)
+                        .fillMaxWidth(),
             ) {
-                Column(modifier = Modifier.padding(12.dp)) {
-                    Text(
-                        "Challenge: ${active.challenge.name}",
-                        style = MaterialTheme.typography.titleSmall,
-                    )
-                    Text(
-                        "Tap the stars of the shape. ${active.progress.coveredVertices}/${active.progress.totalVertices} found.",
-                        style = MaterialTheme.typography.bodySmall,
-                    )
-                    LinearProgressIndicator(
-                        progress = { active.progress.fraction },
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
-                    )
-                    if (active.progress.complete) {
+                Card(
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                    modifier = Modifier.weight(1f),
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                    ) {
                         Text(
-                            "Complete! Saved to My constellations 🎉",
-                            color = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.padding(top = 4.dp),
+                            "${active.progress.coveredVertices}/${active.progress.totalVertices} stars found",
+                            style = MaterialTheme.typography.titleSmall,
+                            modifier = Modifier.weight(1f),
                         )
-                    }
-                    Button(onClick = { challengeTabViewModel.cancel() }, modifier = Modifier.padding(top = 8.dp)) {
-                        Text("End challenge")
+                        if (active.progress.complete) {
+                            Text(
+                                "Saved to My constellations 🎉",
+                                color = MaterialTheme.colorScheme.primary,
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                        Button(onClick = {
+                            // Tip: slew to the challenge zone and zoom to frame it.
+                            val target = challengeTabViewModel.tipTarget(active.challenge)
+                            mapViewModel.aimAt(target.toGeocentricVector(), challengeTabViewModel.tipRadiusDeg(active.challenge))
+                            tipShown = true
+                        }) { Text("Tip") }
+                        FilledTonalIconButton(onClick = { challengeTabViewModel.cancel() }) {
+                            Icon(Icons.Filled.Close, contentDescription = "End challenge")
+                        }
                     }
                 }
+            }
+            if (tipShown) {
+                TipZoneOverlay(
+                    center = challengeTabViewModel.tipTarget(active.challenge),
+                    radiusDeg = challengeTabViewModel.tipRadiusDeg(active.challenge),
+                    camera = camera,
+                    widthPx = screenSize.width,
+                    heightPx = screenSize.height,
+                    modifier = Modifier.matchParentSize(),
+                )
             }
         }
         // Find mode: picker (or live HUD) + tap markers. IAU lines were forced off at entry;
         // any exit path (stop / reveal / ✕) restores them.
         if (findActive) {
+            var findTipShown by remember { mutableStateOf(false) }
             FindModeChrome(
                 viewModel = findGameViewModel,
                 onExit = {
@@ -706,8 +733,28 @@ fun MapScreen(
                 onRevealLines = {
                     layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
                 },
+                onTip = {
+                    // Tip: slew to the figure's zone and highlight it (lines stay hidden).
+                    findSession?.let { active ->
+                        val c = FindGame.center(active.figure)
+                        mapViewModel.aimAt(c.toGeocentricVector(), FindGame.radiusDeg(active.figure))
+                        findTipShown = true
+                    }
+                },
                 modifier = Modifier.matchParentSize(),
             )
+            findSession?.let { active ->
+                if (findTipShown) {
+                    TipZoneOverlay(
+                        center = FindGame.center(active.figure),
+                        radiusDeg = FindGame.radiusDeg(active.figure),
+                        camera = camera,
+                        widthPx = screenSize.width,
+                        heightPx = screenSize.height,
+                        modifier = Modifier.matchParentSize(),
+                    )
+                }
+            }
             FindTapOverlay(
                 viewModel = findGameViewModel,
                 camera = camera,

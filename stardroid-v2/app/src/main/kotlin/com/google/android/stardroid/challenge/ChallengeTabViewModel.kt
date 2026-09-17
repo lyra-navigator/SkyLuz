@@ -81,6 +81,31 @@ class ChallengeTabViewModel(
         _session.value = Session(challenge, emptyList(), ChallengeScorer.Progress(0, challenge.vertices.size, 0))
     }
 
+    /** The challenge's Tip slew target: its real-star centroid. */
+    fun tipTarget(challenge: Challenge): RaDec {
+        var x = 0.0
+        var y = 0.0
+        var z = 0.0
+        for (v in challenge.vertices) {
+            val d = v.toGeocentricVector()
+            x += d.x; y += d.y; z += d.z
+        }
+        return RaDec.fromGeocentricVector(com.google.android.stardroid.math.Vector3(x, y, z).normalized())
+    }
+
+    /** Tip zoom: angular radius from centroid, clamped. */
+    fun tipRadiusDeg(challenge: Challenge): Double {
+        val c = tipTarget(challenge).toGeocentricVector()
+        val maxSep =
+            challenge.vertices.maxOf {
+                com.google.android.stardroid.ui.objectinfo.IdentifyGeometry.angularSeparationDeg(
+                    c,
+                    it.toGeocentricVector(),
+                )
+            }
+        return maxOf(8.0, minOf(40.0, maxSep + 4.0))
+    }
+
     /** The map observes this: true while a challenge is being played on the sky. */
     val isPlaying: Boolean get() = _session.value != null
 
