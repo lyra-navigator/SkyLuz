@@ -596,4 +596,6 @@ readings to SkyLuz.</blockquote>
     <string name="draw_constellation_button" translation_description="Overflow sheet row that enters constellation draw mode">Draw a constellation</string>
     <string name="my_constellations_button" translation_description="Overflow sheet row that opens the saved-custom-constellation library">My constellations</string>
     <string name="layer_custom_figures" translation_description="Layer-toggle row for the user's own drawn constellations">My constellations (drawn)</string>
+    <string name="find_constellation_button" translation_description="Overflow sheet row that starts Find mode: guess a real constellation on a bare sky">Find a constellation</string>
+    <string name="constellations_tab_button" translation_description="Overflow sheet row that opens the Constellations challenges tab">Constellations challenges</string>
 </resources>

@@ -85,6 +85,8 @@ import com.google.android.stardroid.ui.diagnostics.GpsStatus
 import com.google.android.stardroid.ui.diagnostics.NetworkStatus
 import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.MyConstellationsViewModel
+import com.google.android.stardroid.challenge.ChallengeTabViewModel
+import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.ui.gallery.GalleryViewModel
 import com.google.android.stardroid.ui.layers.LayersViewModel
 import com.google.android.stardroid.ui.location.LocationViewModel
@@ -359,6 +361,22 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private val challengeTabViewModel: ChallengeTabViewModel by viewModels {
+        viewModelFactory {
+            initializer {
+                ChallengeTabViewModel(
+                    context = applicationContext,
+                    catalog = catalogAccess::repository,
+                    customFigures = catalogAccess::customFigureRepository,
+                )
+            }
+        }
+    }
+
+    private val findGameViewModel: FindGameViewModel by viewModels {
+        viewModelFactory { initializer { FindGameViewModel(catalogAccess::repository) } }
+    }
+
     private val startupViewModel: StartupViewModel by viewModels {
         viewModelFactory {
             initializer {
@@ -519,6 +537,8 @@ class MainActivity : ComponentActivity() {
                     calibrationViewModel = calibrationViewModel,
                     constellationDrawViewModel = constellationDrawViewModel,
                     myConstellationsViewModel = myConstellationsViewModel,
+                    challengeTabViewModel = challengeTabViewModel,
+                    findGameViewModel = findGameViewModel,
                     sensorPresence = sensorPresence,
                     sensorWarningSuppressed = sensorWarningSuppressed,
                     onWelcomeFinished = startupViewModel::completeWarmWelcome,

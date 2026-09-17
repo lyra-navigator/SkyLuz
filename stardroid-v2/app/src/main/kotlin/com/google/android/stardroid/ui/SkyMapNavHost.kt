@@ -35,6 +35,9 @@ import com.google.android.stardroid.ui.calibration.CompassCalibrationScreen
 import com.google.android.stardroid.ui.calibration.CompassCalibrationViewModel
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsScreen
 import com.google.android.stardroid.ui.diagnostics.DiagnosticsViewModel
+import com.google.android.stardroid.challenge.ChallengeTabViewModel
+import com.google.android.stardroid.challenge.ConstellationsTabScreen
+import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.MyConstellationsScreen
 import com.google.android.stardroid.ui.draw.MyConstellationsViewModel
@@ -68,6 +71,7 @@ object Routes {
     const val HELP = "help"
     const val WHATS_NEW = "whatsnew"
     const val MY_CONSTELLATIONS = "my_constellations"
+    const val CONSTELLATIONS_TAB = "constellations_tab"
     const val CALIBRATION = "calibration/{userInitiated}"
 
     fun calibration(userInitiated: Boolean) = "calibration/$userInitiated"
@@ -118,6 +122,8 @@ fun SkyMapNavHost(
     calibrationViewModel: CompassCalibrationViewModel,
     constellationDrawViewModel: ConstellationDrawViewModel,
     myConstellationsViewModel: MyConstellationsViewModel,
+    challengeTabViewModel: ChallengeTabViewModel,
+    findGameViewModel: FindGameViewModel,
     sensorPresence: SensorPresence,
     sensorWarningSuppressed: Boolean,
     onWelcomeFinished: () -> Unit,
@@ -155,7 +161,10 @@ fun SkyMapNavHost(
                 // the map activity's life).
                 calibrationViewModel,
                 constellationDrawViewModel,
+                challengeTabViewModel,
+                findGameViewModel,
                 onOpenMyConstellations = { navController.navigate(Routes.MY_CONSTELLATIONS) },
+                onOpenConstellationsTab = { navController.navigate(Routes.CONSTELLATIONS_TAB) },
                 sensorWarningSuppressed = sensorWarningSuppressed,
                 onOpenSettings = { navController.navigate(Routes.SETTINGS) },
                 onOpenGallery = { navController.navigate(Routes.GALLERY) },
@@ -311,6 +320,13 @@ fun SkyMapNavHost(
         composable(Routes.MY_CONSTELLATIONS) {
             MyConstellationsScreen(
                 myConstellationsViewModel,
+                onBack = { navController.popBackStack() },
+            )
+        }
+
+        composable(Routes.CONSTELLATIONS_TAB) {
+            ConstellationsTabScreen(
+                challengeTabViewModel,
                 onBack = { navController.popBackStack() },
             )
         }
