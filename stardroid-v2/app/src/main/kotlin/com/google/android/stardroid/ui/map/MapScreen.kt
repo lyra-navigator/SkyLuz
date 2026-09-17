@@ -28,6 +28,7 @@ import androidx.compose.foundation.gestures.calculatePan
 import androidx.compose.foundation.gestures.calculateRotation
 import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,7 +38,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarData
 import androidx.compose.material3.SnackbarDefaults
@@ -103,6 +108,8 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.DrawModeChrome
+import com.google.android.stardroid.ui.draw.DrawTapOverlay
+import com.google.android.stardroid.ui.draw.FindTapOverlay
 import com.google.android.stardroid.challenge.ChallengeTabViewModel
 import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.challenge.FindModeChrome
@@ -199,8 +206,13 @@ fun MapScreen(
     // Constellation draw mode (custom-constellations.md): session state, not saveable —
     // rotation mid-draw would drop an unsaved stroke, which is acceptable for a sky sketch.
     var drawMode by rememberSaveable { mutableStateOf(false) }
-    // Find mode: the map hides the IAU lines and routes taps to the find game.
+    // Find mode: the map hides the IAU lines and routes taps to the find game. The picker
+    // sheet and the session both count as "active" (taps are ignored in both).
+    var findPicking by rememberSaveable { mutableStateOf(false) }
     val findSession by findGameViewModel.session.collectAsStateWithLifecycle()
+    val findActive = findPicking || findSession != null
+    // Challenge play: a challenge started in the tab is played on the map sky.
+    val challengeSession by challengeTabViewModel.session.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it. Settings, gallery,
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
@@ -524,6 +536,17 @@ fun MapScreen(
                                 )
                                 return@detectSkyGestures
                             }
+                            if (challengeSession != null) {
+                                // Challenge play: the tap scores against the challenge.
+                                challengeTabViewModel.onTap(
+                                    xPx = offset.x,
+                                    yPx = offset.y,
+                                    widthPx = screenSize.width,
+                                    heightPx = screenSize.height,
+                                    camera = camera,
+                                )
+                                return@detectSkyGestures
+                            }
                             // Persisted, so later runs get v1's auto-hide: they have now seen
                             // the chrome go away and come back by their own hand.
                             mapViewModel.onChromeToggledByUser()
@@ -622,26 +645,73 @@ fun MapScreen(
         // the chrome stays composed long enough to animate away and is then dropped — keeping
         // the HUD flow cold while hidden (WhileSubscribed). The visible/hidden *look* is
         // MapChrome's per-zone `visible` below.
-        val chromeShown = chromeVisible && searchTarget == null && !drawMode && findSession == null
-        // Find mode chrome: figure name + live progress + reveal/stop. IAU lines are forced
-        // off for the session (bare sky); they return on reveal or cancel.
-        findSession?.let { active ->
+        val chromeShown =
+            chromeVisible && searchTarget == null && !drawMode && !findActive && challengeSession == null
+        // Challenge play HUD: name + progress + exit, plus the gold tap overlay.
+        challengeSession?.let { active ->
+            Card(
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                modifier = Modifier.matchParentSize().padding(top = 48.dp, start = 16.dp, end = 16.dp),
+            ) {
+                Column(modifier = Modifier.padding(12.dp)) {
+                    Text(
+                        "Challenge: ${active.challenge.name}",
+                        style = MaterialTheme.typography.titleSmall,
+                    )
+                    Text(
+                        "Tap the stars of the shape. ${active.progress.coveredVertices}/${active.progress.totalVertices} found.",
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                    LinearProgressIndicator(
+                        progress = { active.progress.fraction },
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                    )
+                    if (active.progress.complete) {
+                        Text(
+                            "Complete! Saved to My constellations 🎉",
+                            color = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.padding(top = 4.dp),
+                        )
+                    }
+                    Button(onClick = { challengeTabViewModel.cancel() }, modifier = Modifier.padding(top = 8.dp)) {
+                        Text("End challenge")
+                    }
+                }
+            }
+        }
+        // Find mode: picker (or live HUD) + tap markers. IAU lines were forced off at entry;
+        // any exit path (stop / reveal / ✕) restores them.
+        if (findActive) {
             FindModeChrome(
-                session = active,
-                onReveal = {
+                viewModel = findGameViewModel,
+                onExit = {
+                    findPicking = false
                     layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
-                    findGameViewModel.cancel()
                 },
-                onCancel = {
+                onRevealLines = {
                     layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
-                    findGameViewModel.cancel()
                 },
+                modifier = Modifier.matchParentSize(),
+            )
+            FindTapOverlay(
+                viewModel = findGameViewModel,
+                camera = camera,
+                widthPx = screenSize.width,
+                heightPx = screenSize.height,
                 modifier = Modifier.matchParentSize(),
             )
         }
         // Constellation draw mode (custom-constellations.md): a top action bar; the sky takes
-        // the taps, the camera gestures stay live. Hides the normal chrome entirely.
+        // the taps, the camera gestures stay live. Hides the normal chrome entirely. The gold
+        // tap overlay gives instant feedback (every tap shows as a dot + stroke lines).
         if (drawMode) {
+            DrawTapOverlay(
+                viewModel = constellationDrawViewModel,
+                camera = camera,
+                widthPx = screenSize.width,
+                heightPx = screenSize.height,
+                modifier = Modifier.matchParentSize(),
+            )
             DrawModeChrome(
                 viewModel = constellationDrawViewModel,
                 onExit = { drawMode = false },
@@ -828,6 +898,7 @@ fun MapScreen(
                     // Bare sky for guessing: IAU lines off for the session (restored on exit).
                     layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
                     findGameViewModel.loadFigures()
+                    findPicking = true
                 },
                 onStartDrawMode = {
                     showOverflowSheet = false

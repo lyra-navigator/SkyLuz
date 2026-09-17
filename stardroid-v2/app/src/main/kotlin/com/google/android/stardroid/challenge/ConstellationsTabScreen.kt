@@ -77,8 +77,12 @@ fun ConstellationsTabScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Text(
-                    "Find the ${active.challenge.name}! Tap its stars on the sky.",
+                    "Now look at the sky (back button) and tap the ${active.challenge.name}'s stars!",
                     style = MaterialTheme.typography.titleMedium,
+                )
+                Text(
+                    "Progress shows on the sky as you tap. Come back here any time.",
+                    style = MaterialTheme.typography.bodyMedium,
                 )
                 val context = LocalContext.current
                 ChallengeExampleImage(challenge = active.challenge, modifier = Modifier.size(140.dp))
