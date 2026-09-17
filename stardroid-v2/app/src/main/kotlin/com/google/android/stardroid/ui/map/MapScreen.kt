@@ -103,6 +103,9 @@ import com.google.android.stardroid.ui.location.LocationViewModel
 import com.google.android.stardroid.ui.location.ManualLocationEntryDialog
 import com.google.android.stardroid.ui.draw.ConstellationDrawViewModel
 import com.google.android.stardroid.ui.draw.DrawModeChrome
+import com.google.android.stardroid.challenge.ChallengeTabViewModel
+import com.google.android.stardroid.challenge.FindGameViewModel
+import com.google.android.stardroid.challenge.FindModeChrome
 import com.google.android.stardroid.ui.objectinfo.EclipseRow
 import com.google.android.stardroid.ui.objectinfo.ImageExpandOverlay
 import com.google.android.stardroid.ui.objectinfo.MoonWidgetPromoRow
@@ -158,7 +161,10 @@ fun MapScreen(
     locationViewModel: LocationViewModel,
     calibrationViewModel: CompassCalibrationViewModel,
     constellationDrawViewModel: ConstellationDrawViewModel,
+    challengeTabViewModel: ChallengeTabViewModel,
+    findGameViewModel: FindGameViewModel,
     onOpenMyConstellations: () -> Unit,
+    onOpenConstellationsTab: () -> Unit,
     sensorWarningSuppressed: Boolean,
     onOpenSettings: () -> Unit,
     onOpenGallery: () -> Unit,
@@ -193,6 +199,8 @@ fun MapScreen(
     // Constellation draw mode (custom-constellations.md): session state, not saveable —
     // rotation mid-draw would drop an unsaved stroke, which is acceptable for a sky sketch.
     var drawMode by rememberSaveable { mutableStateOf(false) }
+    // Find mode: the map hides the IAU lines and routes taps to the find game.
+    val findSession by findGameViewModel.session.collectAsStateWithLifecycle()
     // Saveable so the sheet/dialogs survive rotation — otherwise the dialog dismisses and the
     // rememberSaveable date/time inside it is thrown away with it. Settings, gallery,
     // diagnostics, and calibration are no longer local booleans here — they're Navigation
@@ -505,6 +513,17 @@ fun MapScreen(
                                 }
                                 return@detectSkyGestures
                             }
+                            if (findSession != null) {
+                                // Find mode: the tap scores against the hidden figure.
+                                findGameViewModel.onTap(
+                                    xPx = offset.x,
+                                    yPx = offset.y,
+                                    widthPx = screenSize.width,
+                                    heightPx = screenSize.height,
+                                    camera = camera,
+                                )
+                                return@detectSkyGestures
+                            }
                             // Persisted, so later runs get v1's auto-hide: they have now seen
                             // the chrome go away and come back by their own hand.
                             mapViewModel.onChromeToggledByUser()
@@ -603,7 +622,23 @@ fun MapScreen(
         // the chrome stays composed long enough to animate away and is then dropped — keeping
         // the HUD flow cold while hidden (WhileSubscribed). The visible/hidden *look* is
         // MapChrome's per-zone `visible` below.
-        val chromeShown = chromeVisible && searchTarget == null && !drawMode
+        val chromeShown = chromeVisible && searchTarget == null && !drawMode && findSession == null
+        // Find mode chrome: figure name + live progress + reveal/stop. IAU lines are forced
+        // off for the session (bare sky); they return on reveal or cancel.
+        findSession?.let { active ->
+            FindModeChrome(
+                session = active,
+                onReveal = {
+                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+                    findGameViewModel.cancel()
+                },
+                onCancel = {
+                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, true)
+                    findGameViewModel.cancel()
+                },
+                modifier = Modifier.matchParentSize(),
+            )
+        }
         // Constellation draw mode (custom-constellations.md): a top action bar; the sky takes
         // the taps, the camera gestures stay live. Hides the normal chrome entirely.
         if (drawMode) {
@@ -783,6 +818,16 @@ fun MapScreen(
                 onOpenMyConstellations = {
                     showOverflowSheet = false
                     onOpenMyConstellations()
+                },
+                onOpenConstellationsTab = {
+                    showOverflowSheet = false
+                    onOpenConstellationsTab()
+                },
+                onStartFindMode = {
+                    showOverflowSheet = false
+                    // Bare sky for guessing: IAU lines off for the session (restored on exit).
+                    layersViewModel.setEnabled(CatalogLayers.CONSTELLATIONS_LAYER_ID, false)
+                    findGameViewModel.loadFigures()
                 },
                 onStartDrawMode = {
                     showOverflowSheet = false
