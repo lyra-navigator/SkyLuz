@@ -81,6 +81,9 @@ class ChallengeTabViewModel(
         _session.value = Session(challenge, emptyList(), ChallengeScorer.Progress(0, challenge.vertices.size, 0))
     }
 
+    /** The map observes this: true while a challenge is being played on the sky. */
+    val isPlaying: Boolean get() = _session.value != null
+
     fun cancel() {
         _session.value = null
     }

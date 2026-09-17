@@ -76,6 +76,16 @@ class FindGameViewModel(
         _session.value = null
     }
 
+    /** User closed the picker with the ✕ (the map also restores the IAU lines layer). */
+    fun cancelRequest() {
+        _session.value = null
+    }
+
+    /** Reveal: end the session (the map re-enables the IAU lines so the figure shows). */
+    fun reveal() {
+        _session.value = null
+    }
+
     fun onTap(
         xPx: Float,
         yPx: Float,
