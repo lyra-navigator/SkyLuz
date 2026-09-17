@@ -40,6 +40,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -123,6 +124,7 @@ import com.google.android.stardroid.ui.draw.DrawTapOverlay
 import com.google.android.stardroid.ui.draw.FindTapOverlay
 import com.google.android.stardroid.ui.draw.TipZoneOverlay
 import com.google.android.stardroid.challenge.ChallengeTabViewModel
+import com.google.android.stardroid.challenge.ConstellationPreviewImage
 import com.google.android.stardroid.challenge.FindGame
 import com.google.android.stardroid.challenge.FindGameViewModel
 import com.google.android.stardroid.update.UpdateState
@@ -311,7 +313,33 @@ fun MapScreen(
         }
     }
 
-    // 2.7.0 feedback #7: during ANY play mode the IAU constellation lines are off by default
+    // 2.8.0 feedback #4/#5: chrome is forced visible during play sessions AND restored when
+    // one ends — a session start while the chrome was hidden must not leave the user chrome-
+    // less on exit (the 2.7.0 "stuck with just the sky map" report).
+    LaunchedEffect(challengeSession, findSession) {
+        if (challengeSession != null || findSession != null) {
+            chromeVisible = true
+        } else {
+            // Session ended: bring the chrome back so the map is never left bare.
+            chromeVisible = true
+            chromeToggledByUser = true
+        }
+    }
+
+    // 2.8.0 feedback #3: while a play session runs, the sky is BY HAND (drag to move) —
+    // pointing the phone at a direction fights the search. Sensor mode returns on exit.
+    var frameForcedManual by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(challengeSession, findSession) {
+        if (challengeSession != null || findSession != null) {
+            if (referenceFrame != ReferenceFrame.MANUAL) {
+                mapViewModel.setReferenceFrame(ReferenceFrame.MANUAL)
+                frameForcedManual = true
+            }
+        } else if (frameForcedManual) {
+            frameForcedManual = false
+            mapViewModel.setReferenceFrame(ReferenceFrame.SENSOR)
+        }
+    }
     // (the user's rule from draw mode, extended); they return the moment the session ends.
     // Only touch the layer when the state would actually change — setEnabled is idempotent,
     // but the log entry would spam on every recomposition.
@@ -733,8 +761,7 @@ fun MapScreen(
         // the chrome stays composed long enough to animate away and is then dropped — keeping
         // the HUD flow cold while hidden (WhileSubscribed). The visible/hidden *look* is
         // MapChrome's per-zone `visible` below.
-        val chromeShown =
-            chromeVisible && searchTarget == null && !drawMode && !findActive && challengeSession == null
+        val chromeShown = chromeVisible && searchTarget == null && !drawMode
         // Instant hit/miss toast: center-top, above everything, auto-clears (tapFeedback).
         tapFeedback?.let { f ->
             Text(
@@ -902,6 +929,30 @@ fun MapScreen(
                         heightPx = screenSize.height,
                         modifier = Modifier.matchParentSize(),
                     )
+                    // A small REAL picture of the figure, above the highlighted zone
+                    // (2.8.0 feedback #2): "look in here — it looks like this".
+                    Card(
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        modifier =
+                            Modifier
+                                .align(Alignment.BottomCenter)
+                                .navigationBarsPadding()
+                                .padding(bottom = 96.dp),
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.padding(8.dp),
+                        ) {
+                            ConstellationPreviewImage(
+                                strokes = active.figure.strokes,
+                                modifier = Modifier.size(120.dp),
+                            )
+                            Text(
+                                active.figureName,
+                                style = MaterialTheme.typography.labelSmall,
+                            )
+                        }
+                    }
                 }
                 FindTapOverlay(
                     viewModel = findGameViewModel,

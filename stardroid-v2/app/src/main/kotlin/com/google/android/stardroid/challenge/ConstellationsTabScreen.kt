@@ -93,20 +93,30 @@ fun ConstellationsTabScreen(
                         val isActive = activeFind?.figureName == name
                         val covered = ChallengeProgress.coveredIndices(
                             findViewModel.findContext, "find:$name")
-                        FigureDetail(
-                            name = pick.name,
-                            starCount = FindGame.vertices(pick.figure).size,
-                            covered = covered.size,
-                            exampleAsset = null,
-                            instructions = "The lines are hidden on the sky. Tap each star you " +
-                                "think belongs to " + pick.name + ". Progress is saved as you go.",
-                            isActive = isActive,
-                            onStart = {
-                                findViewModel.start(pick)
-                                onBack()
-                            },
-                            onStop = { findViewModel.cancel() },
-                        )
+                        Column(
+                            modifier = Modifier.fillMaxSize().padding(16.dp),
+                            verticalArrangement = Arrangement.spacedBy(12.dp),
+                        ) {
+                            // The REAL figure, rendered from its catalog star positions.
+                            ConstellationPreviewImage(
+                                strokes = pick.figure.strokes,
+                                modifier = Modifier.size(200.dp),
+                            )
+                            FigureDetail(
+                                name = pick.name,
+                                starCount = FindGame.vertices(pick.figure).size,
+                                covered = covered.size,
+                                exampleAsset = null,
+                                instructions = "The lines are hidden on the sky. Tap each star you " +
+                                    "think belongs to " + pick.name + ". Progress is saved as you go.",
+                                isActive = isActive,
+                                onStart = {
+                                    findViewModel.start(pick)
+                                    onBack()
+                                },
+                                onStop = { findViewModel.cancel() },
+                            )
+                        }
                     }
                 } else {
                     val id = openDetail!!
