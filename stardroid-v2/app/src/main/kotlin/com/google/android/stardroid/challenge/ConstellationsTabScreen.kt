@@ -115,6 +115,7 @@ fun ConstellationsTabScreen(
                                     onBack()
                                 },
                                 onStop = { findViewModel.cancel() },
+                                onRestart = { findViewModel.restart(pick) },
                             )
                         }
                     }
@@ -139,7 +140,8 @@ fun ConstellationsTabScreen(
                                 onBack()
                             },
                             onStop = { viewModel.cancel() },
-                        )
+                            onRestart = { viewModel.restart(entry.challenge) },
+                            )
                     }
                 }
             }
@@ -197,6 +199,7 @@ private fun FigureDetail(
     isActive: Boolean,
     onStart: () -> Unit,
     onStop: () -> Unit,
+    onRestart: () -> Unit = {},
 ) {
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -212,6 +215,12 @@ private fun FigureDetail(
             color = MaterialTheme.colorScheme.primary,
         )
         Text(instructions, style = MaterialTheme.typography.bodyMedium)
+        if (isActive && covered >= starCount && starCount > 0) {
+            Button(
+                onClick = onRestart,
+                modifier = Modifier.fillMaxWidth(),
+            ) { Text("Restart") }
+        }
         Button(
             onClick = { if (isActive) onStop() else onStart() },
             colors =

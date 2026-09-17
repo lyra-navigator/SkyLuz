@@ -905,6 +905,9 @@ fun MapScreen(
                                     " 🎉",
                                     style = MaterialTheme.typography.titleSmall,
                                 )
+                                Button(onClick = { findGameViewModel.restartCurrent() }) {
+                                    Text("Restart")
+                                }
                             }
                             Button(onClick = {
                                 val c = FindGame.center(active.figure)
